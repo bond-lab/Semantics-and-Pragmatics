@@ -1,0 +1,996 @@
+\documentclass[headrule,footrule]{foils}
+
+
+\input{headx.tex}
+
+
+\newcommand{\izn}[2]{\iz{#1:#2}}
+\newcommand{\izb}[1]{(\iz{#1})}
+
+
+
+\begin{document}
+
+\header{Lecture 9}{Meaning Components}{}\maketitle
+
+%\include{schedule}
+
+\myslide{Overview}
+\begin{itemize}\addtolength{\itemsep}{-1ex}
+\item Revision: Speech as Action
+  \begin{itemize}
+  \item Austin's Speech Act Theory
+  \item Categorizing Speech Acts
+  \item Indirect Speech Acts
+  \end{itemize}
+  % \item Sentence Types
+\item Componential Analysis
+\item Katz's Semantic Theory
+\item Levin's Verbal Alternations
+\item Talmy's Cognitive Structure
+\item Jackendoff's (Lexical) Conceptual Structure
+\item Pustejovsky's Generative Lexicon
+\item Next Lecture: Chapter 10 --- \emp{Formal Semantics}
+\end{itemize}
+
+
+%%%
+%%% this changes each year, so keep separate
+%%%
+
+\MyLogo{Finish Annotation by 17:00 Oct 21st; Submit Report by 17:00 Nov 4}
+\include{schedule}
+\MyLogo{}
+
+
+
+\section{Revision: \\ Speech as Action}
+
+
+\myslide{Speech as Action}
+
+\begin{itemize}
+\item Language is often used to \emp{do} things: \txx{speech acts}
+  \\ language has both
+  \begin{itemize}
+  \item \txx{interactivity}
+  \item \txx{context dependence}
+  \end{itemize}
+\item There are four syntactic types that correlate closely to pragmatic uses
+
+  \begin{tabular}{lcl}
+\textbf{Syntactic Type} &  & \textbf{Speech Act} \\
+    \hline
+  \txx{declarative}  &$\leftrightarrow$& \txx{assertion} \\
+  \txx{interrogative} &$\leftrightarrow$& \txx{question} \\
+  \txx{imperative} &$\leftrightarrow$& \txx{order} or \txx{command} \\
+  \txx{optative} &$\leftrightarrow$& \txx{wish}
+  \end{tabular}
+\item Mismatches are \txx{indirect speech acts}
+\end{itemize}
+
+\myslide{Perfomative Utterances}
+
+\begin{exe}
+  \ex \eng{I promise I won't drive home}
+  \ex \eng{I bet you 5 bucks they get caught}
+  \ex \eng{I declare this lecture over} 
+  \ex \eng{I warn you that legal action will ensue}
+  \ex \eng{I name this ship \textit{the Lollipop}} 
+\end{exe}
+
+\begin{itemize}
+\item Uttering these (in an appropriate context) \emp{is} acting
+\\  \emp{Utterances themselves can be actions}
+\item In English, we can signal this explicitly with \textit{hereby}
+\end{itemize}
+
+\myslide{Felicity Conditions}
+\begin{itemize}
+\item Performatives (vs Constantives) \hfill (Austin)
+\\ Given the correct \txx{felicity conditions}
+  \begin{description}
+  \item[A1] There must exist an accepted conventional procedure that
+    includes saying certain words by certain persons in certain
+    circumstances,
+  \item[A2] The circumstances must be appropriate for the invocation
+  \item[B1] All participants must do it both correctly
+  \item[B2] \ldots  and completely
+  \item[C1] The intention must be to do this the act
+  \item[C2] The participants must conduct themselves so subsequently.
+  \end{description}
+\item If the conditions don't hold, the speech act is \txx{infelicitous}
+  \begin{itemize}
+  \item Failing \textbf{A} or \textbf{B} is a \txx{misfire}
+  \item Failing \textbf{C} is an \txx{abuse}
+  \end{itemize}
+  \end{itemize}
+
+\myslide{Explicit and Implicit Performatives}
+\begin{itemize}
+\item \txx{Explicit Performatives}
+  \begin{itemize}
+  \item Tend to be first person
+  \item The main verb  is a performative: 
+    \eng{promise, warn, sentence, bet, pronounce, \ldots}
+  \item You can use \eng{hereby}
+  \end{itemize}
+\item \txx{Implicit Performatives}
+  \begin{exe}
+    \ex \eng{You are hereby charged with treason}
+    \ex \eng{Students are requested to be quiet in the halls}
+    \ex \eng{10 bucks says they'll be late}
+    \ex \eng{Come up and see me some time!}
+  \end{exe}
+  Can be made explicit by adding a perfomative verb
+\end{itemize}
+
+\myslide{Elements of Speech Acts}
+\begin{description}
+\item \txx{Locutionary act} the act of saying something
+\item \txx{\underline{Illocutionary act}} the force of the statement 
+\item \txx{Perlocutionary act} the effects of the statement
+``such as persuading, convincing, scaring, enlightening, inspiring, or otherwise getting someone to do or realize something whether intended or not'' (Austin 1962)
+\end{description}
+Illocutionary force indicating devices(IFID)
+\begin{itemize}
+\item   word order;  stress;    intonation contour;  punctuation; the mood of the verb
+ performative verbs: \eng{I (Vp) you that \ldots} 
+\end{itemize}
+
+\myslide{Searle's speech act classification}
+  \begin{description}
+  \item \txx{Declarative} changes the world (like performatives)
+  \item \txx{Representative} describes the (speaker's view of the) world 
+  \item \txx{Expressives}  express how the speaker feels
+  \item \txx{Directives} get someone else to do something
+  \item \txx{Comissives} commit oneself to a future action
+  \end{description}
+
+
+\myslide{Literal and non-literal uses}
+
+\begin{exe}
+  \ex
+  \begin{xlist}
+    \ex \eng{Could you get that?} 
+    \ex \eng{Please get pass the salt.}
+  \end{xlist}
+  \ex 
+  \begin{xlist}
+    \ex \eng{I wish you wouldn't do that.}
+    \ex \eng{Please don't do that.}
+  \end{xlist}
+  \ex
+  \begin{xlist}
+    \ex \eng{ You left the door open.}
+    \ex \eng{Please close the door.}
+  \end{xlist}
+\end{exe}
+\begin{itemize}
+\item People have access to both the literal and non-literal meanings
+\item Non literal meanings can be slower to understand
+\item Some non-literal uses are very conventionalized 
+  \\ \eng{Can/Could you X?} \into \eng{Please X}
+\item Questioning the felicity conditions produces an indirect version
+\end{itemize}
+
+\myslide{Why be Indirect?}
+
+\begin{itemize}
+\item Mainly for politeness
+\begin{itemize}
+\item \txx{Positive Face} desire to seem worthy and deserving of approval
+\item \txx{Negative Face} desire to be autonomous, unimpeded by others
+\item Threats to another’s face
+  \begin{itemize}
+  \item to positive: disapproval, disagreement, interruption
+  \item to negative: orders, requests, suggestions
+  \end{itemize}
+\item Face-saving acts: 
+  \begin{itemize}
+  \item don't threaten another’s face: \eng{I may be wrong but, \ldots}
+  \item allow for negative face: \eng{Could you please, \ldots}
+  \end{itemize}
+\item Is politeness trans-cultural?
+\end{itemize}
+\end{itemize}
+
+% \section{Sentence Types}
+
+\section{Componential Analysis}
+
+\myslide{Break word meaning into its components}
+\MyLogo{Inspired by work on phonetics in the Prague School}
+\begin{itemize}
+\item For example:
+  \\[2ex] \begin{tabular}{lllll}
+    \lex{woman} & \cmp{female} & \cmp{adult} & \cmp{human} & \\
+    \lex{spinster} & \cmp{female} & \cmp{adult} & \cmp{human} & \cmp{unmarried} \\
+    \lex{bachelor} & \cmp{male} & \cmp{adult} & \cmp{human} & \cmp{unmarried} \\
+    \lex{wife} & \cmp{female} & \cmp{adult} & \cmp{human} & \cmp{married} \\
+    \lex{girl} & \cmp{female} & \cmp{child} & \cmp{human} & \\
+    \lex{boy} & \cmp{male} & \cmp{child} & \cmp{human} & \\
+  \end{tabular}
+  \\[2ex] \txx{semantic components}/\txx{primitives} shown as \cmp{component}
+  \begin{itemize}
+  \item components allow a compact description
+  \item interact with morphology/syntax
+  \item form part of our cognitive architecture
+  \end{itemize}
+\end{itemize}
+
+\myslide{Defining Relations using Components}
+
+\begin{itemize}
+\item \txx{hyponymy}
+  \begin{quote}
+    A lexical item P is a hyponym of Q if all the components of Q are also in P.
+  \end{quote}
+  \begin{tabular}{lllll}
+    \lex{woman} & \cmp{female} & \cmp{adult} & \cmp{human} & \\
+    \lex{spinster} & \cmp{female} & \cmp{adult} & \cmp{human} & \cmp{unmarried} \\
+%    \lex{bachelor} & \cmp{male} & \cmp{adult} & \cmp{human} & \cmp{unmarried} \\
+    \lex{wife} & \cmp{female} & \cmp{adult} & \cmp{human} & \cmp{married} \\
+  \end{tabular}
+\\[2ex]  \lex{spinster} $\subset$ \lex{woman}; \lex{wife} $\subset$ \lex{woman}
+\item \txx{incompatibility}
+  \begin{quote}
+    A lexical item P is incompatible with Q if they share some
+    components but differ in one or more \txx{contrasting} components
+  \end{quote}
+%   \begin{tabular}{lllll}
+% %    \lex{woman} & \cmp{female} & \cmp{adult} & \cmp{human} & \\
+%     \lex{spinster} & \cmp{female} & \cmp{adult} & \cmp{human} & \cmp{unmarried} \\
+% %    \lex{bachelor} & \cmp{male} & \cmp{adult} & \cmp{human} & \cmp{unmarried} \\
+%     \lex{wife} & \cmp{female} & \cmp{adult} & \cmp{human} & \cmp{married} \\
+%   \end{tabular}
+  \lex{spinster} $\not\approx$ \lex{wife}
+
+\end{itemize}
+
+\myslide{Binary Features}
+
+\begin{itemize}
+\item We can make things more economical (fewer components):
+  \\[2ex] \begin{tabular}{lllll}
+    \lex{woman} & \cmp{+female} & \cmp{+adult} & \cmp{+human} & \\
+    \lex{spinster} & \cmp{+female} & \cmp{+adult} & \cmp{+human} & \cmp{--married} \\
+    \lex{bachelor} & \cmp{--female} & \cmp{+adult} & \cmp{+human} & \cmp{--married} \\
+    \lex{wife} & \cmp{+female} & \cmp{+adult} & \cmp{+human} & \cmp{+married} \\
+    \lex{girl} & \cmp{+female} & \cmp{-adult} & \cmp{+human} & \\
+  \end{tabular}
+  \begin{itemize}
+  \item Which should be $+$? \cmp{+female} or \cmp{--male}
+  \item Presumably also \cmp{--electric}, \cmp{--conical}, \ldots
+    \\ Only show \txx{relevant} features
+  \item \txx{antonyms} differ in only one binary component
+  \end{itemize}
+\end{itemize}
+
+\myslide{Redundancy Rules}
+
+\begin{itemize}
+\item We can add relations between components:
+\\[2ex]  \begin{tabular}{llll}
+     \cmp{+human} & \into & \cmp{+animate}  \\
+     \cmp{+adult} & \into & \cmp{+animate}  \\
+     \cmp{+animate} & \into & \cmp{+concrete}  \\
+     \cmp{+married} & \into & \cmp{+adult}  \\
+     \cmp{+married} & \into & \cmp{+human}   & \ldots
+  \end{tabular}
+\item Which allows us to write:
+  \\[2ex] \begin{tabular}{lllll}
+    \lex{woman} & \cmp{+female} & \cmp{+adult} & \cmp{+human} & \\
+    \lex{spinster} & \cmp{+female} & \cmp{+adult} & \cmp{+human} & \cmp{--married} \\
+    \lex{bachelor} & \cmp{--female} & \cmp{+adult} & \cmp{+human} & \cmp{--married} \\
+    \lex{wife} & \cmp{+female} & &   & \cmp{+married} 
+  \end{tabular}
+  \\[2ex] Can we say  \cmp{--married}  \into\  \cmp{+human}?
+\end{itemize} 
+
+\myslide{More Complex Breakdowns}
+
+\begin{itemize}
+\item We can add relations between components:
+\\[2ex]  \begin{tabular}{llll}
+     \cmp{+father} & \into & \cmp{+male} \cmp{+parent}  \\
+     \cmp{+father}(\ul{x},y) & \into & \cmp{+male}(x) \cmp{+parent}(x,y) \\
+     \cmp{+son}(\ul{x},y) & \into & \cmp{+male}(x) \cmp{+parent}(y,x) \\
+     \cmp{+brother}(\ul{x},y) & \into & \cmp{+male}(x) 
+     \cmp{+parent}(z,x) \cmp{+parent}(z,y) \\
+     \cmp{+grandfather}(\ul{x},y) & \into & \cmp{+male}(x) 
+     \cmp{+parent}(x,z)  \cmp{+parent}(z,y) \\
+  \end{tabular}
+\item Assume \cmp{+parent}(x,y)  means ``x is the parent of y''
+\item There are various ways you can formalize such relationships
+  \begin{itemize}
+  \item Many parts of language can be formalized in such a way
+  \item Can you do this for demonstratives?
+    \\ \lex{this, that, these, those, what, here, there, where}\task
+  \end{itemize}
+\end{itemize}
+
+
+%%% FIXME inheritance
+
+\section{Katz’s Semantic Theory}
+
+\myslide{Katz’s Semantic Theory}
+\MyLogo{\txx{Compositional} : the meaning of the whole depends only on the meanings of the parts and the method of combination.}
+\begin{itemize}
+\item Two Central Ideas:
+  \begin{itemize}
+  \item Semantic rules must be recursive \\ to deal with infinite meaning
+  \item Semantic rules interact with syntactic rules \\ to build up meaning,
+    which is \txx{compositional}
+  \end{itemize}
+\item Two major components:
+  \begin{itemize}
+  \item A dictionary pairing lexical items with semantic representations
+  \item A set of \txx{projection rules} that show how meaning is built up
+  \end{itemize}
+\end{itemize}
+
+\myslide{The dictionary}
+\MyLogo{Similar to \txx{genus} and \txx{differentiae}.}
+\begin{itemize}
+\item \lex{bachelor} \{N\}
+  \begin{enumerate}
+  \item \izb{human} \izb{male} [one who has never been married]
+  \item \izb{human} \izb{male} [young knight serving under the standard of another knight]
+  \item \izb{human} [one who has the lowest academic degree]
+  \item \izb{animal} \izb{male} [young fur seal without a mate in the breeding season]
+  \end{enumerate}
+\item \izb{semantic markers} are the links that bind lexical items
+  together in lexical relations
+\item {[\txx{distinguishers}]} serve to identify this particular lexical item
+    \\ this information is not relevant to syntax
+\end{itemize}
+
+\myslide{Projection Rules}
+\MyLogo{More about this in Theories of Syntax/HPSG}
+
+\begin{enumerate}
+\item Projection rules combine with syntactic rules to produce the
+  meaning of a sentence
+  \begin{itemize}
+  \item Information is passed up the tree and collected at the top.
+    \begin{itemize}
+    \item Information is only added, never deleted
+    \item It must come from words or rules (or constructions)
+    \end{itemize}
+  \end{itemize}
+\item \txx{Selectional restrictions} \sr{} help to reduce ambiguity and
+  limit the possible readings
+\end{enumerate}
+
+\myslide{Selectional restrictions} 
+
+\MyLogo{Modern theories prefer \txx{selectional preferences}:
+  probabilities not categories.}
+\begin{enumerate}
+\item \lex{colorful} \{adj\}
+  \begin{enumerate}
+  \item\label{A} \izb{color} [abounding in contrast or variety of bright colors) 
+    \sr{\izb{physical object} or \izb{social activity}}
+  \item\label{B} \izb{evaluative} [having distinctive character, vividness or picturesqueness) 
+    \sr{\izb{aesthetic object} or \izb{social activity}}
+  \end{enumerate}
+
+\item \lex{ball} \{N\}
+  \begin{enumerate}
+  \item\label{D} \izb{social activity} \izb{large} \izb{assembly} [for the purpose of social dancing]
+  \item\label{E} \izb{physical object} [having globular shape]
+  \item\label{F} \izb{physical object} [solid missile for project by engine of war]
+  \end{enumerate}
+\end{enumerate}
+\begin{itemize}
+\item \eng{colorful ball}: The selectional restrictions rule out: \ref{B} $+$ \ref{E},  \ref{B} $+$ \ref{F}
+\end{itemize}
+
+  
+\section{Grammatical Rules and Semantic Components}
+\MyLogo{}
+
+\myslide{Verb Classification}
+\MyLogo{\citep{Levin:1993}}
+
+\begin{itemize}
+\item We can investigate the meaning of a verb by looking at its
+  grammatical behavior
+  \begin{exe}
+    \ex Consider the following transitive verbs
+    \begin{xlist}
+      \ex \eng{Margaret \ul{cut} the bread}
+      \ex \eng{Janet \ul{broke} the vase}
+      \ex \eng{Terry \ul{touched} the cat}
+      \ex \eng{Carla \ul{hit} the door}
+    \end{xlist}
+  \end{exe}
+\item These do not all allow the same argument structure alternations
+
+\end{itemize}
+\myslide{Diathesis Alternations}
+
+\begin{itemize}
+\item \txx{Causative/inchoative} alternation:
+  \begin{quote}
+    \eng{Kim \ul{broke} the window} $\leftrightarrow$ \eng{The window \ul{broke}}
+    \\ also \eng{the window \ul{is broken}} (state)
+  \end{quote}
+\item \txx{Middle construction} alternation:
+  \begin{quote}
+    \eng{Kim \ul{cut} the bread} $\leftrightarrow$ \eng{The bread \ul{cut} easily}
+  \end{quote}
+\item \txx{Conative} alternation:
+  \begin{quote}
+    \eng{Kim \ul{hit} the door} $\leftrightarrow$ \eng{Kim \ul{hit} at the door}
+  \end{quote}
+\item \txx{Body-part possessor ascension} alternation:
+  \begin{quote}
+    \eng{Kim \ul{cut} Sandy's arm} $\leftrightarrow$ \eng{Kim \ul{cut}
+      Sandy on the arm} 
+  \end{quote}
+\end{itemize}
+
+
+
+
+\myslide{Diathesis Alternations and Verb Classes}
+
+\MyLogo{\citep{Levin:1993}}
+
+\begin{itemize}
+\item A verb's (in)compatibility with different alternations is a strong
+  predictor of its lexical semantics:
+  \begin{quote}\smaller[1]
+    \begin{tabular}{lcccc}
+      & \lex{break} & \lex{cut} & \lex{hit} & \lex{touch} \\
+      Causative & YES & NO & NO & NO \\
+      Middle & YES & YES & NO & NO \\
+      Conative & NO & YES & YES & NO \\
+      Body-part & NO & YES & YES & YES \\
+    \end{tabular}
+    \vspace{3ex}
+
+    \larger[1]
+    \lex{break} = \{\eng{break, chip, crack, crash, crush, ...}\}\\
+    \lex{cut} = \{\eng{chip, clip, cut, hack, hew, saw, ...}\}\\
+    \lex{hit} = \{\eng{bang, bash, batter, beat, bump, ...}\}\\
+    \lex{touch} = \{\eng{caress, graze, kiss, lick, nudge, ...}\}
+  \end{quote}
+
+\newpage
+
+\item We can analyze components that correlate with the alternations
+  \\[2ex]
+  \begin{tabular}{ll}
+  \lex{break} & \textsc{cause, change}\\
+  \lex{cut}   & \textsc{cause, change, contact, motion}\\ 
+  \lex{hit}   & \textsc{contact, motion}\\
+  \lex{touch} & \textsc{contact}
+  \end{tabular}
+\item The semantic class/components  predicts the syntax of novel words
+\item Not all parts of meaning are relevant to  syntax 
+\\[1ex]
+\begin{small}
+  \begin{tabular}{ll}
+    has an affect & has no affect \\ \hline
+    Semantic Markers & Semantic Distinguishers \\
+    Grammatically Relevant Subsystem & Unrestricted Conceptual Representation \\
+    Semantic Structure & Semantic Content \\
+    Semantic Form & Conceptual Structure \\
+    Semantic Structure & Conceptual Structure
+  \end{tabular}
+\end{small}
+
+\end{itemize}
+
+\myslide{Thematic Roles and Linking Rules}
+
+\begin{itemize}
+\item Verbs often link their thematic roles to arguments in different ways
+  \begin{exe}
+    \ex
+    \begin{xlist}
+      \ex \eng{He loaded newspapers onto the van}  \sr{\ul{AGENT}, THEME} 
+      \ex \label{complete} 
+      \eng{He loaded the van with newspapers} \sr{\ul{AGENT}, GOAL} 
+    \end{xlist}
+  \end{exe}
+\item But the meanings are not identical: (\ref{complete}) implies
+  completion, and the theta-grid does not deal with the adjuncts
+\item We need more than just theta-grids/roles
+
+\end{itemize}
+
+\myslide{Movement-to-location verbs}
+\begin{itemize}
+\item \txx{locative alternation}
+\begin{exe}
+  \ex
+  \begin{xlist}
+    \ex \eng{Andy poured oil into the pan}
+    \ex *\eng{Andy poured the pan with oil}
+  \end{xlist}
+  \ex
+  \begin{xlist}
+    \ex *\eng{Andy filled oil into the pan}
+    \ex \eng{Andy filled the pan with oil}
+  \end{xlist}
+  \ex
+  \begin{xlist}
+    \ex \eng{Andy brushed oil onto the pan}
+    \ex \eng{Andy brushed the pan with oil}
+  \end{xlist}
+  \ex
+  \begin{xlist}
+    \ex \sr{\ul{AGENT}, THEME, PP:GOAL}
+    \ex \sr{\ul{AGENT}, PATIENT, PP:INSTRUMENT$?$}
+  \end{xlist}
+\end{exe}
+\end{itemize}  
+
+\myslide{Explain with verb classes}
+\MyLogo{\Bad Slightly circular: alternations motivate classes which explain alternations}
+
+\begin{itemize}
+\item Verbs of movement: `X causes Y to move into/onto Z'
+  \begin{enumerate}
+  \item Simple motion verbs: \lex{put, push}
+  \item Manner specified: \lex{pour, drip, slosh}
+  \end{enumerate}
+ \eng{X puts Y on Z}
+\item Verbs of change of state: `X causes Z to change state by means
+  of moving Y into/onto Z': \lex{fill, coat, cover}
+\\ [1.5ex]\eng{X fills Z with Y}
+\item Verbs of movement `X causes Y to move into/onto Z' which also
+  describe a kind of motion which causes an effect on the entity Z: 
+  \lex{spray, paint, brush}
+\\ [1.5ex]\eng{X paints Z with Y}
+
+\end{itemize}
+
+
+\section{Components \\ and Conflation Patterns}
+\MyLogo{}
+
+\myslide{Cognitive Semantics}
+\MyLogo{\citep{Talmy:2000}}
+\begin{itemize}
+\item Major semantic components of Motion:
+\begin{itemize}
+\item \txx{Figure}: object moving or located with respect to the \txx{ground} 
+\item \txx{Ground}: reference object
+\item \txx{Motion}: the presence of movement of location in the event
+\item \txx{Path}: the course followed or site occupied by the Figure w.r.t. the Ground.
+\item \txx{Manner}: the type of motion
+\end{itemize}
+\begin{exe}
+  \ex \gll \eng{Kim} \eng{swam} \eng{away from} \eng{the crocodile} \\
+  Figure Manner Path Ground \\
+  \ex \gll \eng{The banana} \eng{hung} \eng{from} \eng{the tree} \\
+  Figure Manner Path Ground \\
+\end{exe}
+
+\item These are lexicalized differently in different languages.
+\end{itemize}
+\myslide{Different Lexicalizations of Movement}
+\MyLogo{}
+\begin{itemize}
+\item English: Manner in verb, Path as adjunct
+  \begin{exe}
+    \ex \eng{The bottle floated into the cave}
+    \ex \eng{They rolled the keg into the party}
+  \end{exe}
+\item Spanish: Path in verb, Manner  as adjunct
+  \begin{exe}
+    \ex \gll \eng{La} \eng{botella} \eng{entr\'o} \eng{a} \eng{la} \eng{cueva} \eng{flotando} \\
+    the bottle moved-in to the cave floating \\
+    \trans ``The bottle entered the cave, floating''
+    \ex \gll \eng{Met\'{\i}} \eng{el} \eng{barril} \eng{a} \eng{la}
+    \eng{bodega} \eng{rodandolo}  \\
+    I-moved-in the barrel to the storeroom rolling \\
+    \trans ``I put the keg into the storeroom, rolling''
+  \end{exe}
+\end{itemize}
+
+\myslide{Typology of Motion in Languages}
+\bigskip
+\begin{center}
+\begin{tabular}{ll}
+  \textbf{Language (Family)} & \textbf{Verb Conflation Pattern} \\ \hline
+  Romance, Semitic, Polynesian, \ldots & Path + fact-of-Motion \\
+  Indo-European ($-$ Romance), Chinese & Manner/Cause + fact-of-Motion \\
+  Navajo, Atsuwegei, \ldots & Figure + fact-of-Motion 
+\end{tabular}
+\end{center}
+
+\begin{itemize}
+\item \txx{verb-framed} (Motion with Path)
+\item \txx{satellite-framed} (Motion with Manner)
+\item Which group is this from?
+ \begin{exe}
+    \ex \glll \ja{樽~を} \ja{倉庫~に} \ja{転がして} \ja {入れた} \\
+    taru-wo souko-ni korogasite ireta \\
+    barrel-\textsc{acc} storeroom-\textsc{to} rolling put\\
+    \trans ``I put the keg into the storeroom, rolling''
+  \end{exe}
+
+\end{itemize}
+
+\section{Jackendoff’s \\ Conceptual Semantics: 
+  \\ Lexical Conceptual Structure} 
+
+\myslide{Describing Mental Representations}
+\MyLogo{\citep{Jackendoff:1990,Jackendoff:1997}}
+\begin{itemize}
+\item An attempt to explain how we think
+\item \txx{Mentalist Postulate}
+  \begin{quote}
+    Meaning in natural language is an information structure that is
+    mentally encoded by human beings
+  \end{quote}
+\item Try to capture regularities
+  \\[2ex]\begin{tabular}{lll}
+    x lifted y & entails & y rose \\
+    x gave z to y & entails & y received z \\
+    x persuaded y that P & entails & y came to believe P \\[2ex]
+    x cause E to occur & entails & E occurs 
+  \end{tabular}
+
+\item Also linked to vision and music (through X-bar theory)
+\end{itemize}
+
+\myslide{Semantic Components}
+
+\begin{itemize}
+  \item Universal Semantic Categories
+  \begin{itemize}
+  \item \txx{Event}
+  \item \txx{State}
+  \item \txx{Material Thing/Object}
+  \item \txx{Path}
+  \item \txx{Place}
+  \item \txx{Property}
+  \end{itemize}
+  \begin{exe}
+  \ex 
+  \begin{xlist}
+    \ex {[$_S$ [$_{NP}$ Bobby] 
+      [$_{VP}$ [$_{V}$ went] [$_{PP}$ [$_{P}$ into] [$_{NP}$ the house]]]]}
+    \ex {[$_{Event}$ GO ([$_{Thing}$ BOBBY], 
+      [$_{Path}$ TO ([$_{Place}$ IN ([$_{Thing}$ house])])])]}
+  \end{xlist}
+  \end{exe}
+\end{itemize}
+
+\myslide{Motion as a tree}
+
+\begin{multicols}{2}
+  \begin{exe}
+    \ex \eng{Bobby went into the house}
+    \ex ``Bobby traverses a path that terminates at the interior of the house''
+    \ex
+    \begin{tree}
+      \br{Event}{\lf{GO}
+        \br{Thing}{ \lf{BOBBY}}
+        \br{Path}{\lf{TO}
+          \br{Place}{\lf{IN}\br{Thing}{\lf{HOUSE}}}}}
+    \end{tree}
+    %\newpage
+    \ex \eng{The car is in the garage}
+    \ex ``The car is in the state located in the interior of the garage''
+    \ex
+    \begin{tree}
+      \br{State}{\lf{BE-LOC}
+        \br{Thing}{ \lf{CAR}}
+        \br{Place}{\lf{IN}\br{Thing}{\lf{GARAGE}}}}
+    \end{tree}
+\end{exe}
+\end{multicols}
+
+
+\myslide{Extend Location in three ways}
+
+\begin{small}
+  \noindent\begin{tabular}{lll}
+    \textbf{Semantic Field} & BE (state) & GO (event) \\
+    spatial location     & \eng{Jo is in the club}             
+    & \eng{Alex went into the house}          \\
+    temporal location   & \eng{The exam is on Wednesday}      
+    & \eng{The exam moved to Thursday}        \\
+    property ascription & \eng{The class is full}             
+    & \eng{The class went from full to empty} \\
+    possession          & \eng{This theory belongs to Ann Elk}
+    & \eng{The prize went to JC}              \\
+  \end{tabular}
+\end{small}
+
+  \begin{itemize}
+  \item Break down the meaning into components
+  \end{itemize}
+
+\begin{exe}
+  \ex 
+  \begin{xlist}
+    \ex \eng{The pool emptied}
+    \ex {[$_{Event}$ INCH ([$_{State}$ BE-IDENT  
+      ([$_{Thing}$ POOL], [$_{Place}$ AT ([$_{Property}$ EMPTY])])])]}
+  \end{xlist}
+    \ex 
+    \begin{xlist}
+      \ex \eng{Sandy emptied the pool}
+      \ex {[$_{Event}$ CAUSE ([$_{Thing}$ SANDY], [$_{Event}$ INCH ([$_{State}$ BE-IDENT  
+      ([$_{Thing}$ POOL], [$_{Place}$ AT ([$_{Property}$ EMPTY])])])])]}
+  \end{xlist}
+\end{exe}
+
+
+\myslide{THING: Boundedness and Internal Structure}
+\begin{itemize}
+\item Two components:
+\\[2ex]  \begin{tabular}{llll}
+    Boundedness & Internal Struct. & Type & Example\\ \hline
+    $+$b & $-$i & \txx{individuals} & \eng{a dog}/\eng{two dogs}\\
+    $+$b & $+$i & \txx{groups}      & \eng{a committee}\\
+    $-$b & $-$i & \txx{substance}s  & \eng{water}\\
+    $-$b & $+$i & \txx{aggregates}  & \eng{buses, cattle}
+  \end{tabular}
+
+\item This can be extended to verb aspect (the verb event is also [$\pm$b, $\pm$i]).
+  \\ \lex{sleep} [$-$b], \lex{cough} [$+$b], \lex{eat}  [$\pm$b]
+ \begin{exe}
+   \ex \eng{Bill ate two hot dogs in two hours.}
+   \ex *\eng{Bill ate hot dogs in two hours.}
+   \ex $^\#$\eng{Bill ate two hot dogs for two hours.}
+   \ex \eng{Bill ate hot dogs for two hours.}
+\end{exe}
+\end{itemize}
+
+\myslide{Conversion: Boundedness and Internal Structure}
+\MyLogo{See \citet{Bond:2005} for an extension to Japanese and computational implementation.}
+\begin{itemize}
+\item Including
+ \\[2ex] \begin{tabular}{lll}
+  \txx{plural} & {[+b, --i] \into\ [--b, +i]} &     
+    \eng{brick}  \into\ \eng{bricks} \\
+  \txx{composed of} &{[--b, +i] \into\ [+b, --i]} &
+     \eng{bricks}  \into\ \eng{house of bricks} \\
+  \txx{containing} &   {[--b, --i] \into\ [+b, --i]} &
+     \eng{coffee}  \into\ \eng{a cup of coffee/a coffee}
+  \end{tabular}
+\item Excluding
+  \\[2ex] \begin{tabular}{lll}
+    \txx{element}  & {[--b,+i] \into\ [+b, --i]} &     
+    \eng{grain of rice} \\
+    \txx{partitive} & {[--b, $\pm$i] \into\ [+b, --i]} &     
+    \eng{top of the mountain}, \\
+ & &  \eng{one of the dogs} \\
+    \txx{universal grinder} &  {[+b, --i] \into\ [--b, --i]} &     
+    \eng{There's \ul{dog} all over the road}
+  \end{tabular}
+\end{itemize}
+
+
+
+
+\section{Pustejovsky’s \\Generative Lexicon}
+\MyLogo{}
+
+\myslide{The Generative Lexicon}
+\MyLogo{\citet{Pustejovsky:1995}}
+\begin{itemize}
+\item This brings in more encyclopedic knowledge
+\item Each lexical entry can have:\\
+  \textsc{argument structure}\\
+  \textsc{event structure}\\
+  \textsc{lexical  inheritance structure}\\
+  \textsc{qualia structure}:\\[1ex]
+  \begin{tabular}{ll}
+    \textsc{constitutive} & constituent parts \\
+    \textsc{formal} & relation to other things \\
+    \textsc{telic} & purpose \\
+    \textsc{agentive}  & how it is made
+  \end{tabular}
+\item Interpretation is \txx{generated} by combining word meanings
+\end{itemize}
+
+\myslide{The ideas behind the Generative Lexicon}
+\begin{itemize}
+\item Word meaning is decomposed, so that it can be composed with other words
+\item The range of composition teaches us something about the internal
+  structure of the word
+  \begin{itemize}
+  \item Rich Representation: lexical decomposition
+  \item Rich Rules: coercion, sub-selection, co-composition
+  \end{itemize}
+
+\end{itemize}
+
+\myslide{Event Structure}
+
+\begin{itemize}
+\item Events have \textbf{complex} structure
+  \begin{itemize}
+  \item \txx{State} 
+    \begin{tree}
+      \br{S}{\lf{e}}
+    \end{tree}
+    \\[1ex]    \lex{understand, love, be tall}
+  \item \txx{Process}
+    \begin{tree}
+      \br{P}{\tlf{e$_1$ \ldots e$_n$}}
+    \end{tree}
+    \\[1ex]     \lex{sing, walk, swim}
+  \item \txx{Transition}
+    \begin{tree}
+      \br{T}{\lf{E$_1$} \lf{$\neg$E$_2$}}
+    \end{tree}
+    \\[1ex]     \lex{open, close, build}
+    \\ For an achievement, typically  E$_1$ = $\neg$e$_1$; E$_2$ = e$_1$
+  \end{itemize}
+\end{itemize}
+
+\myslide{Different Alternations}
+  \begin{exe}
+    \ex \eng{The door closed}
+   \begin{tree}
+      \br{T}{\br{P}{\br{[$\neg$ closed(door)]}{}}
+        \br{S}{\br{[closed(door)]}{}}} 
+    \end{tree}
+    \ex \eng{Jamie closed the door}
+    \begin{tree}
+      \br{T}{\br{P}{\br{[act(j, door) $\wedge$ $\neg$ closed(door)]}{}}
+        \br{S}{\br{[closed(door)]}{}}} 
+    \end{tree}
+    \ex \eng{The door is closed}
+   \begin{tree}
+      \br{S}{\br{e}{\br{[closed(door)]}{}}}
+    \end{tree}
+  \end{exe}
+
+\myslide{Modifier Ambiguity}
+  \begin{exe}
+    \ex \eng{Jamie closed the door rudely}
+  \begin{xlist}
+    \ex \eng{Jamie closed the door in a rude way [with his foot]}
+    \\\begin{tree}
+      \br{T}{\br{P [rude(P)]}{\br{[act(j, door) $\wedge$ $\neg$ closed(door)]}{}}
+        \br{S}{\br{[closed(door)]}{}}} 
+    \end{tree}
+    \ex \eng{It was rude of Jamie to close the door}
+    \\\begin{tree}
+      \br{T [rude(T)]}{\br{P}{\br{[act(j, door) $\wedge$ $\neg$ closed(door)]}{}}
+        \br{S}{\br{[closed(door)]}{}}} 
+    \end{tree}
+  \end{xlist}
+  \end{exe}
+
+\myslide{Qualia Structure}
+\MyLogo{See \citet{Bond:1997b} for an account of numeral classifiers using the GL}
+
+
+\begin{exe}
+  \ex \eng{fast typist}
+  \begin{xlist}
+    \ex\label{ta} a typist who is fast [at running]
+    \ex\label{tb} a typist who types fast
+  \end{xlist}
+%%% FIXME  \ex \eng{Joan baked the potato}
+\end{exe}
+\begin{itemize}
+\item typist 
+ \begin{avm} \[
+    \textsc{argstr} &
+    \[
+      \textsc{arg1} & \iz{x:typist}\\
+    \]\\
+    \textsc{qualia} &
+    \[
+      \textsc{formal} & \[ \iz{x}  [ $\subset$ \iz{person} ]\] \\
+      \textsc{telic} & \[ \iz{type(e,x)}  \]
+      \] 
+ \]
+\end{avm}
+\item (\ref{ta}) \eng{fast} modifies $x$
+\item (\ref{tb}) \eng{fast} modifies $e$
+\end{itemize}
+
+
+\myslide{Problems with Components of Meaning}
+\begin{itemize}
+\item Primitives are the same as necessary and sufficient conditions
+  \\ it is impossible to agree on the definitions
+  \\ but they allow us to state generalizations better
+\item Don't capture all aspects of meaning
+\item Psycho-linguistic evidence is weak
+\item It is just \txx{markerese} which still needs to be explained,
+  there is no \txx{grounding}
+\item Recent work replaces components with inheritance or dimensions
+  \begin{itemize}
+  \item \lex{boy}$_1$ $\subset$ \lex{male}$_1$ $\wedge$  $\subset$
+    \lex{child}$_1$
+  \item \lex{boy}$_1$ near \lex{male}$_1$ on some dimensions; near
+    \lex{child}$_1$ on others
+  \item same generalizations, more psychologically plausible
+  \end{itemize}
+\end{itemize}
+
+\myslide{Conclusion}
+
+\begin{itemize}
+\item Meaning can be broken up into units smaller than words:  \txx{components} 
+  \begin{itemize}
+  \item These can be combined to make larger meanings
+  \item At least some of them influence syntax
+  \item They may be psychologically real
+  \item Many parts of meaning can be treated in this way
+  \end{itemize}
+% \item \emp{Note:} Similar facts can be handled using multiple
+%   inheritance, this tends to be more common in modern approaches
+\item \emp{Note:} Selectional restrictions are too strict,
+  selectional preferences (giving prototypical arguments and measuring
+  the similarity) are more common in modern approaches: 
+\\ \txx{assigning  probabilities to interpretations}
+\end{itemize}
+
+
+% \myslide{Acknowledgments and References}
+% \MyLogo{}
+% \begin{itemize}
+% \item Video from \textit{The Big Bang Theory} Season 4 Episode 7 ``The
+%   Apology Insufficiency'' %% 6:22
+% \end{itemize}
+% \item Definitions from WordNet: \url{http://wordnet.princeton.edu/}
+%  \item Some slides use material from Alexander Coupe
+%  \item Strict/sloppy identity joke adapted from \textit{Literal-Minded Blog:
+% Linguistic commentary from a guy who takes things too literally}.
+% \\ \footnotesize\url{http://literalminded.wordpress.com/2011/03/04/you-cant-go-from-strict-to-sloppy/}
+  
+%  \end{itemize}
+ % \item Images from
+%   \begin{itemize}
+%   \item the Open Clip Art Library: \url{http://openclipart.org/}
+%   \item Steven Bird, Ewan Klein, and Edward Loper (2009) 
+%      \textit{Natural Language Processing with Python}, O'Reilly Media
+%     \\ \url{www.nltk.org/book}
+% \end{itemize}
+% \item Problems  partially based on exercises from Saeed (2003)
+% \end{itemize}
+
+
+
+\myslide{Fry \& Laurie: \textit{Language}}
+
+
+\begin{itemize}
+\item Series 1 Episode 2
+\\ \url{http://abitoffryandlaurie.co.uk/sketches/language_conversation}
+\item Series 2 Episode 6
+\\ \url{http://abitoffryandlaurie.co.uk/sketches/beauty_and_ideas}
+\item Stephen Fry on \textit{Language}
+\\ \url{http://www.stephenfry.com/2008/11/04/dont-mind-your-language%E2%80%A6/}
+\end{itemize}
+
+
+
+\myslide{Bibliography}
+% Reading: Jurafsky and Martin (2008) Chapter 20
+\renewcommand{\section}[2]{}
+\renewcommand{\baselinestretch}{0.9}
+\small
+\bibliographystyle{aclnat}
+\bibliography{abb,mtg,nlp,ling}
+
+
+\end{document}
+
+
+%%% Local Variables: 
+%%% coding: utf-8
+%%% mode: latex
+%%% TeX-PDF-mode: t
+%%% TeX-engine: xetex
+%%% End: 

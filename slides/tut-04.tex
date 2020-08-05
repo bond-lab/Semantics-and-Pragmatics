@@ -1,0 +1,122 @@
+\documentclass[a4paper]{article}
+
+\title{\vspace*{-30mm}HG2002: Tutorial \\  Sentence Relations and Truth}
+\author{Francis Bond \url{<bond@ieee.org>}}
+\date{}%2011-08-15}
+
+\newcommand{\ans}[1]{\hfill{#1}}
+%\newcommand{\ans}[1]{}
+
+\usepackage{multicol}
+%\Restriction{}
+%\rightfooter{}
+%\leftheader{}
+%\rightheader{}
+\usepackage{mygb4e}
+\newcommand{\lex}[1]{\textbf{\textit{#1}}}
+\newcommand{\lx}[1]{\textbf{\textit{#1}}}
+\newcommand{\ix}{\ex\it}
+\newcommand{\con}[1]{\textsc{#1}}
+\usepackage{url}
+\usepackage[normalem]{ulem}
+\newcommand{\ul}[1]{\uline{#1}}
+\newcommand{\txx}[1]{\textbf{#1}}
+
+\begin{document}
+\maketitle
+
+\begin{enumerate}
+\item Take three sentences, $p$, $q$, and $r$ as follows. 
+
+  \begin{quotation}
+    \noindent $p$: The sun is shining. \\
+    $q$: The day is warm. \\
+    $r$: The sun is shining and the day is warm. 
+  \end{quotation}
+
+  Let’s make the working assumption that we can represent sentence $r$
+  by the logical formula $p \wedge q$. Use the truth table for $\wedge$ ``logical and'' to
+  show the truth-value of $r$ in the situations below:
+  \begin{quotation}
+    \noindent S1. $p$ is true; $q$ is false.\\
+    S2. $p$ is true; $q$ is true.\\
+    S3. $p$ is false; $q$ is true. \\
+    S4. $p$ is false; $q$ is false.
+  \end{quotation}
+\item  In propositional logic, some may want to assume that $p \wedge q$ and 
+$q \wedge p$ are logically
+equivalent i.e. that the order of the elements is irrelevant. Discuss how the following
+examples show that this is not true for the way that speakers use English and. 
+\begin{exe}
+  \ix He woke up and saw on TV that he had won the lottery. 
+  \ix Combine the egg yolks with water in a bowl and whisk the mixture until 
+  foamy.
+  \ix  He made two false starts and was disqualified from the race.
+  \ix Move and I'll shoot! 
+\end{exe}
+
+\item Prove the Contrapositive ($p \rightarrow q \equiv \neg q \rightarrow \neg p$) using truth tables:
+
+\item  Decide if the following pairs of sentences are pairs of entailment or 
+presupposition. How did you make your decisions? 
+
+\begin{exe}
+\ex
+  \begin{xlist}
+ \ix Sandy knows that Joe crashed the car. 
+ \ix Joe crashed the car. 
+\end{xlist}
+\ex 
+  \begin{xlist}
+    \ix Australia is bigger than Singapore. 
+    \ix Singapore is smaller than Australia. 
+  \end{xlist}
+\ex 
+  \begin{xlist}
+\ix The minister blames her secretary for leaking the memo to the press. 
+\ix The memo was leaked to the press. 
+\end{xlist}
+\ex 
+  \begin{xlist}
+\ix Everyone passed the examination. 
+\ix No one failed the examination. 
+\end{xlist}
+\ex 
+\begin{xlist}
+  \ix Fran has resumed their habit of editing Wikipedia. 
+  \ix Frans has a habit of editing Wikipedia. 
+\end{xlist}
+\end{exe}
+
+\newpage
+\item  What are analytically true statements? Decide which of the 
+following sentences are analytically true. Discuss the reasons for your decision. 
+\begin{exe}
+  \ix If it rains, we'll get wet. 
+  \ix The train will either arrive or it won't arrive. 
+  \ix Every doctor is a doctor. 
+  \ix If Bobby killed a deer, Bobby killed an animal. 
+  \ix Madrid is the capital of Spain. 
+  \ix Every city has pollution problems. 
+\end{exe}
+
+\item Translate the following into predicate logic, using restricted
+  quantifiers $\forall$ and $\exists$.  If a sentence is ambiguous,
+  give both readings.
+  \begin{exe}
+    \ix Lancelot hated all dragons
+    \ix Every dragon feared Lancelot
+    \ix One dragon feared every knight.
+    \ix Somebody searched for the Holy Grail
+    \ix Every dragon did not like spinach
+    \ix Every dragon who did not like spinach feared Lancelot
+% -> ->?
+    \ix Not every one searched for the Holy Grail
+%    \ix No dragon searched for Lancelot
+  \end{exe}
+\end{enumerate}
+
+\vfill
+\paragraph{Acknowledgments} These questions are partially
+based on exercises from Saeed (2003).
+\end{document}

@@ -1,0 +1,114 @@
+\documentclass[a4paper]{article}
+
+\title{HG2002: Tutorial 9\\  Componential Analysis}
+\author{Francis Bond \url{<bond@ieee.org>}}
+\date{}%2011-08-15}
+\usepackage[margin=25mm]{geometry}
+\newcommand{\ans}[1]{\hfill{#1}}
+%\newcommand{\ans}[1]{}
+
+\usepackage{multicol}
+%\Restriction{}
+%\rightfooter{}
+%\leftheader{}
+%\rightheader{}
+\usepackage{mygb4e}
+\newcommand{\lex}[1]{\textbf{\textit{#1}}}
+\newcommand{\lx}[1]{\textbf{\textit{#1}}}
+\newcommand{\ix}{\ex\it}
+\newcommand{\con}[1]{\textsc{#1}}
+\newcommand{\eng}[1]{\textit{#1}}
+\usepackage{url}
+\newcommand{\txx}[1]{\textbf{#1}}
+\newcommand{\cmp}[1]{{[\textsc{#1}]}}
+\newcommand{\sr}[1]{\ensuremath{\langle}#1\ensuremath{\rangle}}
+\usepackage[normalem]{ulem}
+\newcommand{\ul}{\uline}
+\newcommand{\ull}{\uuline}
+\newcommand{\wl}{\uwave}
+\newcommand{\vs}{\ensuremath{\Leftrightarrow}~}
+
+
+\begin{document}
+\maketitle
+
+\begin{enumerate}
+\item Using semantic components, analyze the following words:
+  \begin{quote}
+  \lex{son, daughter, child, mother, father, parent, grandfather,
+    grandmother, grandparent}
+  \end{quote}
+  Discuss whether a binary format would be an advantage here.
+  \\ You may use two place relations in your descriptions (e.g. \cmp{sibling-of[x,y]}.
+  \\ If you speak a language that makes additional distinctions in this area, also describe them (e.g. maternal grandmother, \ldots).
+
+
+% child (X,Y): +CHILD-OF(X,Y) | or  +CHILD-OF
+% son (X,Y): +MALE(X) +CHILD-OF(X,Y) | or  +MALE +CHILD-OF
+% daughter (X,Y): -MALE(X) +CHILD-OF(X,Y) | or  -MALE +CHILD-OF
+% parent (X,Y): +CHILD-OF(Y,X) | or  +PARENT-OF <-note we need a new relation
+% father (X,Y): +MALE(X) +CHILD-OF(Y,X) | or  +MALE +PARENT-OF
+% mother (X,Y): -MALE(X) +CHILD-OF(Y,X) | or  -MALE +PARENT-OF
+% grandparent (X,Z): +CHILD-OF(Y,X) +CHILD-OF(Y,Z)  | or  +GRANDPARENT-OF ? not so good
+% grandfather (X,Z): +MALE(X) +CHILD-OF(Y,X)  +CHILD-OF(Y,Z)
+% grandmother (X,Z): -MALE(X) +CHILD-OF(Y,X)  +CHILD-OF(Y,Z)
+
+%%% Note that in English, fact that there are two arguments shows up in det. choice
+%%% "My son is sleepy" (not "a/the son is sleepy")
+%%% can also do with parent-of and reversed elements, likewise +/-FEMALE
+%%% really need two place predicates to get a good def of grandparents
+%%% if there is time at the end, maybe consider /ancestor/ :-)
+%%% maybe discuss markedness/defaults
+
+\item  \label{cia} Which of the following participate in the
+  \textbf{causative/inchoative alternation}.
+  \begin{exe}
+    \ex \textit{The goalkeeper bounced the ball.}
+    \ex \textit{The assassin murdered the general.}
+    \ex \textit{The waiter melted the chocolate.}
+    \ex \textit{Charlie built the new swimming pool.}
+    \ex \textit{The people lowered the boat.}
+    \ex \textit{Kim worried Sandy.}
+    \ex \textit{The censors destroyed the film.}
+    \ex \textit{Jo dried the clothes.}
+  \end{exe}
+  For those verbs that do undergo the alternation, translate them
+  into a language of your choice and report on whether the
+  translations undergo a similar alternation.
+\item Levin and Rapaport Hovav (1995: 102--5) argue that transitive
+  verbs which do not undergo the \textbf{causative/inchoative
+    alternation} need an intentional and volitional Agent.  In contrast,
+  verbs that undergo this alternation should also allow a non-Agent subject:
+  \begin{enumerate}
+  \item \textit{John broke the window with a rock} \hfill Agent Subject
+  \item \textit{The rock broke the window} \hfill Non-Agent (Instrument) Subject 
+  \item \textit{The window broke} \hfill Inchoative Alternation
+  \end{enumerate}
+  Test this hypothesis on the sentences from Question~\ref{cia}.
+\item Consider the following semantic and syntactic tests for countability:
+  \begin{itemize}
+  \item Semantic: Can it be divided and still use the same name 
+    (\textbf{divisibility}):
+    \begin{itemize}
+    \item Mass:     \eng{half some gold} is \eng{gold}
+    \item Count: \eng{half a dog} is not \eng{a dog} 
+    \end{itemize}
+  \item Syntactic: does it co-occur with \eng{much} or \eng{many}
+    (\textbf{enumerability}):
+    \begin{itemize}
+    \item Mass:  \eng{I don't have \ul{much gold}}
+    \item Count: \eng{I don't have \ul{many dogs}} 
+    \end{itemize}
+  \end{itemize}
+  Classify the following nouns using these tests:
+  \begin{quote}
+    \lex{monkey, program, software, chair, furniture, 
+      beer, icecream, curry, chocolate,
+      chicken, salmon, potato, rice, oats, mink}
+  \end{quote}
+  Do the tests always give unique results?  If not, why not?
+\end{enumerate}
+\vfill
+\paragraph{Acknowledgments} These questions are partially
+based on exercises from Saeed (2003).
+\end{document}

@@ -1,0 +1,99 @@
+\documentclass[a4paper]{article}
+
+\title{HG2002: Tutorial 10\\  Formal Semantics}
+\author{Francis Bond \url{<bond@ieee.org>}}
+\date{}%2011-08-15}
+\usepackage[margin=25mm]{geometry}
+\newcommand{\ans}[1]{\hfill{#1}}
+%\newcommand{\ans}[1]{}
+
+\usepackage{multicol}
+%\Restriction{}
+%\rightfooter{}
+%\leftheader{}
+%\rightheader{}
+\usepackage{mygb4e}
+\newcommand{\lex}[1]{\textbf{\textit{#1}}}
+\newcommand{\lx}[1]{\textbf{\textit{#1}}}
+\newcommand{\ix}{\ex\it}
+\newcommand{\con}[1]{\textsc{#1}}
+\newcommand{\eng}[1]{\textit{#1}}
+\usepackage{url}
+\newcommand{\txx}[1]{\textbf{#1}}
+\newcommand{\cmp}[1]{{[\textsc{#1}]}}
+\newcommand{\sr}[1]{\ensuremath{\langle}#1\ensuremath{\rangle}}
+\usepackage[normalem]{ulem}
+\newcommand{\ul}{\uline}
+\newcommand{\ull}{\uuline}
+\newcommand{\wl}{\uwave}
+\newcommand{\vs}{\ensuremath{\Leftrightarrow}~}
+
+
+\begin{document}
+\maketitle
+
+\begin{enumerate}
+% \item Assume  the following model
+% \\  U = \{Ian, Bernard, Peter, Stephen, Tony, Martin\}
+%    \\ F(i) = Ian; F(b) = Bernard; F(p) = Peter; F(s) = Stephen; F(t) = Tony;  F(m) = Martin
+%  \\ \begin{tabular}{lllll}
+%       F(J) & = & in Joy Division & = & \{Ian, Bernard, Peter, Stephen\} \\
+%       F(S) & = & sings & = & \{Ian, Peter\} \\      
+%       F(G) & = & plays guitar & = & \{Bernard, Ian\} \\
+%       F(B) & = & plays bass & = & \{Peter\} \\
+%       F(D) & = & plays drums & = & \{Stephen\} \\
+%       F(M) & = & is a manager & = & \{Tony\} \\
+%       F(P) & = & is a producer & = & \{Martin\} \\
+%       F(F) & = & fires at & = & \{$<$Martin, Tony$>$\} \\
+%       F(O) & = & (over) produces & = & \{$<$Martin, Ian$>$, $<$Martin, Bernard$>$, \\
+%       &&&&  $<$Martin, Peter$>$, $<$Martin, Stephan$>$\} \\
+%     \end{tabular}
+% \\ Paraphrase the following sentences in English and calculate their truth values
+% \begin{exe}
+%   \ex O(m,b)
+%   \ex O(m,t)
+%   \ex ($\exists$x) S(x) $\wedge$ G(x)
+%   \ex ($\exists$x) B(x) $\wedge$ G(x)
+%   \ex ($\forall$x: $\neg$J(x)) M(x) $\vee$ P(x)
+%   \ex ($\forall$x: M(x)) F(m,x)
+%   \ex ($\neg\forall$x) D(x)
+%   \ex ($\forall$x: J(x)) G(x)  $\vee$ B(x)  $\vee$ D(x)
+% \end{exe}
+% \newpage
+\item Are the following quantifiers (i) symmetrical or asymmetrical;
+  (ii) upward or downward entailing in the left (iib) or right (iic)
+  argument?
+  \begin{exe}
+    \ex \textit{most}
+    \ex \textit{many (cardinal)}
+    \ex \textit{few (cardinal)}
+    \ex \textit{every }
+    \ex \textit{{[at least]} two}
+    \ex \textit{{[exactly]} two}
+  \end{exe}
+% \item Using the DRT rules described in Saeed (2003, \S~10.9), try to
+%   identify which NPs in the following sentences are accessible for
+%   coreference with pronouns in subsequent sentences.
+%  \begin{exe}
+%    \ex \textit{If Kim drinks a beer they are happy
+%    \ex \textit{Sandy does not own a scanner
+%    \ex \textit{Every student who answers a question enjoys it
+%   \end{exe}
+\item Using the formulae of meaning postulates, represent the
+  semantic relations between the following word pairs:
+  \begin{exe}
+    \ex \textit{couch/sofa}
+    \ex \textit{accepted/rejected}
+    \ex \textit{student/person}
+    \ex \textit{on/off (of a switch)}
+    \ex \textit{buy/sell}
+    \ex \textit{computer/laptop}
+    \ex \textit{give/receive}
+    \ex \textit{Monday/Tuesday}
+  \end{exe}
+\item Using set notation, define \textup{few(A,B)}
+\end{enumerate}
+\vfill
+\paragraph{Acknowledgments} These questions are partially
+based on exercises from Saeed (2003).
+\end{document}

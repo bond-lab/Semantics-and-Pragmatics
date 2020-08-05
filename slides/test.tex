@@ -1,0 +1,15 @@
+\documentclass{article}
+\usepackage{fontenc}
+\usepackage{polyglossia}
+\setmainlanguage{english}
+\usepackage{xeCJK}
+\makexeCJKinactive
+\newcommand{\zh}[1]{\makexeCJKactive #1\makexeCJKinactive}
+\setCJKmainfont{Noto Sans CJK JP}
+\setCJKsansfont{Noto Sans CJK SC}
+\setCJKmonofont{Noto Sans CJK SC}
+\begin{document}
+
+\zh{看到了}
+
+\end{document}

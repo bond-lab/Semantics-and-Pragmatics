@@ -1,0 +1,190 @@
+%%
+%%%  Macros
+%%%
+\newcommand{\logo}{HG2002 (2020)}
+\usepackage[hidelinks]{hyperref}
+
+\newcommand{\header}[3]{%
+  \title{\vspace*{-2ex} \large 
+    HG2002 Semantics and Pragmatics
+% \thanks{Creative
+%       Commons Attribution License: 
+%       you are free to share and adapt as long as you give 
+%       appropriate credit and add no additional restrictions: 
+%       \protect\url{https://creativecommons.org/licenses/by/4.0/}.
+%     }
+    \\[2ex] \Large  \emp{#2} \\ \emp{#3}}
+  \author{\blu{Francis Bond}   \\ 
+    \normalsize  \textbf{Division of Linguistics and Multilingual Studies}\\
+    \normalsize  \url{http://www3.ntu.edu.sg/home/fcbond/}\\
+    \normalsize  \texttt{bond@ieee.org}}
+  \MyLogo{\logo}
+  % \MyLogo{奈良女子大学：欧米言語情報理論ＩＩ}
+  \date{#1
+    \\ Location: \url{}
+\\[.5ex] \footnotesize Creative  Commons Attribution License:  you are free to share and adapt 
+\\[-.25ex] \footnotesize   as long as you give    appropriate credit and add no
+additional restrictions: 
+\\ \small  \protect\url{https://creativecommons.org/licenses/by/4.0/}.
+}
+  % \renewcommand{\logo}{#2}
+  % \special{! /pdfmark where
+  %   {pop} {userdict /pdfmark /cleartomark load put} ifelse
+  %   [ /Author (Francis Bond)
+  %   /Title (#1: #2)
+  %   /Subject (HG2002: Semantics and Pragmatics)
+  %   /Keywords (Semantics, Pragmatics, Meaning)
+  %   /DOCINFO pdfmark}
+  %   }
+  \hypersetup{%
+    final       = true,
+    colorlinks  = true,
+    urlcolor    = blue,
+    citecolor   = blue,
+    linkcolor   = MidnightBlue,
+    unicode     = true,
+    pdfauthor   = {Francis Bond},
+    pdfkeywords = {Semantics, Pragmatics, Meaning},
+    pdftitle    = {#1: #2},
+    pdfsubject  = {HG2002 Semantics and Pragmatics; License CC BY 4.0}
+  }
+}
+
+
+\usepackage[a4paper,landscape]{geometry}
+%\usepackage[dvips]{xcolor}
+\usepackage[dvipsnames,x11names]{xcolor}
+\usepackage{graphicx}
+\newcommand{\blu}[1]{\textcolor{blue}{#1}}
+\newcommand{\grn}[1]{\textcolor{green}{#1}}
+\newcommand{\hide}[1]{\textcolor{white}{#1}}
+\newcommand{\emp}[1]{\textcolor{red}{#1}}
+\newcommand{\txx}[1]{\textbf{\textcolor{blue}{#1}}}
+\newcommand{\lex}[1]{\textbf{\mtcitestyle{#1}}}
+
+
+\usepackage{amsmath,latexsym}
+\usepackage{pifont}
+\renewcommand{\labelitemi}{\textcolor{violet}{\ding{227}}}
+\renewcommand{\labelitemii}{\textcolor{purple}{\ding{226}}}
+
+\newcommand{\subhead}[1]{\noindent\textbf{#1}\\[5mm]}
+
+\newcommand{\Bad}{\emp{\raisebox{0.15ex}{\ensuremath{\mathbf{\otimes}}}}}
+\newcommand{\bad}{*}
+
+\newcommand{\com}[1]{\hfill \textnormal{(\emp{#1})}}%
+\newcommand{\cxm}[1]{\hfill \textnormal{(\txx{#1})}}%
+\newcommand{\cmm}[1]{\hfill \textnormal{(#1)}}%
+
+\usepackage{relsize,xspace}
+\newcommand{\into}{\ensuremath{\rightarrow}\xspace}
+\newcommand{\ent}{\ensuremath{\Rightarrow}\xspace}
+\newcommand{\nent}{\ensuremath{\not\Rightarrow}\xspace}
+\newcommand{\tot}{\ensuremath{\leftrightarrow}\xspace}
+\usepackage{url}
+\newcommand{\lurl}[1]{\MyLogo{\url{#1}}}
+
+\usepackage{mygb4e}
+\let\eachwordone=\itshape
+\newcommand{\lx}[1]{\textbf{\textit{#1}}}
+\newcommand{\ix}{\ex\it}
+
+\newcommand{\cen}[2]{\multicolumn{#1}{c}{#2}}
+%\usepackage{times}
+%\usepackage{nttfoilhead}
+\newcommand{\myslide}[1]{\foilhead[-25mm]{\raisebox{12mm}[0mm]{\emp{#1}}}\MyLogo{\logo}}
+\newcommand{\myslider}[1]{\rotatefoilhead[-25mm]{\raisebox{12mm}[0mm]{\emp{#1}}}}
+%\newcommand{\myslider}[1]{\rotatefoilhead{\raisebox{-8mm}{\emp{#1}}}}
+
+\newcommand{\section}[1]{\myslide{}{\begin{center}\Huge \emp{#1}\end{center}}}
+
+
+
+\usepackage[lyons,j,e,k]{mtg2e}
+\renewcommand{\mtcitestyle}[1]{\textcolor{teal}{\textsl{#1}}}
+%\renewcommand{\mtcitestyle}[1]{\textsl{#1}}
+\newcommand{\ja}[1]{\mtcitestyle{\makexeCJKactive #1\makexeCJKinactive}}
+\newcommand{\chn}[1]{\mtciteform{#1}}
+%\newcommand{\cmn}[1]{make\cjkactive\mtciteform#1\makecjkinactive}
+\newcommand{\iz}[1]{\textup{\texttt{\textcolor{blue}{\textbf{#1}}}}}
+\newcommand{\con}[1]{\textsc{#1}}
+\newcommand{\gm}{\textsc}
+\newcommand{\cmp}[1]{{[\textsc{#1}]}}
+\newcommand{\sr}[1]{\ensuremath{\langle}#1\ensuremath{\rangle}}
+\usepackage[normalem]{ulem}
+\newcommand{\ul}{\uline}
+\newcommand{\ull}{\uuline}
+\newcommand{\wl}{\uwave}
+\newcommand{\vs}{\ensuremath{\Leftrightarrow}~}
+%%% theta role
+\newcommand{\tr}[1]{\textcolor{Chartreuse4}{\textsc{#1}}}
+%%% theta grid
+\newcommand{\grid}[1]{\ensuremath{\langle}\tr{#1}{\ensuremath{\rangle}}}
+
+%%%
+%%% Bibliography
+%%%
+\usepackage{natbib}
+%\usepackage{url}
+\usepackage{bibentry}
+%\usepackage{CJKutf8}
+
+
+\usepackage{fontenc}
+\usepackage{polyglossia}
+\setmainlanguage{english}
+\setotherlanguages{tamil}
+\setmainfont[Ligatures=TeX]{TeX Gyre Pagella}
+\setsansfont[Ligatures=TeX]{TeX Gyre Heros}
+
+\usepackage{xeCJK}
+\makexeCJKinactive
+\newcommand{\zh}[1]{\mtcitestyle{\makexeCJKactive #1\makexeCJKinactive}}
+%\newcommand{\ja}[1]{\makexeCJKactive #1\makexeCJKinactive}
+\setCJKmainfont{Noto Sans CJK JP}
+\setCJKsansfont{Noto Sans CJK SC}
+\setCJKmonofont{Noto Sans CJK SC}
+
+\newfontfamily\tamilfont[Script=Tamil]{Noto Sans Tamil}
+\newfontfamily\tamilfontsf[Script=Tamil]{Noto Sans Tamil}
+\newcommand{\tam}[1]{\texttamil{#1}}
+%%% From Tim
+\newcommand{\WMngram}[1][]{$n$-gram#1\xspace}
+\newcommand{\infers}{$\rightarrow$\xspace}
+
+
+\usepackage{rtrees,qtree}
+\renewcommand{\lf}[1]{\br{#1}{}}
+\usepackage{avm}
+%\avmoptions{topleft,center}
+\newcommand{\ft}[1]{\textsc{#1}}
+\newcommand{\val}[1]{\textit{#1}}
+\newcommand{\typ}[1]{\textit{#1}}
+\avmfont{\sc}
+\avmvalfont{\sc}
+\renewcommand{\avmtreefont}{\sc}
+\avmsortfont{\it}
+
+
+%%% From CSLI book
+\newcommand{\mc}{\multicolumn}
+\newcommand{\HD}{\textbf{H}\xspace}
+\newcommand{\el}{\< \>}
+\makeatother
+\long\def\smalltree#1{\leavevmode{\def\\{\cr\noalign{\vskip12pt}}%
+\def\mc##1##2{\multispan{##1}{\hfil##2\hfil}}%
+\tabskip=1em%
+\hbox{\vtop{\halign{&\hfil##\hfil\cr
+#1\crcr}}}}}
+\makeatletter
+
+%\usepackage{tipa}
+\usepackage{multicol}
+
+
+\newcommand{\task}{\marginpar{\large ~~~\textbf{?}}}
+\newcommand{\sh}[1]{\href{https://www.arthur-conan-doyle.com/index.php?title=#1}{#1}}
+
+\usepackage{tikz}
+\usepackage{tikz-qtree}

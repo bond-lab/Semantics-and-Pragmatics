@@ -1,0 +1,1074 @@
+\documentclass[headrule,footrule]{foils}
+
+\input{headx.tex}
+% \usepackage{tree-dvips}
+% \newcommand{\sa}[2]{\node{c#1}{\iz{#2}}}%\nodebox{c#1}}
+\usepackage{pst-node}
+\usepackage{pst-plot}
+
+\usepackage{tree-dvips} % ALT Ontology
+\newcommand{\sa}[2]{\texttt{\small #1}:\iz{#2}} %\nodebox{c#1}}
+%\newcommand{\sagt}[2]{\rnode{c#1}{\iz{#2}}} %\nodebox{c#1}}
+\newcommand{\sagt}[2]{\rnode{c#1}{\izn{#1}{#2}}} %\nodebox{c#1}}
+\newcommand{\izn}[2]{\iz{#1:#2}}
+
+
+
+\begin{document}
+%\begin{CJK}{UTF8}{min}
+\header{Lecture 6}{Participants}{}\maketitle
+
+%\include{schedule}
+
+\myslide{Overview}
+
+\begin{itemize}\addtolength{\itemsep}{-1ex}
+\item Revision: Situations
+  \begin{itemize}
+  \item Verb Types
+  \item TAM: Tense, Aspect and Modality
+  \item Mood and Evidentiality
+  \end{itemize}
+\item Thematic Roles
+  \begin{itemize}
+  \item Grammatical Relations and Thematic Roles
+  \item Verbs and Thematic Role Grids
+  \item Problems with Thematic Roles
+  \item The Motivation for Identifying Thematic Roles
+ \item Voice
+ \end{itemize}
+\item Classifiers and Noun Classes
+
+\item Next Lecture: Chapter 7: Context and Inference
+\end{itemize}
+
+%%%
+%%% this changes each year, so keep separate
+%%%
+\include{schedule}
+
+
+\section{Revision: Situations}
+
+\myslide{Summary of Situation}
+\begin{itemize}\addtolength{\itemsep}{-1ex}
+\item Verb/Situation Types
+\begin{itemize}
+\item Stative 
+\item  Dynamic
+  \begin{itemize}
+  \item  Punctual
+  \item  Durative
+    \begin{itemize}
+    \item  Telic/Resultative 
+    \item  Atelic
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+\item Tense/Aspect and Time: R, S and E
+\item Modality
+  \begin{itemize}
+  \item Epistemic
+  \item Deontic: Permission, Obligation
+  \end{itemize}
+\item Evidentiality
+\end{itemize}
+
+
+\myslide{Situation Types}
+
+\noindent\begin{tabular}{lcccl}
+Situations     & Stative & Durative & Telic & Examples \\ \hline
+State          & +       & +        &       & \eng{desire, know} \\
+Activity       & $-$       & +        & $-$     & \eng{run, drive a car} \\
+Accomplishment & $-$       & +        & +     & \eng{bake, walk to school, build} \\
+Punctual       & $-$       & $-$        & $-$     & \eng{knock, flash} \\
+Achievement    & $-$       & $-$        & +     & \eng{win,  start}  
+\end{tabular}
+
+
+\myslide{Tense and Time}
+\begin{itemize}
+\item  Locate a situation to a point in time: 
+  \\ S = speech point;  R = reference time:  E = event time
+\begin{itemize}
+\item  Simple Tense
+  \begin{itemize}
+  \item Past ($R = E < S$) \eng{saw}
+\item  Present ($R = S = E$) \eng{see} 
+\item  Future ($S < R = E$) \eng{will see}
+\end{itemize}
+\item Complex Tense
+\begin{itemize}
+\item  Past Perfect ($E < R < S$) \eng{had seen}
+\item  Present Perfect ($E < R =S$) \eng{had seen}
+\item  Future Perfect ($S< E < R$) \eng{had seen}
+\end{itemize}
+\end{itemize}
+\end{itemize}
+
+\myslide{Aspect in General}
+
+\begin{itemize}
+\item  \txx{Perfective} focus on the end point
+  \begin{itemize}
+  \item  \txx{Completive} \eng{I built the building}
+  \item  \txx{Experiential} \eng{I have built the building} %(E < R = S) ???
+  \end{itemize}
+\item  \txx{Imperfective} 
+  \begin{itemize}
+  \item  \txx{Progressive} \eng{I was listening/I am listening}
+  \item  \txx{Habitual} \eng{I listen to the Goon Show}
+\end{itemize}
+\item Different languages grammaticalize different things
+\end{itemize}
+
+
+\myslide{Mood: Knowledge vs Obligation}
+\begin{itemize}
+\item  \txx{Epistemic modality}: Speaker signals degree of  
+knowledge.
+\begin{exe}
+  \ex\eng{You can drive this car} \cmm{You are able to}
+\end{exe}
+\item  \txx{Deontic modality}: Speaker signals his/her attitude  
+to social factors of obligation and permission.
+\begin{itemize}
+\item \txx{Permission}
+  \begin{exe}
+    \ex\eng{You can drive this car}  \cmm{You have permission to}
+    \ex\eng{You may drive this car}  
+  \end{exe}
+\item \txx{Obligation}
+  \begin{exe}
+    \ex\eng{You must drive this car}  \cmm{You have an obligation to}
+    \ex\eng{You ought to drive this car}
+  \end{exe}
+% \item  Question: How do you use `must', `confirm', and 
+% `sure' in Singlish? ???
+\end{itemize}
+\end{itemize}
+
+\myslide{Mood more Generally}
+
+\begin{itemize}
+\item Grammatical Inflection used to mark modality is called \txx{mood}
+  \begin{itemize}
+  \item \txx{indicative} expresses factual statements
+  \item \txx{conditional} expresses events dependent on a condition
+  \item \txx{imperative} expresses commands
+  \item \txx{injunctive} expresses pleading, insistence, imploring
+  \item \txx{optative} expresses hopes, wishes or commands 
+  \item \txx{potential} expresses something likely to happen
+  \item \txx{subjunctive} expresses  hypothetical events; opinions or emotions
+  \item \txx{interrogative} expresses questions
+\end{itemize}
+\item English only really marks imperative and subjunctive, and then only on \lex{be}
+  \begin{exe}
+    \ix \eng{\ul{Be} good!}
+    \ix \eng{If I \ul{were} a rich man}
+  \end{exe}
+\end{itemize}
+
+
+
+\section{Participants} 
+
+\myslide{Thematic Roles}
+
+In this section we talk about the relations between the participants
+in a situation and the situation itself.
+
+\begin{itemize}
+\item  \txx{Thematic roles} are the roles played by the parts of the sentence that 
+correspond to the participants in the situation described
+
+\item  They classify relations between entities in a situation
+
+\item  Also known as
+\begin{itemize}
+\item  Deep case \citep{Fillmore:1968}
+\item  Thematic roles; Theta roles;   $\theta$-roles
+\item  Semantic Roles; Participant Roles
+\end{itemize}
+\end{itemize}
+ 
+\myslide{Roles link different alternations}
+\begin{exe}
+  \ex\eng{Kim patted Sandy}
+  \ex\eng{Sandy was patted by Kim}
+\end{exe}
+\begin{itemize}
+\item  Which is the \txx{Subject} and which the \txx{Object} in these sentences?\task
+\item  What are the thematic roles of Kim and Sandy?\task
+\end{itemize}
+
+\myslide{Thematic Roles}
+\MyLogo{Some prose and examples from \citet{Bender:2013}}
+\begin{itemize}
+\item \txx{\tr{agent}} (takes \eng{deliberately, on purpose, what did X do?})
+  \begin{quote}
+    A participant which the meaning of the verb specifies as doing or causing something,
+    possibly intentionally. 
+  \end{quote}
+  \begin{itemize}
+  \item The initiator, performer of controller of an action; typically volitional, typically animate
+  \item Typically \textsc{subject}
+  \end{itemize}
+  \begin{exe}
+      \ex\eng{\eng{\ul{Kim} kicked Sandy}}
+      \ex\eng{\eng{\ul{The ogre} leaped into the fray}}
+      \ex\eng{\eng{\ul{The student} watched the video}}
+    \end{exe}
+\item (\txx{\tr{actor}}) generalization of \txx{\tr{agent}} that allows non-volitional, non-actor:
+   if you use this, then \txx{\tr{agent}} is restricted to animate, volitional participants
+\newpage
+\item  \txx{\tr{patient}} (\eng{What happened to X?})
+  \begin{quote}
+    A participant which the verb characterizes as having something
+    happen to it, and as being affected by what happens to it.
+    %Examples: objects of kill, eat, smash but not those of watch, hear
+    %and love.
+  \end{quote}
+  \begin{itemize}
+  \item The undergoer of an action
+  \item  Undergoes change in state usually, both animate and 
+    inanimate
+  \item Typically \textsc{object}
+  \end{itemize}
+  \begin{exe}
+    \ex\eng{\eng{Kim kicked \ul{Sandy}}}
+    \ex\eng{\eng{The ogre ate  \ul{the dog}}}
+    \ex\eng{$^\#$\eng{The student watched \ul{the video}}}
+    \ex\eng{$^\#$\eng{I heard \ul{a sound}}}
+  \end{exe}
+\newpage
+\item  \txx{\tr{theme}}
+  \begin{quote}
+     A participant which is characterized as changing its position or condition, or as
+being in a state or position. 
+  \end{quote}
+  \begin{itemize}
+  \item  Moved, location or state is described
+  \item Typically \textsc{object}
+\end{itemize}
+\begin{exe}
+  \ex \eng{\eng{Hiromi put \ul{the book} on the shelf}}
+  \ex \eng{\eng{Freddy gave you \ul{the chocolate}}}
+  \ex \eng{\eng{\ul{The book} is on the shelf}}
+  \ex \eng{\eng{\ul{The protagonist} died}}
+  \ex *\eng{\eng{\ul{The dog} walked home}}
+\end{exe}
+\newpage
+
+\item  \txx{\tr{experiencer}}
+  \begin{quote}
+    A participant who is characterized as aware of something.
+  \end{quote}
+  \begin{itemize}
+  \item   Non-volitional, displaying awareness of action, state
+  \item Typically \textsc{subject}
+  \end{itemize}
+  \begin{exe}
+  \ex\eng{\ul{Liling} heard thunder}
+  \ex\eng{\ul{Jo} felt sick}
+  \ex\eng{The lecturer annoyed \ul{the students}}
+\end{exe}
+\newpage
+\item  \txx{\tr{beneficiary}}
+  \begin{itemize}
+  \item   for whose benefit the action was performed
+  \item   Typically indexed by "for" PP in English
+    \\ or \textsc{object} in ditransitive verbs
+  \end{itemize}
+  \begin{exe}
+  \ex\eng{They made \ul{me} a present}
+  \ex\eng{They made a present \ul{for me}}
+\end{exe}
+
+\item  \txx{\tr{location}}
+  \begin{itemize}
+  \item  Place
+  \item Typically indexed by locative PPs in English
+  \end{itemize}
+  \begin{exe}
+  \ex\eng{I am living \ul{in Indonesia}}
+  \ex\eng{It is \ul{on the table}}
+\end{exe}
+\newpage  
+
+\item  \txx{\tr{goal}}
+  \begin{itemize}
+  \item  towards which something moves (lit or metaphor)
+ \item  Typically indexed by "to" PP in English 
+   \\ or \textsc{object} in ditransitive
+  \end{itemize}
+  \begin{exe}
+  \ex\eng{She handed the form \ul{to him}}
+  \ex\eng{She handed \ul{him} her form}
+  \end{exe}
+\item  \txx{\tr{source}}
+ \begin{itemize}
+ \item  from which something moves or originates
+ \item  Typically indexed by "from" PP in English
+ \end{itemize}
+  \begin{exe}
+ \ex\eng{We gleaned this \ul{from the Internet}}  
+\end{exe}
+\newpage
+\item  \txx{\tr{stimulus}}
+  \begin{itemize}
+  \item  Usually used in connection with \tr{experiencer}
+  \end{itemize}
+  \begin{exe}
+  \ex\eng{\ul{The lightning} scared them}
+  \ex\eng{I don't like \ul{the lightning}}
+\end{exe}
+\item  \txx{\tr{instrument/manner}}
+  \begin{itemize}
+  \item  Means by which action is performed
+  \item  Can be indexed by "with" PP in English
+  \end{itemize}
+  \begin{exe}
+    \ex\eng{I ate breakfast \ul{with chopsticks}}
+  \end{exe}
+\end{itemize}
+
+\myslide{Split Themes}
+
+\begin{itemize}
+\item \citet{Jackendoff:1990} suggests
+  \begin{itemize}
+  \item \txx{action tier} (actor-patient)
+    \\ \tr{actor, agent, experiencer, patient, beneficiary, instrument}
+  \item \txx{thematic tier} (spatial)
+  \\ \tr{theme, goal, source, location}
+\end{itemize}
+\end{itemize}
+
+% \myslide{Case Grid}
+% {\small
+% \noindent\begin{tabular}{lllll}
+%             & Source  & Path 
+%             & Goal & Local\\ \hline
+%   Active    & INSTIGATOR  & MEANS & RECIPIENT & PATIENT   \\
+%   Objective & MATERIAL & INSTRUMENT & RESULT & CHANGED   \\
+%   Dative    & STIMULUS & MEDIUM & EXPERIENCER & CONTENT \\ 
+%             & OWNER &   PRICE   & RECIPIENT & TRANSFERRED \\
+%   Locative  & SOURCE   & PATH  & GOAL & POINT  \\
+%   Temporal  & FROM & DURATION& UNTIL & WHEN \\
+%   Ambient   & REASON&  MANNER & AIM & CONDITION 
+%   % Particle& \multicolumn{2}{c}{\cm{ga}, wa, towa} & 
+%   % \multicolumn{2}{c}{\cm{de}, to, o} & \multicolumn{2}{c}{\cm{ni} e}
+%   % & \multicolumn{2}{c}{\cm{o}, to} \\
+%   %           & \multicolumn{2}{c}{kara, yori} &  &       &
+%   %           \multicolumn{2}{c}{made to}  & \multicolumn{2}{c}{ni, de,
+%   %             nituite}  \\
+%   % Preposition & \multicolumn{2}{c}{\cm{from}} &
+%   % \multicolumn{2}{c}{\cm{by}, with} & \multicolumn{2}{c}{\cm{to},
+%   %   until}  & \multicolumn{2}{c}{\cm{in/at/on}}\\
+%   %             & \multicolumn{2}{c}{for}  & \multicolumn{2}{c}{for,
+%   %               around}  & \multicolumn{2}{c}{as, for} &
+%   %             \multicolumn{2}{c}{with, about} 
+% \end{tabular}}
+
+% \citet{Somers:1987}: \textit{Valency and Case in Computational Linguistics}
+
+% \begin{itemize}
+% \item Combines the two tiers into a matrix
+% \end{itemize}
+
+\myslide{Theta-Grid}
+\begin{itemize}\addtolength{\itemsep}{-1ex}
+% \item  Goal: Explanation for the syntax-semantics 
+% interface.
+\item Have a semantic \txx{valence}
+  (\txx{theta-grid}) %, \txx{subcategorization})
+
+ \begin{itemize}
+ \item  \lex{give}: V \grid{\ul{agent}, theme, beneficiary}
+ \item  underlined role maps to subject
+ \item  order of roles allows prediction of grammatical function
+ \end{itemize}
+\item  This is used to link the meaning with the realization
+\item Distinguish between
+  \begin{itemize}
+  \item \txx{participant roles} depend on the verb --- in the grid (\txx{arguments})
+    \begin{itemize}
+    \item In general, if it takes part in an alternation: it should be in the grid.
+    \end{itemize}
+  \item \txx{non-participant roles} combine freely --- not in the grid (\txx{adjuncts})
+    \begin{itemize}
+    \item If there can be multiple instances: it should not be in the grid.
+    \end{itemize}
+ 
+  \end{itemize}
+\end{itemize}
+  
+
+
+\myslide{Theta-Grids (continued)}
+
+\begin{itemize}
+\item Theta Grids/subcategorization are properties of meta-lexemes
+  \begin{itemize}
+  \item For a given sense they are constant:
+    \\ \textbf{\textit{hand}}: V \grid{\ul{agent}, theme,
+    beneficiary} (NP, NP, NP)
+    \begin{itemize}
+    \item \textit{I handed Kim the book}: 
+      %\\ Sbj=AGENT, Obj=THEME, IObj =  BENEFICIARY
+    \end{itemize}
+  \item passivization changes the grid: 
+      \\ \textbf{\textit{handed}}:  V \grid{\ul{beneficiary},
+      theme, agent} (NP, NP, PP:by)
+  \begin{itemize}
+    \item \textit{Kim was handed the book by me}: 
+      %\\ Sbj=BENEFICIARY, Obj=THEME, PP =  AGENT
+    \end{itemize}
+  \item Can change with alternations, voice, \ldots
+  \end{itemize}
+\item Theta Roles are semantic NOT syntactic
+  \begin{itemize}
+  \item Never \textsc{subject, object, adjective, \ldots}
+  \end{itemize}
+\end{itemize}
+
+
+\myslide{Some Issues}
+\begin{itemize}
+\item  Every theory has a different set of roles
+
+\item  From 8 to 42! (two groups at NTT) 
+\item  How useful is the notion of \tr{patient} if it 
+encompasses all these?
+\begin{exe}
+\ex\eng{The genie touched \ul{the lamp} with their nose.}
+\ex\eng{The baby rubbed \ul{the lamp} with its hands.}
+\ex\eng{The baby squeezed \ul{the rubber toy} with its hands.}
+\ex\eng{She cracked \ul{the mirror} with a stone.}
+\end{exe}
+\end{itemize}
+
+
+
+\myslide{Linking Grammatical Relations and Thematic Roles}
+\begin{itemize}
+\item    Thematic roles typically map onto grammatical 
+  functions systematically
+  \begin{itemize}
+  \item  \tr{agent} is usually the subject
+  \item  \tr{patient} is usually the object
+  \end{itemize}
+\item  It is possible to predict how arguments are linked to 
+the verb from their thematic roles, and hence their 
+grammatical functions.
+\item Different languages show these in different ways:
+  \begin{itemize}
+  \item English uses position for SUBJ/OBJ and prepositions
+  \item Japanese uses postpositions
+\newpage
+  \item Latin inflects:  \eng{familia} ``family, household''
+\\    \begin{tabular}{lll}
+ & Singular & 	Plural \\
+Nominative & 	familia & 	familiae\\
+Accusative & 	familiam & 	familiās\\
+Genitive & 	\raisebox{-1ex}[0ex][0ex]{familiae} & 	familiārum\\
+Dative &    &		\raisebox{-1ex}[0ex][0ex]{familiīs}  \\
+Ablative & 	familiā & 	 \\
+    \end{tabular}
+
+  \end{itemize}
+\item Most language mark arguments and adjuncts slightly differently
+  \begin{itemize}
+  \item There are far fewer arguments (typically not more than 4)
+  \item There are more adjuncts, so they are typically marked with a
+    contentful marker
+  \end{itemize}
+\end{itemize}
+
+\myslide{Many verbs allow alternations}
+\begin{exe}
+  \ex \eng{Jo broke the ice with a pickaxe}
+  \\   \grid{\ul{agent}, patient,  instrument} (NP, NP, PP:with)
+  \ex \eng{The pickaxe broke the ice}
+  \\  \grid{\ul{instrument}, patient} (NP, NP)
+  \ex \eng{The ice broke}  
+  \\ \grid{\ul{patient}} (NP)
+\end{exe}
+
+
+\myslide{Other Predicates}
+
+\begin{itemize}
+\item Adjectives  (normally theme)
+  \begin{exe}
+  \ex \eng{John is tall} \grid{\ul{theme}}
+  \ex \eng{John is cold [to touch]} \grid{\ul{theme}}
+  \ex \eng{John is/feels cold} \grid{\ul{experiencer}}
+    \\ different adjectives in e.g., Japanese：
+    \\  \eng{冷たい} \jpn[cold (to touch)]{tsumetai}  vs \eng{寒い} \jpn[(feel) cold]{samui}
+  \end{exe}
+\item Predicative Copula (treat second NP as predicate)
+  \begin{exe}
+  \ex \eng{John is a boy} \grid{\ul{theme}}
+  \end{exe}
+\item Identity Copula (reversible)
+  \begin{exe}
+  \ex \eng{Kim is my teacher} \grid{\ul{theme}, theme}?
+  \ex \eng{My teacher is Kim} \grid{\ul{theme}, theme}?
+  \end{exe}
+
+
+\end{itemize}
+
+
+
+\myslide{Thematic Hierarchy}
+
+\begin{itemize}
+\item  The higher you are in the hierarchy the more likely 
+to be subject (then object, then indirect, then 
+argument PP, then adjunct PP)
+\end{itemize}
+
+\[  \hspace*{-3em}\mbox{\tr{agent}} > 
+\left\{\begin{array}[c]{l} \mbox{\tr{goal/recipient}} \\ \mbox{\tr{beneficiary}} \end{array} \right\}  >
+\left\{\begin{array}[c]{l} \mbox{\tr{theme}} \\ \mbox{\tr{patient}} \end{array} \right\}  >
+\mbox{\tr{instrument}} > 
+\mbox{\tr{location}} \]
+
+\begin{itemize}
+\item  Generally true across languages
+\end{itemize}
+
+
+
+\myslide{Dowty's Proto-Arguments}
+\MyLogo{\citet{Dowty:1991}}
+\begin{itemize}
+\item  The \tr{Agent} Proto-Role 
+\begin{itemize}
+\item  Volitional
+\item  Sentient (and/or perceptive)
+\item  Causes event or change of state; 
+\item  Movement
+\end{itemize}
+\item  The \tr{Patient} Proto-Role
+\begin{itemize}
+\item  Change of state
+\item  Incremental theme (i.e. determines aspect)
+\item  Causally affected by event
+\item  Stationary (relative to movement of proto-agent).     
+\end{itemize}
+\end{itemize}
+
+\myslide{Dowty's Argument Selection Principle}
+\begin{itemize}
+\item   when a verb takes a subject and an object
+  \begin{itemize}
+  \item  the argument with the greatest number of Proto-Agent 
+    properties will be the one selected as \textsc{subject}
+  \item  the one with the greatest number of Proto-Patient properties 
+    will be selected as \textsc{object}
+  \end{itemize}
+\item   Try: \lex{threw} --- ball, the man, the dog
+
+\item   Relatively predictive, but what about sentences 
+such as:
+\\  \eng{The hunger killed him}?
+\end{itemize}
+
+
+\myslide{Alternations}
+ \MyLogo{English Verb Classes and Alternation \citep{Levin:1993}}
+\begin{itemize}
+\item  Many verbs have multiple theta-grids
+  \begin{exe}
+    \ex
+    \begin{xlist}
+      \ex\eng{Kim broke the window with the hammer}
+      \trans \grid{\ul{agent}, patient, instrument}
+      \ex\eng{The hammer broke the window}
+      \trans \grid{\ul{instrument}, patient}
+      \ex\eng{The window broke}
+      \trans \grid{\ul{patient}}
+    \end{xlist}
+    \ex
+    \begin{xlist}
+      \ex\eng{I cut the cake with the knife}
+      \trans \grid{\ul{agent}, patient, instrument}
+      \ex\eng{This cake cuts easily}
+      \trans \grid{\ul{patient}}
+    \end{xlist}
+  \end{exe}  
+\item  The relations between them are called \txx{alternations}
+
+\end{itemize}
+
+
+\myslide{Voice}
+\MyLogo{These are also alternations for Levin}
+\begin{itemize}
+\item  Another alternation that changes the number of arguments is 
+\txx{voice}: passive, middle
+\begin{exe}
+  \ex \txx{Transitive Passive}
+  \\ makes the \tr{patient} more salient
+  \begin{xlist}
+    \ex\eng{Kim ate Sandy}
+    \ex\eng{Sandy was eaten (by Kim)}
+  \end{xlist}
+  \ex \txx{Ditransitive Passive} 
+  \\ can make the \tr{theme} or the \tr{goal} more salient
+  \begin{xlist}
+    \ex\eng{Abraham gave Brown chocolate}
+    \ex\eng{Abraham gave chocolate to Brown}
+    \ex\eng{Chocolate was given to Brown (by Abraham)}
+    \ex\eng{Brown was given chocolate (by Abraham)}
+  \end{xlist}
+\newpage
+  \ex \txx{Transitive Middle} 
+  \\ requires an adverbial, becomes a timeless generic statement 
+  \begin{xlist}
+    \ex\eng{They open the gate very quietly} (active)
+    \ex\eng{The gate opens very quietly} (middle)
+    \ex\eng{The gate opened very quietly} (inchoative)
+  \end{xlist}
+  \ex \txx{Intransitive Middle}
+ \\ requires an adverbial, becomes a timeless generic statement 
+  \begin{xlist}
+    \ex\eng{The knife cuts the cake well}
+    \ex\eng{The knife cuts well}
+  \end{xlist}
+\end{exe}
+\end{itemize}
+
+\myslide{Why so many possibilities?}
+
+\begin{itemize}
+\item So we can emphasize different participants
+\item We may not know all the participants
+\item We may not care about all the participants
+\item There are also lexical alternations
+\end{itemize}
+\begin{exe}
+\ex \eng{Kim \ul{killed} Sandy} vs \eng{Sandy \ul{dies}}
+\ex c.f. \eng{Kim \ul{melted} the ice} vs \eng{the ice \ul{melted}}
+\makexeCJKactive
+\ex \glll \zh{金が} 氷を \ul{溶かした}  {~~~vs~~~}  氷が \ul{溶けた} \\ 
+\makexeCJKinactive
+Kim-ga koori-wo \ul{tokashita}  {} koori-ga \ul{toketa} \\
+  Kim-\textsc{sbj} ice-\textsc{obj} \textit{melt:trans} 
+{} ice-\textsc{sbj} \textit{melt:intrans} \\
+\end{exe}
+
+
+\section{Classifiers}
+
+\myslide{Classifiers and Noun Classes}
+\MyLogo{}
+\begin{itemize}
+\item  Many languages include special ways to classify 
+nouns
+\begin{itemize}
+\item  Noun Classifiers (Bantu, Yidi , \ldots) 
+\item  Numeral Classifiers (Chinese, Malay, Japanese, \ldots)
+  \begin{itemize}
+  \item English group nouns: \lex{flock, mob, group, pack, \ldots}
+  \end{itemize}
+\item  Gender (German, Spanish, \ldots)  
+\end{itemize}
+\item Classifiers can be marked on the noun, on the verb, on a
+  separate word (a classifier) or on all words
+\end{itemize}
+
+\myslide{Examples}
+\begin{exe}
+  \ex \gll Bulumba walba      malan \\
+  CL:HABITABLE CL:STONE  flat.rock \\
+  \trans ``a flat rock for camping'' \hfill Yidi\textltailn\  \citep{Dixon:1977}
+  \ex \eng[1.CL:round apple]{se-biji epel} \hfill Malay
+  \ex \zh{一张\,纸} \eng[1.CL:flat paper]{yi-zhang zhi} \hfill Mandarin
+  \ex \eng[the:male dog]{der Hund} \hfill German
+  \ex \eng[the:neuter girl]{den Madchen}\hfill German
+\end{exe}
+
+\myslide{What gets Classified?}
+\MyLogo{Allan (2001)}
+\begin{itemize}
+\item \txx{Taxonomic Class}: Human, Animal, Tree, Female
+\item \txx{Function}: piercing, cutting, writing instrument, for eating/drinking
+\item \txx{Shape}: long, flat, round (1D, 2D, 3D)
+\item \txx{Consistency}: rigid, flexible
+\item \txx{Size}: grab in fingers, hand, $<$ human, $>$ human
+\item \txx{Location}: towns
+\item \txx{Arrangement}: row, coil, heap
+\item \txx{Quanta}: head, pack, flock
+\end{itemize}
+
+\myslide{Noun Classes in Bantu}
+
+\begin{tabular}{ll}
+  Class &  Semantics \\
+\hline
+1/2 	& sg/pl   human \\
+3/4 	& sg/pl   plants, foods, non-paired body parts \\
+5/6 	& sg/pl  fruits, paired body parts, \ldots \\
+7/8 	& sg/pl  inanimate \\
+9/10 	& sg/pl  animals \\
+11/12 	& sg/p   long objects, abstracts \\
+13      & small objects, birds \\
+14      & masses \\
+15      & infinitives
+\end{tabular}
+\newpage
+Other elements in the sentence agree with the noun (class 8)
+\begin{exe}
+  \ex \gll Vi-su vidogo viwili hi-vi amba-vy-o nili-vi-nunua ni vi-kali sana \\
+  vi-knife vi-small vi-teo this-vi which-vi 1.s-vi-buy be vi-sharp very \\
+\trans These two small knives which I bought are very sharp
+\end{exe}
+
+\myslide{Classification}
+\MyLogo{}
+\begin{itemize}
+\item    Is there a system for classifying nouns in a 
+language that you speak? \task
+\begin{itemize}
+\item  What are the criteria for classification? \task
+\end{itemize}
+\item  Semantic change?  
+\begin{itemize}
+\item  How do you classify \iz{watermelon}?   (or what gender is $\sim$)\task
+\item  How do you classify a \iz{grain (of rice)} \task
+\item  How do you classify a \iz{human} \task
+\item  How do you classify a \iz{robot} \task
+\end{itemize}
+\end{itemize}
+
+
+
+\myslide{Classifiers in Japanese and Chinese}
+\MyLogo{\citet{Paik:Bond:2002}}
+\begin{itemize}
+\item Modeling Classifier use in  Japanese and Chinese:
+  \begin{itemize}
+  \item Associate classifiers with semantic classes (in an ontology) by hand
+  \item Most sortal classifiers select for some kind of semantic class
+  \item 20\% of the classes require more than one classifier\\
+    choose the most common one
+  \item class \iz{961:weapon}:\\
+    \jpn[knives]{-ch\=o}, \jpn[long thin things]{-hon},
+    \jpn[swords]{-furi}, \jpn[machines]{-ki}
+  \end{itemize}
+\item Each language took around two weeks
+\item Currently redoing this with WordNet and associating
+  semi-automatically from a corpus (URECA projects available)
+\end{itemize}
+
+\myslide{Top four levels of the Goi-Taikei (\zh{語彙大系}) Ontology}
+\begin{small}
+\hspace*{-3em}\begin{tikzpicture}[grow'=right]
+  \tikzset{level distance=8em,sibling distance=0em}
+  \tikzset{every tree node/.style={anchor=base west}}
+  \Tree 
+  [.{\sa{1}{noun}} 
+    [.{\sa{2}{concrete}}
+      [.{\sa{3}{agent}} 
+        [.{\sa{4}{person}} ]
+        [.{\sa{362}{organization}} ] ]
+      [.{\sa{388}{place}}
+        [.{ \sa{389}{facility}} ]
+        [.{\sa{458}{region}} ]
+        [.{\sa{468}{natural place}} ] ]
+      [.{\sa{533}{object}}
+        [.{\sa{534}{animate}} ]
+        [.{\sa{706}{inanimate}} ]
+      ]
+    ]
+ [.{\sa{1000}{abstract}}  
+ [.\sa{1001}{\shortstack{abstract\\thing}} 
+ [.\sa{1002}{mental state} ]
+ [.\sa{1154}{action} ] ]
+ [.\sa{1235}{event} 
+[.\sa{1236}{human activity} ]
+[.\sa{2054}{phenomenon} ]
+[.\sa{2304}{natural phenomenon} ]
+]
+ [.\sa{2422}{relation}  
+[.\sa{2423}{existence} ]
+[.\sa{2432}{system} ]
+[.\ldots{} ] ]
+]
+]
+\end{tikzpicture}
+ \end{small}
+\vspace*{-4.5ex}\begin{itemize}\addtolength{\itemsep}{-0.5ex}
+\item A rich ontology for Japanese, English, Chinese and Malay 
+\item \emp{2,710} semantic classes (12-levels) for common  nouns
+  % \item \emp{200} classes (9-level tree structure) for proper nouns:
+  %   \item Japanese word semantic dictionary has:
+  %   \begin{itemize}
+  %   \item \emp{100,000} common nouns
+  %   \item \emp{70,000} technical terms
+  %   \item \emp{200,000} proper nouns
+  %   \item \emp{30,000} other words
+  %   \end{itemize}
+  %  \item \emp{108} classes for predicates: \emp{17,000} entries
+\end{itemize}
+
+
+   % The solid arrows show the direct parent and child relationship.
+   % Dashed arrows show indirect relationships (skipping some levels).
+
+
+
+\myslide{Japanese Classifiers}
+\vspace*{-5mm}\begin{center}
+    \begin{tabular}{lclrrlrr}
+      \multicolumn{2}{l}{\textsc{classifier}} & Referents classified &  
+      No. & \% &  Sample Class \\ \hline% & No. & \% \\ \hline
+      \multicolumn{2}{l}{None} & Uncountable & 794 & 29.3 
+      & \iz{3:agent} \\% & 34,548& 20.0\\
+      \jpn{-kai} & (\zh{回}) &  events & 703& 25.9& \iz{1699:visit}
+      \\%& 35,050 & 20.3\\
+      \jpn{-tsu} & (\zh{つ})&  abstract/general & 565& 20.9&\iz{2:concrete} 
+      
+      \\%& 52,921& 30.1      \\
+      \jpn{-nin} & (\zh{人}) &  people & 298 & 11.0 & \iz{5:person}
+      \\%& 8,545& 4.9       \\   
+      \jpn{-ko} & (\zh{個})&  concrete objects & 124& 4.6& \iz{854:fruit} 
+      \\%& 14,380& 8.3      \\
+      \jpn{-hon} & (\zh{本})&  long thin objects & 52& 1.9& \iz{673:tree}
+      \\%& 3,775& 2.1       \\
+      \jpn{-mai} & (\zh{枚})&  flat objects & 32& 1.2& \iz{770:paper}
+      \\%&2,807 & 1.6      \\
+      \jpn{-teki} & (\zh{滴})&  liquid & 21& 0.8& \iz{652:tear}
+      \\%&1,219 & 0.7       \\
+      \jpn{-dai} & (\zh{台})&  mechanical items& 18 & 0.7&
+      \iz{962:machinery} \\
+      & & furniture
+      \\%& 5,087& 2.9      \\
+      \jpn{-hiki} & (\zh{匹})&  animals & 12& 0.6& \iz{537:beast}
+      \\%& 1,361& 0.8       \\
+      \multicolumn{2}{l}{Other} & 38 classifiers & 91 & 3.4 &
+\\\hline
+      \multicolumn{2}{l}{Total} & 47 classifiers & 2,710 & 100 &
+      \\%& 12,813&  7.4      \\
+      \end{tabular}
+    \end{center}
+
+% \myslide{Korean Classifiers}
+%   \begin{center}
+%      \begin{tabular}{lclrrlrr}
+%       \multicolumn{2}{l}{\textsc{classifier}} & Referents classified &  
+%       No. & \% &  Sample  Class \\ \hline% & No. & \% \\ \hline
+%       \multicolumn{2}{l}{None} & Uncountable & 799 & 29.5 
+%       & \iz{3:agent} \\% & 34,548& 20.0\\
+%       \kor{-kae} & \emp{(개)}& abstract/general & \emp{737} & 27.1 &
+%       \iz{2:concrete} \\
+%       \kor{-hyoi} & (회) &  events & 707& 26.1& \iz{1699:visit}
+%       \\%& 35,050 & 20.3\\
+%       \kor{-myong} & (명) &  people & 296 & 10.9 & \iz{5:person}
+%       \\%& 8,545& 4.9  
+%       \kor{-bangul} & (방울) & liquid & 26 & 1.0 & \iz{652:tear}
+%      \\  
+%       \kor{-jang} & (장)&  flat objects & 24 & 0.9 & \iz{770:paper}
+%       \\%&2,807 & 1.6      \\ 
+%  %     \kor{-dae} & (대)&  long thin objects & 21& 1.9& \iz{673:tree}
+%   %    \\%& 3,775& 2.1       \\
+%        \kor{-dae} & (대)&  mechanical items & 20 & 0.7&
+%        \iz{962:machinery} \\   
+%        & & furniture \\
+%       \kor{-keun} & (건)&  incidents & 14& 0.5 & \iz{1717:contract}
+%       \\%&1,219 & 0.7       \\
+
+%      % \\%& 5,087& 2.9      \\
+%        \kor{-mari} & (마리)&  animals & 14& 0.5 & \iz{535:animal}
+%       \\%& 1,361& 0.8       \\
+%        \multicolumn{2}{l}{Other} & 26 classifiers & 73 & 2.7 & 
+% \\\hline
+%       \multicolumn{2}{l}{Total} & 34 classifiers & 2,710 & 100 &
+%      \\%& 12,813&  7.4      \\
+%       \end{tabular}
+% \end{center}
+
+\myslide{Chinese Classifiers}
+\vspace*{-1ex}  \begin{center}
+    \begin{tabular}{lclrrlrr}
+      \multicolumn{2}{l}{\textsc{classifier}} & Referents classified &  
+      No. & \% &  Sample Class \\ \hline% & No. & \% \\ \hline
+ \multicolumn{2}{l}{None} & Uncountable referents& 765  & 28.2 & \iz{3:agent} \\% & 34,548& 20.0\\
+      \chn{-ci4} & (\zh{次}) &  events & 692 & 25.5 & \iz{1699:visit}
+      \\%& 35,050 & 20.3\\
+%      \chn{-zhong3} & (\zh{种}) & types & 71 & ?? &  \iz{767:product}
+%      \\%& 8,545& 4.9  
+   \chn{-ge4} & (\zh{个})& general/people & 655 & 24.1 &
+   \iz{2:concrete} \\
+      \chn{-wei4} & (\zh{位}) & people (\zh{honored}) & 68 & 2.5 &  \iz{228:doctor}
+     \\  
+      \chn{-quai4} & (\zh{块}) & big objects & 61 & 2.2 &  \iz{461:land}
+     \\  
+      \chn{-ren2} & (\zh{人}) & people & 39 & 1.4 &  \iz{92:descendants}
+     \\  
+      \chn{-tiao2} & (\zh{条})& long thin objects & 33 & 1.2 &\iz{417:route}
+      \\%&2,807 & 1.6      \\ 
+      \chn{-pian4} & (\zh{片}) & parts/pieces  & 25  & 0.9 & \iz{2578:flake}
+      \\%&1,219 & 0.7       \\
+      \chn{-zhang1} & (\zh{张})& big flat objects  & 23 & 0.8 & \iz{773:board} \\   
+     % \\%& 5,087& 2.9 \\ 
+      \chn{-ming2} & (\zh{名}) & people (\zh{respected}) & 22 & 0.8 &  \iz{351:expert}
+     \\  
+      \chn{-di1} & (\zh{滴})& liquid & 20 & 0.7 & \iz{652:tear} \\
+     %& 1,361& 0.8 \\ 
+   \chn{-jian4} & (\zh{件})& incidents & 19 & 0.7 & \iz{1717:contract} 
+           \\%& 1,361& 0.8 \\ 
+%    \chn{-??} & (\zh{??})& mechanic items/furniture & 19 & ?? & \iz{962:machinery} \\%& 1,361& 0.8 \\ ask Yao-san
+       \multicolumn{2}{l}{Other} & 70 classifiers & 293 & 10.8  &
+     \\%& 12,813&  7.4      \\
+\hline      \multicolumn{2}{l}{Total} & 81 classifiers & 2,710 & 100 &
+      \\%& 12,813&  7.4      \\
+      \end{tabular}
+%    \caption{Chinese Numeral Classifiers and associated Semantic Classes}
+%    \label{tab:nc-chn}
+  \end{center}
+%\end{table*}
+
+\myslide{Language Differences}
+
+\begin{itemize}
+\item   %\emp{34} Korean classifiers at the level of semantic classes\\
+  \emp{47} Japanese classifiers at the level of semantic classes\\
+  \emp{81} Chinese classifiers at the level of semantic classes
+  \begin{itemize}
+  \item Around the number a human typically uses (30--80)\\
+    More classifiers at the noun level (default classifiers)
+  \item Chinese uses more classifiers than Japanese\\
+        Chinese has more specific classifiers
+
+  % \item Japanese uses more kinds of classifiers than Korean\\
+  %   \cll{つ \jpn{-tsu}, 個 \jpn{-ko}, 本 \jpn{-hon}} \into  \cll{개
+  %     \kor{-kae}}
+   \end{itemize}
+\item No classifiers assigned to \emp{800} semantic classes %need to
+                                                            %check for Chinese
+  \begin{itemize}
+    \item Uncountable, abstract nouns (e.g.  \eng{greed, lethargy}) 
+    \item Empty classes
+  \end{itemize}
+\end{itemize}
+
+\myslide{Noun Classes vs Classifiers}
+\MyLogo{\citet{Dixon:1986}}
+
+\noindent\begin{tabular}{lll}
+  & \textbf{Noun classes} & \textbf{Classifiers} \\
+Size & Small Finite Set & Large Number (low hundreds) \\
+Realization & Closed Grammatical System & Separate Morpheme \\
+Marking & Also outside the noun word & Only in the noun phrase
+\end{tabular}
+
+\begin{itemize}
+\item Gender (noun class in e.g., German)
+  \begin{itemize}
+  \item typically 3 (Masculine, Feminine, Neuter)
+  \item marked as inflection
+  \item marked on determiners, adjective and nouns
+  \end{itemize}
+\item Numeral Classifiers (in e.g., Japanese)
+  \begin{itemize}
+  \item typically 30-80 in common use, hundreds exist
+  \item separate classifier phrase (numeral/interrogative+classifier)
+  \item classifier phrase modifies noun
+  \end{itemize}
+\end{itemize}
+
+\myslide{Summary}
+\MyLogo{}
+\begin{itemize}
+\item  Semantics motivates syntax
+  \begin{itemize}
+  \item  But most generalizations fail to cover all examples
+  \end{itemize}
+\item Argument structure and thematic roles link predicates and their arguments
+  \begin{itemize}
+  \item \blu{Remember the basic roles and examples}
+  \end{itemize}
+%\item Grammar relations and thematic roles
+\item Dowty's Argument Selection Principle
+  \\ prototypical agents and patients are subjects and objects 
+\item Problems with thematic roles
+\item Noun Classes and Classifiers
+\end{itemize}
+
+
+
+
+
+
+\myslide{Acknowledgments and References}
+\MyLogo{}
+\begin{itemize}
+% \item Definitions from WordNet: \url{http://wordnet.princeton.edu/}
+% \item Images from
+%   \begin{itemize}
+%   \item the Open Clip Art Library: \url{http://openclipart.org/}
+%   \item Steven Bird, Ewan Klein, and Edward Loper (2009) 
+%      \textit{Natural Language Processing with Python}, O'Reilly Media
+%     \\ \url{www.nltk.org/book}
+% \end{itemize}
+ \item Video: \textit{Does your dog bite} excerpt from \textit{The Pink Panther Strikes Again} directed by Blake Edwards, starring Peter Sellers.  The Pink Panther Strikes Again is the fifth film in The Pink Panther series and was released in 1976.
+   \begin{itemize}
+   \item It shows issues of reference and cooperation in dialog
+   \end{itemize}
+   \begin{small}
+\begin{verbatim}
+Closeau
+   Good day.
+   My name is Professor Guy Gabroir...
+   medieval castle authority from Marseilles.
+   Tell me, do you have a room?
+Clerk
+    I do not know what a "reum" is.
+Closeau
+    A Zimmer.
+Clerk
+    Ah! A room!
+Closeau
+    That is what I have been saying, you idiot.
+    Room.
+
+    Does your dog bite?
+Clerk
+    No.
+Closeau
+    Nice doggy.
+Dog
+    Grrrr <BITE>
+Closeau
+    I thought you said your dog did not bite.
+Clerk
+    That is not my dog.
+\end{verbatim}
+   \end{small}
+ \end{itemize}
+
+%\myslide{Bibliography}
+% Reading: Jurafsky and Martin (2008) Chapter 20
+\small
+\bibliographystyle{aclnat}
+\bibliography{abb,mtg,nlp,ling}
+
+\clearpage
+%\end{CJK}
+\end{document}
+
+
+%%% Local Variables: 
+%%% coding: utf-8
+%%% mode: latex
+%%% TeX-PDF-mode: t
+%%% TeX-engine: xetex
+%%% End: 
+

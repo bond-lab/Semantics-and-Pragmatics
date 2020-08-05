@@ -1,0 +1,1184 @@
+\documentclass[headrule,footrule]{foils}
+
+\input{headx.tex}
+
+\usepackage{tikz}
+
+\begin{document}
+\header{Lecture 10}{Formal Semantics}{}\maketitle
+
+%\include{schedule}
+
+\myslide{Overview}
+\begin{itemize}\addtolength{\itemsep}{-1ex}
+\item Revision: Components
+\item Quantifiers and Higher Order Logic
+\item Modality
+\item (Dynamic Approaches to Discourse)
+\item Next Lecture: Chapter 11 --- \emp{Cognitive Semantics}
+\end{itemize}
+
+
+
+
+\section{Revision: \\ Componential Analysis}
+
+
+\myslide{Break word meaning into its components}
+\begin{itemize} \addtolength{\itemsep}{-2ex}
+\item components allow a compact description
+\item interact with morphology/syntax
+\item form part of our cognitive architecture
+\item For example:
+  \\[2ex] \begin{tabular}{lllll}
+    \lex{woman} & \cmp{female} & \cmp{adult} & \cmp{human} & \\
+    \lex{spinster} & \cmp{female} & \cmp{adult} & \cmp{human} & \cmp{unmarried} \\
+    \lex{bachelor} & \cmp{male} & \cmp{adult} & \cmp{human} & \cmp{unmarried} \\
+    \lex{wife} & \cmp{female} & \cmp{adult} & \cmp{human} & \cmp{married} \\
+  \end{tabular}
+\item We can make things more economical (fewer components):
+  \\[2ex] \begin{tabular}{lllll}
+    \lex{woman} & \cmp{+female} & \cmp{+adult} & \cmp{+human} & \\
+    \lex{spinster} & \cmp{+female} & \cmp{+adult} & \cmp{+human} & \cmp{--married} \\
+    \lex{bachelor} & \cmp{--female} & \cmp{+adult} & \cmp{+human} & \cmp{--married} \\
+    \lex{wife} & \cmp{+female} & \cmp{+adult} & \cmp{+human} & \cmp{+married} \\
+  \end{tabular}
+\end{itemize}
+
+\myslide{Defining Relations using Components}
+
+\begin{itemize}%\addtolength{\itemsep}{-0.2em}
+\item \txx{hyponymy}: 
+    P is a hyponym of Q if all the components of Q are also in P.
+\\ \lex{spinster} $\subset$ \lex{woman}; \lex{wife} $\subset$ \lex{woman}
+\item \txx{incompatibility}:
+    P is incompatible with Q if they share some
+    components but differ in one or more \txx{contrasting} components
+\\  \lex{spinster} $\not\approx$ \lex{wife}
+\item{Redundancy Rules}
+\\[2ex]  \begin{tabular}{llll}
+     \cmp{+human} & \into & \cmp{+animate}  \\
+     % \cmp{+adult} & \into & \cmp{+animate}  \\
+      \cmp{+animate} & \into & \cmp{+concrete}  \\
+     \cmp{+married} & \into & \cmp{+adult}  \\
+     \cmp{+married} & \into & \cmp{+human}   & \ldots
+  \end{tabular}
+\item Predicates with argument structure
+\\ \lex{parent (of y)}(\ul{x},y)  \into  \cmp{+parent}(\ul{x},y)
+\end{itemize} 
+
+
+\myslide{Katz’s Semantic Theory}
+
+\begin{itemize}
+\item Semantic rules must be recursive to deal with infinite meaning
+\item Semantic rules interact with syntactic rule to build up meaning \txx{compositionally}
+  \begin{itemize}
+  \item A \txx{dictionary} pairs lexical items with semantic representations
+ \begin{itemize}
+ \item (\txx{semantic markers}) are the links that bind lexical items
+   together in lexical relations
+ \item {[\txx{distinguishers}]} serve to identify this particular lexical item
+   \\ this information is not relevant to syntax
+ \end{itemize}
+\item\txx{projection rules} show how meaning is built up
+  \begin{itemize}
+  \item Information is passed up the tree and collected at the top.
+  \item \txx{Selectional restrictions} help to reduce ambiguity and
+    limit the possible readings
+  \end{itemize}
+\end{itemize}
+
+  
+\myslide{Verb Classification}
+\MyLogo{Levin (1993)}
+
+\begin{itemize}
+\item We can investigate the meaning of a verb by looking at its
+  grammatical behavior
+  \begin{exe}
+    \ex Consider the following transitive verbs
+    \begin{xlist}
+      \ex \eng{Margaret \ul{cut} the bread}
+      \ex \eng{Janet \ul{broke} the vase}
+      \ex \eng{Terry \ul{touched} the cat}
+      \ex \eng{Carla \ul{hit} the door}
+    \end{xlist}
+  \end{exe}
+\item These do not all allow the same argument structure alternations
+
+\end{itemize}
+\myslide{Diathesis Alternations}
+
+\begin{itemize}
+\item \txx{Causative/inchoative} alternation:
+  \begin{quote}
+    \eng{Kim \ul{broke} the window} $\leftrightarrow$ \eng{The window \ul{broke}}
+    \\ also \eng{the window \ul{is broken}} (state)
+  \end{quote}
+\item \txx{Middle construction} alternation:
+  \begin{quote}
+    \eng{Kim \ul{cut} the bread} $\leftrightarrow$ \eng{The bread \ul{cut} easily}
+  \end{quote}
+\item \txx{Conative} alternation:
+  \begin{quote}
+    \eng{Kim \ul{hit} the door} $\leftrightarrow$ \eng{Kim \ul{hit} at the door}
+  \end{quote}
+\item \txx{Body-part possessor ascension} alternation:
+  \begin{quote}
+    \eng{Kim \ul{cut} Sandy's arm} $\leftrightarrow$ \eng{Kim} \ul{cut Sandy on the arm}
+  \end{quote}
+\end{itemize}
+
+
+
+
+\myslide{Diathesis Alternations and Verb Classes}
+
+\MyLogo{Levin (1993)}
+
+\begin{itemize}
+\item A verb's (in)compatibility with different alternations is a strong
+  predictor of its lexical semantics:
+  \begin{quote}\smaller[1]
+    \begin{tabular}{lcccc}
+      & \lex{break} & \lex{cut} & \lex{hit} & \lex{touch} \\
+      Causative & YES & NO & NO & NO \\
+      Middle & YES & YES & NO & NO \\
+      Conative & NO & YES & YES & NO \\
+      Body-part & NO & YES & YES & YES \\
+    \end{tabular}\larger[1]
+ \end{quote}
+\item 
+    
+    \lex{break} = \{\eng{break, chip, crack, crash, crush, ...}\}\\
+    \lex{cut} = \{\eng{chip, clip, cut, hack, hew, saw, ...}\}\\
+    \lex{hit} = \{\eng{bang, bash, batter, beat, bump, ...}\}\\
+    \lex{touch} = \{\eng{caress, graze, kiss, lick, nudge, ...}\}
+  \item 
+  \begin{tabular}[t]{ll}
+  \lex{break} & \textsc{cause, change}\\
+  \lex{cut}   & \textsc{cause, change, contact, motion}\\ 
+  \lex{hit}   & \textsc{contact, motion}\\
+  \lex{touch} & \textsc{contact}
+  \end{tabular}
+ 
+
+\end{itemize}
+
+\myslide{Cognitive Semantics}
+\MyLogo{Talmy (1975, 1983, 1985, 2000)}
+\begin{itemize}
+\item Major semantic components of Motion:
+\begin{itemize}
+\item \txx{Figure}: object moving or located with respect to the \txx{ground} 
+\item \txx{Ground}: reference object
+\item \txx{Motion}: the presence of movement of location in the event
+\item \txx{Path}: the course followed or site occupied by the Figure
+\item \txx{Manner}: the type of motion
+\end{itemize}
+\begin{exe}
+  \ex \gll Kim swam {away from} {the crocodile} \\
+  Figure Manner Path Ground \\
+  \ex \gll {The banana} hung from {the tree} \\
+  Figure Manner Path Ground \\
+\end{exe}
+\item These are lexicalized differently in different languages.
+\\ 
+\begin{small}
+\begin{tabular}{ll}
+  Language (Family) & Verb Conflation Pattern \\ \hline
+  Romance, Semitic, Polynesian, \ldots & Path + fact-of-Motion \\
+  Indo-European ($-$ Romance), Chinese & Manner/Cause + fact-of-Motion \\
+  Navajo, Atsuwegei, \ldots & Figure + fact-of-Motion 
+\end{tabular}
+\end{small}
+\end{itemize}
+
+\myslide{Jackendoff’s Lexical Conceptual Structure} 
+
+\begin{itemize}
+\item An attempt to explain how we think
+\item \txx{Mentalist Postulate}
+  \begin{quote}
+    Meaning in natural language is an information structure that is
+    mentally encoded by human beings
+  \end{quote}
+\item Universal Semantic Categories
+  \begin{itemize}
+  \item \txx{Event}
+  \item \txx{State}
+  \item \txx{Material Thing/Object}
+  \item \txx{Path}
+  \item \txx{Place}
+  \item \txx{Property}
+  \end{itemize}
+\end{itemize}
+
+\myslide{Motion as a tree}
+
+\begin{multicols}{2}
+  \begin{exe}
+    \ex \eng{Bobby went into the house}
+    \ex ``Bobby traverses a path that terminates at the interior of the house''
+    \ex
+    \begin{tree}
+      \br{Event}{\lf{GO}
+        \br{Thing}{ \lf{BOBBY}}
+        \br{Path}{\lf{TO}
+          \br{Place}{\lf{IN}\br{Thing}{\lf{HOUSE}}}}}
+    \end{tree}
+    %\newpage
+    \ex \eng{The car is in the garage}
+    \ex ``The car is in the state located in the interior of the garage''
+    \ex
+    \begin{tree}
+      \br{State}{\lf{BE-LOC}
+        \br{Thing}{ \lf{CAR}}
+        \br{Place}{\lf{IN}\br{Thing}{\lf{GARAGE}}}}
+    \end{tree}
+\end{exe}
+\end{multicols}
+
+
+\myslide{Things: Boundedness and Internal Structure}
+\begin{itemize}
+\item Two components:
+\\[2ex]  \begin{tabular}{llll}
+    Boundedness & Internal Struct. & Type & Example\\ \hline
+    $+$b & $-$i & \txx{individuals} & \eng{a dog}/\eng{two dogs}\\
+    $+$b & $+$i & \txx{groups}      & \eng{a committee}\\
+    $-$b & $-$i & \txx{substance}s  & \eng{water}\\
+    $-$b & $+$i & \txx{aggregates}  & \eng{buses, cattle}
+  \end{tabular}
+
+\item This can be extended to verb aspect (the verb event is also [$\pm$b, $\pm$i]).
+  \\ \lex{sleep} [$-$b], \lex{cough} [$+$b], \lex{eat}  [$\pm$b]
+ \begin{exe}
+   \ex Bill ate two hot dogs in two hours.
+   \ex *Bill ate hot dogs in two hours.
+   \ex $^\#$Bill ate two hot dogs for two hours.
+   \ex Bill ate hot dogs for two hours.
+\end{exe}
+\end{itemize}
+
+\myslide{Conversion: Boundedness and Internal Structure}
+\MyLogo{See Bond (2005) for an extension to Japanese and computational implementation.}
+\begin{itemize}
+\item Including
+ \\[2ex] \begin{tabular}{lll}
+  \txx{plural} & {[+b, --i] \into\ [--b, +i]} &     
+    \eng{brick}  \into\ \eng{bricks} \\
+  \txx{composed of} &{[--b, +i] \into\ [+b, --i]} &
+     \eng{bricks}  \into\ \eng{house of bricks} \\
+  \txx{containing} &   {[--b, --i] \into\ [+b, --i]} &
+     \eng{coffee}  \into\ \eng{a cup of coffee/a coffee}
+  \end{tabular}
+\item Excluding
+  \\[2ex] \begin{tabular}{lll}
+    \txx{element}  & {[--b,+i] \into\ [+b, --i]} &     
+    \eng{grain of rice} \\
+    \txx{partitive} & {[--b, $\pm$i] \into\ [+b, --i]} &     
+    \eng{top of the mountain}, \eng{one of the dogs} \\
+    \txx{universal grinder} &  {[+b, --i] \into\ [--b, --i]} &     
+    \eng{There's \ul{dog} all over the road}
+  \end{tabular}
+\end{itemize}
+
+
+
+\myslide{Pustejovsky’s Generative Lexicon}
+\MyLogo{}
+
+\begin{itemize} 
+\item Each lexical entry can have:\\
+  \textsc{argument structure}\\
+  \textsc{event structure}\\
+  \textsc{lexical  inheritance structure}\\
+  \textsc{qualia structure}:\\
+  \begin{tabular}{ll}
+    \textsc{constitutive} & constituent parts \\
+    \textsc{formal} & relation to other things \\
+    \textsc{telic} & purpose \\
+    \textsc{agentive}  & how it is made
+  \end{tabular}
+\item Interpretation is \txx{generated} by combing word meanings
+\item Events have \textbf{complex} structure
+ \\ \begin{tabular}{ccc}
+    \txx{State}  & \txx{Process} & \txx{Transition} \\
+ \begin{tree}
+    \br{S}{\lf{e}}
+  \end{tree}
+  &    \begin{tree}
+    \br{P}{\tlf{e$_1$ \ldots e$_n$}}
+  \end{tree}
+  &     \begin{tree}
+    \br{T}{\lf{E$_1$} \lf{$\neg$ E$_2$}}
+  \end{tree}
+  \\   \lex{understand, love, be tall}
+  &    \lex{sing, walk, swim}
+  &     \lex{open, close, build}
+\end{tabular}
+\end{itemize}
+\end{itemize}
+
+% \myslide{Different Alternations}
+%   \begin{exe}
+%     \ex \eng{The door closed}
+%    \begin{tree}
+%       \br{T}{\br{P}{\br{[$\neg$ closed(door)]}{}}
+%         \br{S}{\br{[closed(door)]}{}}} 
+%     \end{tree}
+%     \ex \eng{Jamie closed the door}
+%     \begin{tree}
+%       \br{T}{\br{P}{\br{[act(j, door) $\wedge$ $\neg$ closed(door)]}{}}
+%         \br{S}{\br{[closed(door)]}{}}} 
+%     \end{tree}
+%     \ex \eng{The door is closed}
+%    \begin{tree}
+%       \br{S}{\br{e}{\br{[closed(door)]}{}}}
+%     \end{tree}
+%   \end{exe}
+
+\myslide{Modifier Ambiguity}
+\MyLogo{}
+  \begin{exe}
+    \ex \eng{Jamie closed the door rudely}
+    \ex \eng{Jamie closed the door in a rude way [with his foot]}
+    \\\begin{tree}
+      \br{T}{\br{P [rude(P)]}{\br{[act(j, door) $\wedge$ $\neg$ closed(door)]}{}}
+        \br{S}{\br{[closed(door)]}{}}} 
+    \end{tree}
+    \ex \eng{It was rude of Jamie to close the door}
+    \\\begin{tree}
+      \br{T [rude(T)]}{\br{P}{\br{[act(j, door) $\wedge$ $\neg$ closed(door)]}{}}
+        \br{S}{\br{[closed(door)]}{}}} 
+    \end{tree}
+  \end{exe}
+
+\myslide{Qualia Structure}
+\MyLogo{}
+
+\begin{exe}
+  \ex \eng{fast typist}
+  \begin{xlist}
+    \ex\label{ta} a typist who is fast [at running]
+    \ex\label{tb} a typist who types fast
+  \end{xlist}
+%  \ex \eng{Joan baked the potato}
+\end{exe}
+\begin{itemize}
+\item typist 
+ \begin{avm} \[
+    \textsc{argstr} &
+    \[
+      \textsc{arg1} & \iz{x:typist}\\
+    \]\\
+    \textsc{qualia} &
+    \[
+      \textsc{formal} & \[ \iz{x}  [ $\subset$ \iz{person} ]\] \\
+      \textsc{telic} & \[ \iz{type(e,x)}  \]
+      \] 
+ \]
+\end{avm}
+\item (\ref{ta}) \eng{fast} modifies $x$
+\item (\ref{tb}) \eng{fast} modifies $e$
+\end{itemize}
+
+
+
+\myslide{Summary}
+
+\begin{itemize}
+\item Meaning can be broken up into units smaller than words:  \txx{components} 
+  \begin{itemize}
+  \item These can be combined to make larger meanings
+  \item At least some of them influence syntax
+  \item They may be psychologically real
+  \end{itemize}
+\item Problems with Components of Meaning
+  \begin{itemize}
+  \item Primitives are no different from necessary and sufficient conditions
+    \\ it is impossible to agree on the definitions
+    \\ but they allow us to state generalizations better
+  \item Psycho-linguistic evidence is weak
+  \item It is just \txx{markerese}
+  \item There is no \txx{grounding}
+  \end{itemize}
+\end{itemize}
+
+
+
+\section{Word Meaning: \\ Meaning Postulates}
+
+\myslide{Defining Relations using Logic}
+\MyLogo{These are relations on predicates, not words}
+\begin{itemize}
+\item \txx{hyponymy}
+  \begin{itemize}
+  \item $\forall$x(DOG(x) \into\ ANIMAL(x))
+  \end{itemize}
+\item \txx{antonym}
+  \begin{itemize}
+  \item $\forall$x(DEAD(x) \into\ $\neg$ALIVE(x))
+  \item[?] $\forall$x(ALIVE(x) \into\ $\neg$DEAD(x))
+  \end{itemize}
+\item \txx{converse}
+  \begin{itemize}
+  \item $\forall$x$\forall$y(PARENT(x,y) \into\ CHILD(y,x))
+  \end{itemize}
+\item \txx{synonym}
+  \begin{itemize}
+  \item $\forall$x((EGGPLANT(x) \into\ BRINJAL(x)) $\wedge$ 
+    (BRINJAL(x) \into EGGPLANT(x)))
+  \item $\forall$x(EGGPLANT(x) $\equiv$\ BRINJAL(x))
+  \end{itemize}
+\end{itemize}
+
+
+
+
+\myslide{Semantic Relations as Sets ($p \subset q$ and $p \sim q$)}
+
+
+\begin{tabular}{cc}
+$p \subset q$ \iz{hypernym}  & $p \sim q$ \iz{synonym} \\[2ex] 
+\scalebox{2}{
+\begin{tikzpicture}
+\filldraw[fill=white] (-2,-2) rectangle (3,2);
+\scope % A \vee B
+%\clip (0,0) circle (1);
+\fill[pink] (0.25,0) circle (0.5);
+%\fill[white] (0,0) circle (1);
+\endscope
+\draw (0.25,0) circle (0.5) node [text=black] {$p$}
+      (1,0) circle (1.5) node [text=black,right] {$q$};
+% outline
+\end{tikzpicture}}
+&
+\scalebox{2}{
+\begin{tikzpicture}
+\filldraw[fill=white] (-2,-2) rectangle (3,2);
+\scope % A \vee B
+%\clip (0,0) circle (1);
+%\fill[pink] (1,0) circle (1);
+\fill[pink] (0.5,0) circle (1);
+\endscope
+\draw (0.5,0) circle (1) node [text=black,left] {$p$}
+      (0.5,0) circle (1) node [text=black,right] {$q$};
+% outline
+\end{tikzpicture}}
+
+\end{tabular}
+
+
+
+\myslide{Logical Connectives as Sets ($p$ and $\neg p$)}
+
+
+\begin{tabular}{cc}
+$p$   & $\neg p$ ``not'' \\[2ex] 
+\scalebox{2}{
+\begin{tikzpicture}
+\filldraw[fill=white] (-2,-2) rectangle (3,2);
+\scope % A \cap B
+%\clip (0,0) circle (1);
+\fill[pink] (0,0) circle (1);
+\endscope
+% outline
+\draw (0,0) circle (1) node [text=black,left] {$p$}
+      (1,0) circle (1) node [text=black,right] {$q$};
+\end{tikzpicture}} &
+\scalebox{2}{
+\begin{tikzpicture}
+\filldraw[fill=pink] (-2,-2) rectangle (3,2);
+\scope % A \vee B
+%\clip (0,0) circle (1);
+%\fill[pink] (1,0) circle (1);
+\fill[white] (0,0) circle (1);
+\endscope
+\draw (0,0) circle (1) node [text=black,left] {$p$}
+      (1,0) circle (1) node [text=black,right] {$q$};
+% outline
+\end{tikzpicture}}
+
+\end{tabular}
+
+\myslide{Logical Connectives as Sets ($p \wedge q$ and   $p \vee q$)}
+
+
+\begin{tabular}{cc}
+$p \wedge q$ ``and''  & $p \vee q$ ``or'' \\[2ex]  
+\scalebox{2}{
+\begin{tikzpicture}
+\filldraw[fill=white] (-2,-2) rectangle (3,2);
+\scope % A \cap B
+\clip (0,0) circle (1);
+\fill[pink] (1,0) circle (1);
+\endscope
+% outline
+\draw (0,0) circle (1) node [text=black,left] {$p$}
+      (1,0) circle (1) node [text=black,right] {$q$};
+\end{tikzpicture}} &
+\scalebox{2}{
+\begin{tikzpicture}
+\filldraw[fill=white] (-2,-2) rectangle (3,2);
+\scope % A \vee B
+%\clip (0,0) circle (1);
+\fill[pink] (1,0) circle (1);
+\fill[pink] (0,0) circle (1);
+\endscope
+% outline
+\draw (0,0) circle (1) node [text=black,left] {$p$}
+      (1,0) circle (1) node [text=black,right] {$q$};
+\end{tikzpicture}}
+\end{tabular}
+
+
+\myslide{Logical Connectives as Sets ($p \oplus q$ and   $p \rightarrow q$)}
+
+
+\begin{tabular}{cc}
+$p \oplus q$ ``exclusive or''  & $p \rightarrow q$ ``if'' \\[2ex] 
+\scalebox{2}{
+\begin{tikzpicture}
+\filldraw[fill=white] (-2,-2) rectangle (3,2);
+\fill[pink] (1,0) circle (1);
+\fill[pink] (0,0) circle (1);
+\scope % A \cap B
+\clip (0,0) circle (1);
+\fill[white] (1,0) circle (1);
+\endscope
+% outline
+\draw (0,0) circle (1) node [text=black,left] {$p$}
+      (1,0) circle (1) node [text=black,right] {$q$};
+\end{tikzpicture}} &
+\scalebox{2}{
+\begin{tikzpicture}
+\filldraw[fill=pink] (-2,-2) rectangle (3,2);
+\scope % A \vee B
+%\clip (0,0) circle (1);
+\fill[white] (0,0) circle (1);
+\fill[pink] (1,0) circle (1);
+\endscope
+% outline
+\draw (0,0) circle (1) node [text=black,left] {$p$}
+      (1,0) circle (1) node [text=black,right] {$q$};
+\end{tikzpicture}}
+\end{tabular}
+
+
+
+\section{Natural Language Quantifiers \\ and Higher Order Logic}
+
+\myslide{Restricted Quantifiers}
+
+\begin{itemize}
+\item \eng{Most students read a book}
+  \begin{itemize}
+  \item Most(x)(S(x) $\wedge$ R(x))
+    \\ \eng{most things are students and most things read books}
+  \item Most(x)(S(x) \into\  R(x))
+    \\ \eng{most things are such that, if they are students, they read
+      books}
+    \\ but also true for all things that are not students!
+  \end{itemize}
+\item We need to restrict the quantification
+  \begin{itemize}
+  \item (Most x: S(x)) R(x)
+  \end{itemize}
+\item Sometimes we need to decompose
+  \begin{itemize}
+  \item \eng{everybody} ($\forall$x: P(x))
+  \item \eng{something} ($\exists$x: T(x))
+  \end{itemize}
+\end{itemize}
+
+\myslide{Higher Order Logic}
+\begin{itemize}
+\item First-order logic over individuals
+\item Second-order logic also quantifies over sets
+\item Third-order logic also quantifies over sets of sets
+\item Fourth-order logic also quantifies over sets of sets of sets
+\item[\ldots{}]
+\end{itemize}
+
+
+
+\myslide{Higher Order Logic}
+ \begin{itemize}
+\item Recall  \eng{Ian sings}
+  \begin{itemize}
+  \item {[S(i)]$^{M_1}$ = 1 iff [i]$^{M_1} \in$ [S]$^{M_1}$} \\ The
+    sentence is true if and only if the extension of \eng{Ian} is part of
+    the set defined by \eng{sings} in the model $M_1$
+  \item Remodel, with sing a property of Ian: i(S) \\ {[i(S)]$^{M_1}$
+      = 1 iff [S]$^{M_1} \in$ [i]$^{M_1}$} \\ The sentence is true if
+    and only if the denotation of the verb phrase \textit{sings} is
+    part of the extension of \eng{Ian}  in the model $M_1$
+  \end{itemize}
+\item \eng{Ian} is a set of sets of properties: \txx{second-order logic}
+\end{itemize}
+
+\myslide{Generalized Quantifiers} 
+\MyLogo{Q: Try to define \iz{many}}
+\begin{itemize}
+\item Q(A,B): \eng{Q A are B}
+\item \iz{most(A,B)} = 1 iff $|$ A $\cap$ B $| > |$ A $-$ B $|$ 
+\item \iz{all(A,B)} = 1 iff  A $\subseteq$ B  
+\item \iz{some(A,B)} = 1 iff  A $\cap$ B $\ne \emptyset$ 
+\item \iz{no(A,B)} = 1 iff A $\cap$ B  $= \emptyset$ 
+\item \iz{fewer than x(A,B,X)} =1 iff $|$ A $\cap$ B $| <  |$ X $|$ 
+\end{itemize}
+
+\myslide{Generalized Quantifiers:  \iz{all}, \iz{most}} 
+\begin{tabular}{cc}
+all $p$ are $q$ & most $p$ are $q$ \\[2ex] 
+\scalebox{2}{
+\begin{tikzpicture}
+\filldraw[fill=white] (-2,-2) rectangle (3,2);
+\scope % A \vee B
+%\clip (0,0) circle (1);
+\fill[pink] (0.25,0) circle (0.5);
+%\fill[white] (0,0) circle (1);
+\endscope
+\draw (0.25,0) circle (0.5) node [text=black] {$p$}
+      (1,0) circle (1.5) node [text=black,right] {$q$};
+% outline
+\end{tikzpicture}}
+&
+\scalebox{2}{
+\begin{tikzpicture}
+\filldraw[fill=white] (-2,-2) rectangle (3,2);
+\scope % A \vee B
+\clip (1,0) circle (1.5);
+\fill[pink] (0.2,0) circle (1);
+%\fill[white] (1,0) circle (1);
+\endscope
+\draw (0.2,0) circle (1) node [text=black] {$p$}
+      (1,0) circle (1.5) node [text=black,right] {$q$};
+% outline
+\end{tikzpicture}}
+
+\end{tabular}
+
+
+\myslide{Generalized Quantifiers:  \iz{some}, \iz{no}} 
+\begin{tabular}{cc}
+some $p$ are $q$ & no $p$ are $q$ \\[2ex] 
+\scalebox{2}{
+\begin{tikzpicture}
+\filldraw[fill=white] (-2,-2) rectangle (3,2);
+\scope % A \vee B
+\clip (1,0) circle (1.5);
+\fill[pink] (0.2,0) circle (1);
+%\fill[white] (0,0) circle (1);
+\endscope
+\draw (-0.8,0) circle (1) 
+      (-0.6,0) circle (1) 
+      (-0.4,0) circle (1) 
+      (-0.2,0) circle (1) 
+      (0.0,0) circle (1) node [text=black] {$p$}
+      (0.2,0) circle (1) 
+%      (0.25,0) circle (0.5) 
+      (1,0) circle (1.5) node [text=black,right] {$q$};
+% outline
+\end{tikzpicture}}
+&
+\scalebox{2}{
+\begin{tikzpicture}
+\filldraw[fill=white] (-2,-2) rectangle (3,2);
+\scope % A \vee B
+%\clip (1,0) circle (1.5);
+\fill[pink] (-0.75,0) circle (1);
+%\fill[white] (1,0) circle (1);
+\endscope
+\draw (-.75,0) circle (1) node [text=black] {$p$}
+      (1.75,0) circle (1) node [text=black] {$q$};
+% outline
+\end{tikzpicture}}
+
+\end{tabular}
+
+
+
+\myslide{Strong/Weak Quantifiers}
+\MyLogo{Q: Come up with some more strong and weak quantifiers}
+\begin{exe}
+  \ex only \txx{weak} quantifiers can occur in existential \eng{there} sentences
+  \begin{xlist}
+      \ex \eng{There is \ul{a} fox in the henhouse}
+      \ex \eng{There are \ul{two} foxes in the henhouse}
+      \ex \eng{*There is \ull{every} fox in the henhouse}
+      \ex \eng{*There are \ull{both} foxes in the henhouse}
+  \end{xlist}
+\end{exe}
+\begin{itemize}\addtolength{\itemsep}{-1ex}
+\item \txx{symmetrical} (cardinal) quantifiers are \ul{\txx{weak}}
+  \\ det(A,B) = det(B,A)
+  \begin{exe}
+    \ex \eng{3 lecturers are Australian}   = \eng{3 Australians are lecturers}
+  \end{exe}
+\item \txx{asymmetrical} (proportional) quantifiers are \ull{\txx{strong}}
+  \\ det(A,B) $\ne$ det(B,A)
+  \begin{exe}
+    \ex \eng{most lecturers are Australian}   $\ne$ \eng{most Australians are lecturers}
+  \end{exe}
+
+\end{itemize}
+
+\myslide{Negative Polarity Items (NPI)}
+\MyLogo{Q: Come up with some NPIs and environments}
+\begin{itemize}
+\item Some words in English mainly appear in negative environments
+  \begin{exe}
+    \ex
+    \begin{xlist}
+      \ex \eng{Kim does\ull{n't} \ul{ever} eat dessert}
+      \ex *\eng{Kim does \ul{ever} eat dessert}
+    \end{xlist}
+    \ex
+    \begin{xlist}
+      \ex \eng{Kim has\ull{n't} eaten dessert \ul{yet}}
+      \ex *\eng{Kim has eaten dessert \ul{yet}}
+    \end{xlist}
+    \ex
+    \begin{xlist}
+      \ex \eng{Few people  have eaten dessert \ul{yet}}
+      \ex *\eng{Many people have eaten dessert \ul{yet}}
+    \end{xlist}
+   \ex
+    \begin{xlist}
+      \ex \eng{Rarely does Kim \ul{ever} eat dessert}
+      \ex *\eng{Often does Kim \ul{ever} eat dessert}
+    \end{xlist}
+  \end{exe}
+\item Not just negation, but also some quantifiers
+\end{itemize}
+
+\myslide{Monotonicity}
+
+\begin{itemize}
+\item Some quantifiers control entailment between sets and subsets
+  \begin{itemize}
+  \item \txx{Upward entailment} goes from a subset to a set
+  \item \txx{Downward entailment} goes from a set to a subset
+  \end{itemize}
+\end{itemize}
+
+\begin{exe}
+  \ex
+  \begin{xlist}
+    \ex \eng{Kim does\ull{n't} eat dessert} \ent  \eng{Kim does\ull{n't} eat hot dessert}
+    \ex \eng{Kim does\ull{n't} eat hot dessert} \nent  \eng{Kim does\ull{n't} eat dessert}
+    \trans \textbf{Downward entailment}
+    \end{xlist}
+    \ex
+  \begin{xlist}
+    \ex \eng{Kim eats some desserts} \nent  \eng{Kim eats hot desserts}
+    \ex \eng{Kim eats some hot desserts} \ent  \eng{Kim  eats some desserts}
+    \trans \textbf{Upward entailment}
+    \end{xlist}
+  \end{exe}
+  \begin{itemize}
+  \item \emp{Negative Polarity Items} are licensed by \emp{downward entailing expressions}
+  \end{itemize}
+  %
+  % \end{document}
+  % \section{Intensionality}
+
+\myslide{Left and Right Monotonicity}
+
+\begin{itemize}
+\item The monotonicity may depend on the position
+  \begin{exe}
+    \ex 
+ \begin{xlist}
+    \ex \eng{Every student studies semantics} \nent  
+    \eng{Every student studies formal semantics}
+    \ex \eng{Every student studies formal semantics} \ent  
+    \eng{Every student studies semantics}
+    \trans \textbf{Upward entailment (right argument)}
+    \end{xlist}
+    \ex 
+ \begin{xlist}
+    \ex \eng{Every student studies semantics} \ent  
+    \eng{Every linguistics student studies  semantics}
+    \ex \eng{Every linguistic student studies  semantics} \nent  
+    \eng{Every student studies semantics}
+    \trans \textbf{Downward entailment (left argument)}
+    \end{xlist}
+\newpage
+\MyLogo{Q: Make up your own example (up or down, left or right)}
+  \ex 
+ \begin{xlist}
+    \ex \eng{Every student who has ever studied semantics loves it}
+    \ex *\eng{Every student who has studied semantics ever loves it}
+    \ex \eng{Few students who have ever studied semantics dislike it}
+    \ex \eng{Few students who have studied semantics ever dislike it}
+    \end{xlist}
+  \end{exe}
+\end{itemize}
+\begin{itemize}
+\item Formal models of quantification can be used to make predictions
+  about seemingly unrelated phenomena
+\end{itemize}
+
+\myslide{In other languages too!}
+
+\MyLogo{Thanks to Joanna Sio}
+%\CJKfamily{gbsn}
+\begin{exe}
+\ex \glll {} \zh{我} \zh{没有} \zh{任何} \zh{朋友}  \\
+        {} wǒ   méi-yǒu   rènhé   péngyǒu    \\
+        {} I   \textsc{neg}-have any     friend \\
+\trans ``I don’t have any friends.''
+\ex \glll * \zh{我} \zh{有} \zh{任何} \zh{朋友} \\
+        {} wǒ  yǒu   rènhé   péngyǒu     \\
+        {} I  have any     friend \\
+\trans *``I have any friends.''
+\end{exe}
+%\CJKfamily{min}
+\section{Modality}
+
+\myslide{Modality as a scale of Implicatures}
+\MyLogo{Allan (1986): incomplete}
+
+\begin{exe}
+  \ex \eng{I know that $p$}
+  \ex \eng{I am absolutely certain that  $p$}
+  \ex \eng{I am almost certain that  $p$}
+  \ex \eng{I believe that $p$}
+  \ex \eng{I am pretty certain that $p$}
+\\ $\ldots$
+\item \eng{Possibly $p$}
+\\ $\ldots$
+  \ex \eng{It is very unlikely that $p$}
+  \ex \eng{It is almost impossible that  $p$}
+  \ex \eng{It is impossible that $p$}
+  \ex \eng{It is not the case that $p$}
+  \ex \eng{I am absolutely certain that  not-$p$}
+\end{exe}
+
+\myslide{Modal Logics}
+
+\begin{itemize}
+\item Add two modal operators for epistemic modality
+  \begin{itemize}
+  \item $\diamond\phi =$ \eng{it is possible that $\phi$}
+  \item $\Box\phi =$ \eng{it is necessary that $\phi$}
+  \end{itemize}
+\item Define them in terms of \txx{possible worlds}
+  \begin{itemize}
+  \item $\diamond\phi$: true in at least one world
+  \item $\Box\phi$: true in all worlds
+  \end{itemize}
+\item $M = \{W, U, F\}$: the model now has three parts
+  \begin{itemize}
+  \item[$W$] set of possible worlds 
+  \item[$U$] domain of individuals (universe)
+  \item[$F$] denotation assignment function
+  \end{itemize}
+\end{itemize}
+
+\myslide{Deontic Modality}
+
+\begin{itemize}
+\item Add two modal operators for deontic modality
+  \begin{itemize}
+  \item P$\phi =$ \eng{it is permitted that $\phi$}
+  \item O$\phi =$ \eng{it is obligatorily $\phi$}
+  \end{itemize}
+\item Define them in terms of \txx{possible worlds}
+  \begin{itemize}
+  \item P$\phi$: true in at least one legal or morally ideal world
+  \item O$\phi$: true in all legal or morally ideal worlds
+  \end{itemize}
+\end{itemize}
+
+\section{Dynamic Approaches \\ to Discourse}
+
+\myslide{Anaphora}
+
+\begin{exe}
+  \ex 
+  \begin{xlist}
+    \ex \eng{R2D2$_i$ mistrusts itself$_i$}
+    \ex M(r,r)
+  \end{xlist}
+ \ex 
+  \begin{xlist}
+    \ex \eng{Every robot mistrusts itself}
+    \ex ($\forall$x: R(x)) M(x,x)
+  \end{xlist}
+ \ex 
+  \begin{xlist}
+    \ex \eng{Luke bought a robot and it doesn't work}
+    \ex ($\exists$x: R(x)) B(l,x) $\wedge$ $\neg$W(x)
+  \end{xlist}
+ \ex 
+  \begin{xlist}
+    \ex \eng{Every robot went to Naboo.  ?It met Jar Jar.}
+    \ex ($\forall$x: R(x)) W(x,n); M(x,j)\hfill \emp{unbound}
+  \end{xlist}
+ \ex 
+  \begin{xlist}
+    \ex \eng{A robot went to Naboo.  It met Jar Jar.}
+    \ex ($\exists$x: R(x)) W(x,n); M(x,j)\hfill \emp{???}
+  \end{xlist}
+  \trans indefinite nominals exist beyond the sentence: \txx{discourse referents}
+\ex 
+  \begin{xlist}
+    \ex \eng{Luke didn't buy a robot.  ?It met Jar Jar.}
+  \end{xlist}
+  \trans indefinite nominals scope can still be limited
+\end{exe}
+
+\myslide{Donkey Sentences}
+
+\begin{exe}
+  \ex 
+  \begin{xlist}
+    \ex \eng{If R2D2$_i$ owns a ship it is rich}
+    \ex ($\exists$x (S(x) $\wedge$ O(r,x))) \into\ R(x)
+  \end{xlist}
+  \ex 
+  \begin{xlist}
+    \ex \eng{If a robot owns a ship it races it}
+    \ex *($\exists$x$\exists$y (R(x) $\wedge$ S(y) $\wedge$ O(x,y))) \into\ R(x,y)
+    \ex $\forall$x$\forall$y ((R(x) $\wedge$ S(y) $\wedge$ O(x,y)) \into\ R(x,y)
+  \end{xlist}
+  \trans $\exists$ needs to become $\forall$
+  \ex \eng{Every farmer who owns a donkey beats it}
+\end{exe}
+
+\myslide{Discourse Representation Theory}
+\begin{itemize}
+\item Build up Discourse Representation Structures
+\end{itemize}
+
+\begin{exe}
+   \ex 
+  \begin{xlist}
+    \ex \eng{Alex met a robot$_i$}
+    \ex \eng{It$_i$ smiled}
+  \end{xlist}
+  \ex \fbox{\begin{tabular}{l}
+      \cen{1}{x y} \\[2ex]
+    Alex(x) \\
+    robot(y) \\
+    met (x,y) 
+  \end{tabular}} 
+\hspace{5em} \fbox{\begin{tabular}{l}
+      \cen{1}{x y u} \\[2ex]
+    Alex(x) \\
+    robot(y) \\
+    met (x,y) \\
+    u = y \\
+    smiled(u)
+  \end{tabular}}
+\end{exe}
+
+\myslide{Negative Contexts}
+
+\begin{exe}
+   \ex 
+  \begin{xlist}
+    \ex \eng{Luke does not own a robot}
+  \end{xlist}
+  \ex 
+  \fbox{\begin{tabular}{l}
+      \cen{1}{x} \\
+      Luke(x) \\
+      $\neg$\ \  \fbox{\begin{tabular}{l}
+          \cen{1}{y} \\[2ex]
+          robot(y) \\
+          own (x,y) 
+        \end{tabular}} 
+    \end{tabular}}
+  \end{exe}
+  \begin{itemize}
+  \item The contained DRS is \txx{subordinate}
+    \begin{itemize}
+    \item indefinite NPs in negated subordinate structures are inaccessible
+    \item names (constants) are always accessible
+    \end{itemize}
+  \end{itemize}
+
+\myslide{Conditionals}
+
+\begin{exe}
+   \ex 
+  \begin{xlist}
+    \ex \eng{If Jo owns a robot then they are rich}
+  \end{xlist}
+  \ex 
+  \fbox{\begin{tabular}{lll}
+      & \cen{1}{x} \\
+ \fbox{\begin{tabular}{l}
+          \cen{1}{y} \\[2ex]
+          Jo(x) \\
+          robot(y) \\
+          own (x,y) 
+        \end{tabular}} 
+& \into &
+ \fbox{\begin{tabular}{l}
+          \cen{1}{u} \\[2ex]
+          u=x \\
+          rich(u) 
+        \end{tabular}} 
+    \end{tabular}}
+  \end{exe}
+  \begin{itemize}
+  \item The contained DRS is \txx{subordinate}
+    \begin{itemize}
+    \item indefinite NPs in the antecedent are accessible in the consequent
+    \end{itemize}
+  \end{itemize}
+\myslide{More Conditionals}
+
+\begin{exe}
+   \ex 
+  \begin{xlist}
+    \ex \eng{If a Jedi owns a robot then they are rich}
+  \end{xlist}
+  \ex 
+  \fbox{\begin{tabular}{lll}
+ \fbox{\begin{tabular}{l}
+          \cen{1}{x y} \\[2ex]
+          jedi(x) \\
+          robot(y) \\
+          own (x,y) 
+        \end{tabular}} 
+& \into &
+ \fbox{\begin{tabular}{l}
+          \cen{1}{u} \\[2ex]
+          u=x \\
+          rich(u) 
+        \end{tabular}} 
+    \end{tabular}}
+  \end{exe}
+  \begin{itemize}
+  \item The contained DRS is \txx{subordinate}
+    \begin{itemize}
+    \item indefinite NPs in the antecedent are accessible in the consequent
+    \end{itemize}
+  \end{itemize}
+
+\myslide{More Conditionals}
+
+\begin{exe}
+   \ex 
+  \begin{xlist}
+    \ex \eng{If a Jedi owns a robot then they race it}
+  \end{xlist}
+  \ex 
+  \fbox{\begin{tabular}{lll}
+ \fbox{\begin{tabular}{l}
+          \cen{1}{x y} \\[2ex]
+          jedi(x) \\
+          robot(y) \\
+          own (x,y) 
+        \end{tabular}} 
+& \into &
+ \fbox{\begin{tabular}{l}
+          \cen{1}{u v} \\[2ex]
+          u=x \\
+          v=y \\
+          race(u,v) 
+        \end{tabular}} 
+    \end{tabular}}
+  \end{exe}
+  \begin{itemize}
+  \item The contained DRS is \txx{subordinate}
+    \begin{itemize}
+    \item indefinite NPs in the antecedent are accessible in the consequent
+    \end{itemize}
+  \end{itemize}
+
+\myslide{More Conditionals}
+
+\begin{exe}
+   \ex 
+  \begin{xlist}
+    \ex \eng{Every Jedi who owns a robot races it}
+  \end{xlist}
+  \ex 
+  \fbox{\begin{tabular}{lll}
+ \fbox{\begin{tabular}{l}
+          \cen{1}{x y} \\[2ex]
+          jedi(x) \\
+          robot(y) \\
+          own (x,y) 
+        \end{tabular}} 
+& \into &
+ \fbox{\begin{tabular}{l}
+          \cen{1}{u} \\[2ex]
+          u=y \\
+          race(x,u) 
+        \end{tabular}} 
+    \end{tabular}}
+  \end{exe}
+  \begin{itemize}
+  \item The contained DRS is \txx{subordinate}
+    \begin{itemize}
+    \item Universal Quantifiers copy the variable across the conditional
+    \end{itemize}
+  \end{itemize}
+
+\myslide{Discourse Representation Theory}
+\MyLogo{More in \textbf{HG4049}: Linguistics Meaning and Its Interfaces}
+\begin{itemize}
+\item Explains how reference occurs across clauses and sentences
+  \begin{itemize}
+  \item Distinguishes between names and indefinite NPS
+  \item Distinguishes between positive assertions, negative sentences,
+    conditional sentences, universally quantified sentences
+  \item Is useful for modeling the incremental update of knowledge in a conversation
+  \end{itemize}
+\end{itemize}
+
+%\myslide{Summary}
+
+\myslide{Acknowledgments and References}
+\begin{itemize}
+\item Video \textit{Regency Disco} from that Mitchel and Webb Look Episode 3.3, which was first broadcast on Thursday 25th June 2009.
+\end{itemize}
+ 
+% \MyLogo{}
+% \begin{itemize}
+% \item Video from \textit{The Big Bang Theory} Season 4 Episode 7 ``The
+%   Apology Insufficiency'' %% 6:22
+% \end{itemize}
+% \item Definitions from WordNet: \url{http://wordnet.princeton.edu/}
+%  \item Some slides use material from Alexander Coupe
+%  \item Strict/sloppy identity joke adapted from \textit{Literal-Minded Blog:
+% Linguistic commentary from a guy who takes xgrepthings too literally}.
+% \\ \footnotesize\url{http://literalminded.wordpress.com/2011/03/04/you-cant-go-from-strict-to-sloppy/}
+  
+%  \end{itemize}
+ % \item Images from
+%   \begin{itemize}
+%   \item the Open Clip Art Library: \url{http://openclipart.org/}
+%   \item Steven Bird, Ewan Klein, and Edward Loper (2009) 
+%      \textit{Natural Language Processing with Python}, O'Reilly Media
+%     \\ \url{www.nltk.org/book}
+% \end{itemize}
+% \item Problems  partially based on exercises from Saeed (2003)
+% \end{itemize}
+
+%\myslide{Bibliography}
+% Reading: Jurafsky and Martin (2008) Chapter 20
+% \small
+% \bibliographystyle{aclnat}
+% \bibliography{abb,mtg,nlp,ling}
+
+
+\end{document}
+
+%%% Local Variables: 
+%%% coding: utf-8
+%%% mode: latex
+%%% TeX-PDF-mode: t
+%%% TeX-engine: xetex
+%%% End: 

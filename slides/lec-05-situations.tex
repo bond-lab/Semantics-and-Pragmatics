@@ -1,0 +1,902 @@
+\documentclass[headrule,footrule]{foils}
+
+%\usepackage{nttfoilhead}
+%\newcommand{\myslide}[1]{\foilhead[-25mm]{\raisebox{12mm}[0mm]{\emp{#1}}}}
+%\newcommand{\myslider}[1]{\rotatefoilhead[-25mm]{\raisebox{12mm}[0mm]{\emp{#1}}}}
+%\newcommand{\myslider}[1]{\rotatefoilhead{\raisebox{-8mm}{\emp{#1}}}}
+
+%\newcommand{\TIPA}[1]{\textipa{\mtcitestyle{#1}}}%
+\newcommand{\TIPA}[1]{\mtcitestyle{#1}}
+
+\input{headx.tex}
+
+
+
+\begin{document}
+%\begin{CJK}{UTF8}{min}
+\header{Lecture 5}{Situations}{}\maketitle
+
+%\include{schedule}
+
+\myslide{Overview}
+
+\begin{itemize}\addtolength{\itemsep}{-1ex}
+\item Revision: Truth
+  \begin{itemize}
+  \item Logic and Truth
+  \item Entailment
+  \item Presupposition
+  \end{itemize}
+\item TAM: Tense, Aspect and Modality
+\item Mood and Evidentiality
+\item Next week: Chapter 6: Participants
+\end{itemize}
+
+%%%
+%%% this changes each year, so keep separate
+%%%
+\include{schedule}
+
+\section{Revision: Sentence Relations and Truth}
+
+\myslide{Logic}
+
+\begin{itemize}
+\item Classical logic is an attempt to find valid principles of argument and inference.
+\\[2ex]
+\begin{tabular}{llr}
+  $a$ & If something is human then it is mortal & \txx{premise}\\
+  $b$ & Socrates is human & \txx{premise}\\ \hline
+  $c$ & Socrates is mortal & \txx{conclusion}
+\end{tabular}
+\item Can we go from $a$ and $b$ to $c$? \hfill {\large Yes}
+\item Truth is \txx{empirical}: The premises need to correspond with
+  the facts of the world
+  \begin{itemize}
+  \item Sentences have \txx{truth values} (true, false or unknown)
+  \item The state of the world that makes a sentence true or false are its \txx{truth conditions}
+  \end{itemize}
+\end{itemize}
+
+
+\myslide{Methods of Argument}
+
+\begin{itemize}
+\item \txx{Modus Ponens}
+\\[2ex]
+  \begin{tabular}{ll}
+    $a$ & If something is human then it is mortal \\
+    $b$ & Socrates is human \\ \hline
+    $c$ & Socrates is mortal
+  \end{tabular}
+\\ $p \rightarrow q, p \vdash q$
+\item \txx{Modus tollens}
+\\[2ex]
+  \begin{tabular}{ll}
+    $a$ & If something is human then it is mortal \\
+    $b$ & Zeus is not mortal \\ \hline
+    $c$ & Zeus is not human
+  \end{tabular}
+\\ $p \rightarrow q, \neg q \vdash \neg p$
+
+\newpage
+\item \txx{Hypothetical syllogism}
+\\[2ex]
+ \begin{tabular}{ll}
+    $a$ & If something is human then it is mortal \\
+    $b$ & If something is mortal then it dies \\ \hline
+    $c$ & If something is human then it dies
+  \end{tabular}
+\\ $p \rightarrow q, q \rightarrow r \vdash p \rightarrow r$
+\item \txx{Disjunctive syllogism}
+\\ (modus tollendo ponens: affirm by denying)
+\\[2ex]
+ \begin{tabular}{ll}
+    $p$ & Either a human is mortal or a human is immortal \\
+    $q$ & A human is not immortal \\ \hline
+    $r$ & A human is mortal
+  \end{tabular}
+\\ $p \oplus q, \neg p \vdash q$
+\end{itemize}
+
+
+\myslide{Empirical truths and connectives}
+% \begin{itemize}
+% \item \txx{and} ($p \wedge q$)
+% \item \txx{or}  ($p \vee q$: disjunction, inclusive or)
+% \item \txx{xor} ($p \oplus q$: exclusive or, either or)
+% \item \txx{if} ($p \rightarrow q$: if then, material implication)
+% % If it doesn’t rain, p = F, the conditional claim cannot be
+% % invalidated by whatever is done. (q= T or q =F). p is a
+% % sufficient but not necessary condition for q. Some other
+% % factor might want to cause me to go to the movies!
+% % But not all if.. then…constructions work like that. What are
+% % some counterexamples that you can think of? If she is smart,
+% % then I would win the Nobel prize (counterfactuals)
+% \item \txx{iff} ($p \equiv q$: if and only if) 
+%   ($(p \rightarrow q) \wedge (q \rightarrow p)$)
+% \item \txx{not} ($\neg p$: contradiction)
+% \end{itemize}
+
+% \myslide{Truth Tables}
+\begin{center}
+  \begin{tabular}{|c|c|c|c|c|c|c|c|}
+    \hline
+    $p$ & $q$ & $p \rightarrow q$ & $p \wedge q$ & $p \vee q$ 
+    & $p \oplus q$ & $p \equiv q$ & $\neg p$\\
+    \hline
+    &   & if & and & or &  XOR & iff & not  \\
+    \hline
+    T & T & T & T & T & F & T & F \\ 
+    T & F & F & F & T & T & F & F \\  
+    F & T & T & F & T & T & F & T\\ 
+    F & F & T & F & F & F & T & T\\ \hline
+%    \hline
+  \end{tabular}
+  \begin{itemize}
+  \item Words themselves often carry more implications
+    \\ \eng{I did A and B} often implies \eng{I did A first}
+  \item There are many ways of saying the operations
+  \end{itemize}
+\end{center}
+
+
+\myslide{Necessary Truth, A Priori Truth and Analyticity}
+\begin{itemize}
+\item Arguments from the speaker's knowledge
+\begin{itemize}
+\item \txx{A priori} truth is truth that is known without experience.
+\item \txx{A posteri} truth is truth known from empirical testing.
+\end{itemize}
+\item Arguments from the facts of the world
+  \begin{itemize}
+  \item \txx{Necessary truth} is truth that cannot be denied without forcing a
+    contradiction.
+  \item \txx{Contingent truth} can be contradicted depending on the facts.
+  \end{itemize}
+\item Arguments from our model of the world
+\begin{itemize}
+\item \txx{Analytic truth} Truth follows from meaning relations  within the sentence.
+\\ \emp{can include word meaning}
+\item \txx{Synthetic truth} Agrees with facts of the world.
+\end{itemize}
+%\item Normally these give the same results, but not always.  Why?
+% \\ \textit{Consuming gum is allowed in Singapore}
+% \\ Contingent truth? Why?
+\end{itemize}
+
+% If we include our model of word meaning in our reasoning, then \eng{an
+%   apple is a fruit} is \textbf{analytic}.  So it is important to have
+% an explicit model: these models are typically called \txx{ontologies}.
+
+% \begin{itemize}
+% \item What about \eng{the apple of my eye}?
+% \end{itemize}
+
+% Building an \txx{inference engine} is actually very, very hard, \ldots
+% \\ But very useful for question answering
+
+\myslide{Entailment}
+
+
+\begin{itemize}
+\item \txx{Entailment} \\[2ex]
+  \begin{tabular}{ll}
+    $a$ & The evil overlord  assassinated the man in the red shirt. \\ \hline
+    $b$ &  The man  in the red shirt died.
+  \end{tabular}
+  \\[2ex]
+  A sentence $p$ entails a sentence $q$ when the truth of the first ($p$)
+  guarantees the truth of the second ($q$), and the falsity of the
+  second ($q$) guarantees the falsity of the first ($p$).
+\item Sources of Entailment
+\begin{itemize}
+\item Hyponyms
+  \begin{exe}
+    \ix I rescued a dog today. \textnormal{vs} I rescued an animal today.
+  \end{exe}
+\item Paraphrases
+  \begin{exe}
+    \ix My mom baked a cake.\textnormal{vs}  A cake was baked by my mom.
+  \end{exe}
+\end{itemize}
+\end{itemize}
+
+\myslide{Presuppositions}
+
+\begin{itemize}
+\item Many statements assume the truth of something else
+  \begin{exe}
+    \ex   \begin{xlist}
+    \ix Mary's sister bakes the best pies. %(presupposing sentence p)
+    \ix Mary has a sister. %(presupposition q)
+    \end{xlist}
+  \end{exe}
+\item Negating the presupposing sentence $a$ doesn't affect the presupposition $b$
+ whereas negating an entailing sentence destroys the entailment.
+\item Sources of Presuppositions
+  \begin{itemize}
+  \item Names presuppose that their referents' exist
+  \item Clefts (\eng{it was X that Y}); Time adverbial; Comparative
+  \item Factive verbs: \eng{realize}; 
+    some judgement verbs: \eng{blame}; \ldots
+%    some change of state: \eng{stop}
+  \end{itemize}
+\item  Presupposition is one aspect of a speaker’s strategy of
+organizing information for maximum clarity for the listener.
+\end{itemize}
+
+\myslide{Language meets Logic (again)}
+
+\begin{itemize}
+\item \txx{formal semantics} is also known as
+  \begin{itemize}
+  \item \txx{truth-conditional semantics}
+  \item \txx{model-theoretic semantics}
+  \item \txx{Montague Grammar}
+  \item \txx{logical semantics}
+  \end{itemize}
+\item A general attempt to link the meaning of sentences to the
+  circumstances of the world: \txx{correspondence theory}
+  \begin{itemize}
+  \item If the meaning of the sentence and the state of the world
+    \emp{correspond} then the sentence is \textbf{true}
+  \end{itemize}
+\end{itemize}
+
+\myslide{Model-Theoretical Semantics}
+
+\begin{enumerate}
+\item Translate from a natural language into a logical language
+  with explicitly defined syntax and semantics
+\item Establish a mathematical model of the situations that the
+  language describes
+\item Establish procedures for checking the mapping between the
+  expressions in the logical language and the modeled situations.
+\end{enumerate}
+
+
+\myslide{Translating English into a Logical Metalanguage}
+%\myslide{Empirical truths and connectives}
+\MyLogo{Recall lecture 4}
+\begin{itemize}
+\item Consider simple sentences
+  \begin{itemize}
+  \item Represent the predicates by a capital \txx{predicate letter}
+    \\ these can be n-ary
+  \item Represent the \txx{individual constants} by lower case letters
+  \item Represent \txx{variables} by lower case letters (x,y,z)
+  \end{itemize}
+\item Join simple sentences with logical connectives
+\\ treat relative clauses as \txx{and}
+  \begin{exe}
+    \ex \eng{Bobbie who is asleep writhes}: A(b) $\wedge$ W(b)
+    \ex \eng{Bobbie is asleep and Freddie drinks}: A(b) $\wedge$ D(f)
+    \ex \eng{Freddie drinks and sleeps}: D(f) $\wedge$ S(f)
+    \ex \eng{Freddie doesn't drink beer}: $\neg$ D(f,b)
+    \ex \eng{If Freddie drinks whiskey Bobbie sleeps}: D(f,w) \into S(b)
+%    \ex \eng{x is asleep}: A(x)
+  \end{exe}
+\end{itemize}
+
+\myslide{Quantifiers in Predicate Logic}
+\MyLogo{$\forall$ and \into; $\exists$ and $\wedge$}
+
+\begin{itemize}
+  \item Quantifiers bind variables and scope over predications
+    \begin{itemize}
+    \item \txx{Universal Quantifier} ($\forall$: \eng{each, every, all})
+    \item \txx{Existential Quantifier} ($\exists$: \eng{some, a})
+    \end{itemize}
+    \begin{exe}
+      \ex \eng{All students learn logic}: $\forall$x (S(x)  $\into$ L(x,l))
+      \ex \eng{A student learns logic}: $\exists$x (S(x)  $\wedge$ L(x,l))
+      \ex \eng{Some students learn logic}: $\exists$x (S(x)  $\wedge$ L(x,l))
+      \ex \eng{No students learn logic}: $\neg\exists$x (S(x)  $\wedge$ L(x,l))
+      \ex \eng{All students don't learn logic}: $\forall$x (S(x)  $\into$ $\neg$L(x,l))
+    \end{exe}
+  \item All variables must be bound
+\end{itemize}
+
+\myslide{Tutorial Solutions}
+\MyLogo{$\forall$ and \into; $\exists$ and $\wedge$}
+ \begin{exe}
+    \ex \eng{Lancelot hated all dragons} \\
+    $\forall$x (D(x)  $\into$ H(l,x))
+    \ex \eng{Every dragon feared Lancelot} \\
+    $\forall$x (D(x)  $\into$ F(x,l))
+    \ex \eng{One dragon feared every knight.} \\
+    $\exists$x  (D(x)  $\wedge$ $\forall$y(K(y)  $\into$ F(x,y)))
+    \\ or  $\exists$x$\forall$y (D(x)  $\wedge$ (K(y)  $\into$ F(x,y)))
+ \\   $\forall$y(K(y)   $\into$ $\exists$x  (D(x)  $\wedge$  F(y,x)))
+ \\ or $\forall$y$\exists$x(K(y)   $\into$   (D(x)  $\wedge$  F(y,x)))
+    \ex \eng{Somebody searched for the Holy Grail} \\
+    $\exists$x  (P(x)  $\wedge$ S(x,h))
+\newpage
+    \ex \eng{Every dragon did not like spinach} \\
+    $\forall$x (D(x)  $\into$ $\neg$L(x,l))
+    \\ $\neg\forall$x (D(x)  $\into$ L(x,l))
+    \ex \eng{Every dragon who did not like spinach feared Lancelot} \\
+    $\forall$x ((D(x)  $\wedge$ $\neg$L(x,l)) $\into$  F(x,l))
+    \\ I would accept  $\forall$x ((D(x)  $\into$ $\neg$L(x,l)) $\into$  F(x,l))
+
+    \ex \eng{Not every one searched for the Holy Grail} \\
+    $\neg\forall$x (P(x)  $\into$ S(x,h))
+    \ex No dragon searched for Lancelot
+\\
+    $\neg\exists$x (D(x)  $\wedge$ S(x,l))
+  \end{exe}
+
+\myslide{Some Advantages in Translating to Predicate Logic}
+\MyLogo{}
+
+\begin{itemize}
+\item Explicit representation of scope ambiguity
+  \begin{exe}
+    \ex \eng{Everyone doesn't love semantics}
+    \begin{xlist}
+          \ex \eng{It is not the case that all people love semantics}:  
+          \\ $\neg\forall$x (L(x,s))
+          \ex \eng{All people have the property of not loving semantics}: 
+          \\ $\forall$x($\neg$L(x,s))
+    \end{xlist}
+  \end{exe}
+\item But the big advantage is in reasoning with the real world
+   \\ \txx{denotational semantic analysis}
+\end{itemize}
+
+
+
+
+
+\section{Situations}
+\MyLogo{Chapter 5}
+
+
+\myslide{Situations}
+
+Here we look at the meanings of situations described by sentences: 
+in particular how we can talk about time and belief.
+
+ \begin{itemize}
+ \item  How are situations classified?
+ \item  How does classification affect the way we can talk 
+   about these situations?
+ \item  How are different types of verbs lexically biased  
+   towards describing situation types?
+ \end{itemize}
+
+\myslide{Stative or Dynamic}
+
+\begin{itemize}
+\item  Differences in states  
+  \begin{exe}
+    \ex \eng{The museum is open.}
+    \ex \eng{The museum opens at nine.}
+    \ex \eng{The fruit is ripe.}
+    \ex \eng{The fruit is ripening.}
+  \end{exe}
+\item  A situation can be 
+  \begin{itemize}
+  \item  \txx{Static}: stable for its duration
+  \item  \txx{Dynamic}: change over time
+  \item  Which of the above are stative and which dynamic?    
+  \end{itemize}
+\end{itemize}
+
+\myslide{Semantics motivates Syntax}
+
+\begin{itemize}
+\item  There is typically  a correlation between states and 
+adjectives, and between verbs and dynamic 
+situations.
+\begin{exe}
+\ex \eng{I am writing a paper.}
+\ex \eng{The paper is hard to read.}
+\ex \eng{Kim poured water into the glass.}
+\ex \eng{The glass is full.}
+\end{exe}
+\item There are exceptions
+\begin{exe}
+\ex \eng{Be brave!}
+\ex \eng{Sandy is being foolish.}
+\ex \eng{She knows what semantics is.}
+\ex \eng{He loves cats.}
+\ex \eng{The cat has green eyes.}
+\end{exe}
+
+
+\myslide{Different Verb Classes}
+
+\item  Verbs differ in whether they are stative or dynamic.
+\begin{exe}
+\ex \eng{John knows how to drive.}
+\ex \eng{John learned how to drive.}
+\end{exe}
+\item  \txx{Stative}
+  \begin{itemize}
+  \item  Steady situation, relatively unchanging
+  \item  no reference to an explicit start or endpoint
+  \end{itemize}
+\item  \txx{Dynamic}
+  \begin{itemize}
+  \item   Situations that have internal phases    
+  \end{itemize}
+\end{itemize}
+
+\myslide{Properties of Stative Verbs/Adjectives}
+
+\begin{itemize}
+\item    Usually incompatible with progressive aspect
+  \begin{exe}
+    \ex \eng{John is learning German.}
+    \ex \eng{*John is knowing German.}
+  \end{exe}
+\item  Usually strange with imperatives
+  \begin{exe}
+    \ex \eng{Learn German!}
+    \ex \eng{? Know German!}
+  \end{exe}
+\item  Exceptions: \lex{remain, have, \ldots}
+\end{itemize}
+
+\myslide{Dynamic Verbs}
+
+\begin{itemize}
+\item \txx{Durative} vs. \txx{Punctual}
+\begin{itemize}
+\item  whether situation described by verb lasts for a period of 
+  time or not
+  \begin{exe}
+    \ex \eng{John blinked.} \cmm{punctual}
+    \ex \eng{John slept.}  \cmm{durative}
+  \end{exe}
+\end{itemize}
+\item  \txx{Telic/Bounded/Resultative} vs. \txx{Atelic/Unbounded}
+\begin{itemize}
+\item  whether situation described by verb has a natural point of 
+  completion
+  \begin{exe}
+    \ex \eng{John built a raft.}  \cmm{telic}
+    \ex \eng{John gazed at the clouds.}  \cmm{atelic}
+  \end{exe}
+  If you interrupt a telic process, then it may not finish.
+  \item Typically test with \eng{in/for 10 minutes}: telic/atelic
+\end{itemize}
+
+\myslide{Depends on the whole sentence}
+\begin{exe}
+  \ex \eng{John was swimming.} \cmm{atelic}
+  \ex \eng{John was swimming in the biathlon.} \cmm{telic}
+\end{exe}
+\end{itemize}
+%\newpage
+\begin{itemize}
+\item    There is a derivational process to turn atelic into 
+telic verbs in some languages.
+\begin{itemize}
+\item  German: \eng[eat]{essen} \into \eng[finish eating]{aufessen}
+\end{itemize}
+\item  It can also be done with an auxiliary
+\begin{itemize}
+\item  Japanese: \eng[write]{kaku}  \into \eng[finish writing]{kaki-oeru}
+\end{itemize}
+\item  It can also be done with a particle
+\begin{itemize}
+\item  English: \eng{eat}  \into \eng{eat up}
+\end{itemize}
+\end{itemize}
+
+\myslide{Punctual verbs}
+\begin{itemize}
+\item  \txx{Punctual verbs} (Semelfactive) describe events that 
+  occur for a brief moment 
+\item  They can get an \txx{iterative} interpretation if the 
+  duration is prolonged
+\begin{exe}
+  \ex \eng{John coughed.}
+  \ex \eng{John coughed all night.}
+  \ex \eng{The traffic lights flashed.}
+  \ex \eng{The traffic lights flashed the entire time.}
+\end{exe}
+\end{itemize}
+
+\myslide{Situation Types}
+
+\begin{tabular}{lcccl}
+Situations     & Stative & Durative & Telic & Examples \\ \hline
+State         & +       & +        &       & \lex{desire, know} \\
+Activity     & $-$       & +        & $-$     & \lex{run, drive a car} \\
+Accomplishment & $-$       & +        & +     & \lex{bake, walk to school, build} \\
+Punctual       & $-$       & $-$        & $-$     & \lex{knock, flash} \\
+Achievement    & $-$       & $-$        & +     & \lex{win,  start}  
+\end{tabular}
+\begin{exe}
+  \ex \eng{Kim desires more cowbell}
+  \ex \eng{Sandy drives to school}
+  \ex \eng{Hiromi compiled a lexicon}
+  \ex \eng{Bobby tapped on the window}
+  \ex \eng{Alex lost the race}
+\end{exe}
+% \myslide{Verb Types}
+% \begin{itemize}
+% \item Stative know
+% \item  Dynamic
+%   \begin{itemize}
+%   \item  Punctual  flash
+%   \item  Durative
+%     \begin{itemize}
+%     \item  Telic  build
+%     \item  Atelic gaze
+%     \end{itemize}
+%   \end{itemize}
+% \end{itemize}
+% % Situations Stative Durative Telic Exe
+% % States + + desire
+% % Activities - + - run
+% % Accomplishment - + + bake
+% % Punctual - - - knock
+% % Achievement - - + win
+\section{Tense}
+
+\myslide{TAM}
+\begin{center}
+  \LARGE \emp{Tense, Aspect and Modality}
+\end{center}
+\begin{itemize}
+\item  We need to distinguish grammatical expression from 
+  meaning
+  \begin{itemize}
+  \item  Tense vs Time
+  \item  Grammatical Aspect vs Semantic Aspect
+  \item  Mood vs Modality
+  \item  Surface Case vs Deep Case
+  \end{itemize}
+\item  The relation between them is refered to as
+  \begin{itemize}
+  \item  linking; syntax-semantics interface; grammar
+  \end{itemize}
+\end{itemize} 
+ 
+
+\myslide{How Universal is Tense?}
+\begin{itemize}
+\item  Grammatical tense is different from semantic time
+\item  English has \iz{past/non-past}
+\item  Latin marks \iz{past/present/future}
+\item  Chibemba (Bantu) has \txx{metrical tense}
+  \begin{multicols}{2}
+  \begin{itemize}
+  \item  Remote Past ($<$ yesterday)
+  \item  Removed Past (yesterday)
+  \item  Near Past (today)
+  \item  Immediate Past (past few hours)
+  \item Immediate Future (next few hours)
+  \item Near Future (today)
+  \item Removed Future (tomorrow)
+  \item Remote Future ($>$ tomorrow)
+  \end{itemize}
+\end{multicols}
+\end{itemize}
+
+\myslide{Tense and Time}
+\begin{itemize}
+\item  Locate a situation to with respect to a point in time
+  \begin{itemize}
+  \item  S = speech point
+  \item  R = reference time
+  \item  E = event time
+  \end{itemize}
+\item   Hans Reichenbach (1947)
+\end{itemize}
+
+\myslide{Simple Tense}
+
+\begin{itemize}
+\item  Past ($R = E < S$) \eng{saw} \hfill
+\begin{tabular}[t]{ccc|ccc|ccc}
+  \mc{3}{c}{past} &  \mc{3}{c}{present} & \mc{3}{c}{future} \\
+&R=E&&&S&&&& \\ \hline
+&&&&&&& \\ 
+\end{tabular}
+\item  Present ($R = S = E$) \eng{see} \hfill
+\begin{tabular}[t]{ccc|ccc|ccc}
+  \mc{3}{c}{past} &  \mc{3}{c}{present} & \mc{3}{c}{future} \\
+&&&&S=R=E&&&&  \\ \hline
+&&&&&&& \\ 
+\end{tabular}
+\item  Future ($S < R = E$) \eng{will see}\hfill
+\begin{tabular}{ccc|ccc|ccc}
+  \mc{3}{c}{past} &  \mc{3}{c}{present} & \mc{3}{c}{future} \\
+&&&&S&&&R=E& \\ \hline
+&&&&&&& \\ 
+\end{tabular}
+\end{itemize}
+
+\myslide{Complex Tense}
+
+\begin{itemize}
+\item  Past Perfect ($E < R < S$) \eng{had seen} \hfill
+\begin{tabular}[t]{ccc|ccc|ccc}
+  \mc{3}{c}{past} &  \mc{3}{c}{present} & \mc{3}{c}{future} \\
+E&R&&&S&&&& \\ \hline
+&&&&&&& \\ 
+\end{tabular}
+\\ \eng{By 1939 my Father had seen many arrests}
+\item  Future Perfect ($S< E < R$) \eng{will have seen} \hfill
+\begin{tabular}[t]{ccc|ccc|ccc}
+  \mc{3}{c}{past} &  \mc{3}{c}{present} & \mc{3}{c}{future} \\
+&&&&S&&&E&R \\ \hline
+&&&&&&& \\ 
+\end{tabular}
+\\ \eng{By 2039 my son will have seen many things}
+\end{itemize}
+
+\myslide{Aspect in English}
+\begin{itemize}
+\item  Finer grained talking about time!
+\item  \txx{Progressive}  is used for ongoing processes (unfinished)
+  \begin{itemize}
+  \item  \txx{Past Progressive} \eng{I was building the building}
+  \item  \txx{Present Progressive} \eng{I am building the building}
+  \item  \txx{Future Progressive} \eng{I will be building the building}  %(E < R = S) ???
+  \end{itemize}
+\item  \txx{Perfect} compares the time to the reference point
+ \begin{itemize}
+  \item  \txx{Past Perfect} \eng{I had built the building} ($E<R<S$)
+  \item  \txx{Present Perfect} \eng{I have built the building}  ($E<R=S$)
+  \item  \txx{Future Perfect} \eng{I will have built the building}  ($S<E<R$)
+  \end{itemize}
+\end{itemize}
+
+\myslide{Aspect more Generally}
+
+\begin{itemize}
+\item  \txx{Perfective} focuses on the end point
+  \begin{itemize}
+  \item  \txx{Completive} \eng{I built the building}
+  \item  \txx{Experiential} \eng{I have built the building} %(E < R = S) ???
+  \end{itemize}
+\item  \txx{Imperfective} 
+  \begin{itemize}
+  \item  \txx{Progressive} \eng{I was listening/I am listening}
+  \item  \txx{Habitual} \eng{I listen to the Goon Show}
+\end{itemize}
+\item Different languages grammaticalize different things
+\end{itemize}
+
+% \item  Progressive
+% \item  Habitual
+% \item  Completive
+% \item  Experiential
+\section{Mood}
+
+\myslide{Mood and Modality}
+\begin{itemize}
+\item  Modality expresses varying degrees of the speaker's 
+commitment and belief
+\begin{exe}
+  \ex \eng{She has left by now.}
+  \ex \eng{She must have left by now.}
+  \ex \eng{She could have left by now.}
+  \ex \eng{She needn't have left by now.}
+  \ex \eng{She couldn't have left by now.}
+  \ex \eng{She has to leave by now.}
+  \ex \eng{She must leave by now.}
+  \ex \eng{She can leave now. }
+\end{exe}
+\end{itemize}
+
+\myslide{Other means of expression}
+\begin{itemize}
+\item Explicit External Verb
+  \begin{exe}
+    \ex \eng{I know that $S$}
+    \ex \eng{I believe that $S$}
+  \end{exe}
+\item Adverb or Adjective
+  \begin{exe}
+    \ex \eng{It is certain that $S$}
+    \ex \eng{It is likely that $S$}
+    \ex \eng{I will probably $S$}
+    \ex \eng{I will definitely $S$}
+  \end{exe}
+
+\end{itemize}
+
+\myslide{Knowledge vs Obligation}
+\begin{itemize}
+\item  \txx{Epistemic modality}: Speaker signals degree of  
+knowledge.
+\begin{exe}
+  \ex \eng{You can drive this car} \cmm{You are able to}
+\end{exe}
+\item  \txx{Deontic modality}: Speaker signals his/her attitude  
+to social factors of obligation and permission.
+\begin{itemize}
+\item \txx{Permission}
+  \begin{exe}
+    \ex \eng{You can drive this car}  \cmm{You have permission to}
+    \ex \eng{You may drive this car}  
+  \end{exe}
+\item \txx{Obligation}
+  \begin{exe}
+    \ex \eng{You must drive this car}  \cmm{You have an obligation to}
+    \ex \eng{You ought to drive this car} 
+  \end{exe}
+% \item  Question: How do you use `must', `confirm', and 
+% `sure' in Singlish? ???
+\end{itemize}
+\end{itemize}
+
+\myslide{Possible Worlds}
+
+\begin{itemize}
+\item We can analyze these in terms of \txx{possible worlds}
+\item We mark how close a hypothetical case is to reality:
+  \begin{exe}
+    \ex \eng{It must be/might be/is/can't be \ul{hot outside}}
+  \end{exe}
+\item Similarly for \txx{conditionals} (condition/consequence)
+  \begin{exe}
+    \ex \eng{If it is Singapore, it will be hot outside}
+    \ex \eng{If it were Singapore, it would be hot outside}
+    \ex \eng{If you should go to Singapore, take some cool clothes}
+  \end{exe}
+\end{itemize}
+
+\myslide{Real vs Hypothetical}
+\begin{itemize}
+\item  \txx{Realis} is used for things that occur
+\item  \txx{Irrealis} is used for things that are not claimed to 
+occur (hypotheticals, negation, future)
+\item  English doesn't mark this normally
+  \begin{exe}
+    \ex \eng{If I were to go} \textnormal (subjunctive)
+  \end{exe}
+\item  What about Singlish? ???
+ \begin{exe}
+    \ex \eng{I got go.}
+    \ex \eng{I sure confirm go.}
+    \ex \eng{I maybe go.}
+  \end{exe}
+\end{itemize}
+
+\myslide{Mood more Generally}
+\MyLogo{See Saeed for more examples}
+\begin{itemize}
+\item Grammatical Inflection used to mark modality is called \txx{mood}
+  \begin{itemize}
+  \item \txx{indicative} expresses factual statements
+  \item \txx{conditional} expresses events dependent on a condition
+  \item \txx{imperative} expresses commands
+  \item \txx{injunctive} expresses pleading, insistence, imploring
+  \item \txx{optative} expresses hopes, wishes or commands 
+  \item \txx{potential} expresses something likely to happen
+  \item \txx{subjunctive} expresses  hypothetical events; opinions or emotions
+  \item \txx{interrogative} expresses questions
+\end{itemize}
+\item English only really marks imperative and subjunctive
+  morphologically on \lex{be} 
+  \begin{exe}
+    \ex \eng{\ul{Be} good!}
+    \ex \eng{If I \ul{were} a rich man}
+  \end{exe}
+\end{itemize}
+\section{Evidentiality}
+
+\myslide{Evidentiality}
+\MyLogo{Eastern Pomo (McLendon 2003)}
+\begin{itemize}
+\item  Some languages must show you gained the evidence
+\begin{itemize}\addtolength{\itemsep}{1.5ex}
+\item  \txx{nonvisual sensory}:  speaker felt the sensation
+  \begin{itemize}
+  \item  \TIPA{/p\super ha$\cdot$b\'ek\super h-\ul{ink'e}/}  ``burned, I felt it''
+  \end{itemize}
+\item  \txx{inferential}: speaker saw circumstantial evidence 
+  \begin{itemize}
+  \item  \TIPA{/p\super ha$\cdot$b\'ek\super h-\ul{ine}/}  ``must have burned''
+  \end{itemize}
+\item  \txx{hearsay (reportative)}:   speaker is reporting what was told
+  \begin{itemize}
+  \item  \TIPA{/p\super ha$\cdot$b\'ek\super h-\ul{le}/} ``burned, they say''
+  \end{itemize}
+\item  \txx{direct knowledge}:   speaker has direct evidence, probably visual 
+  \begin{itemize}
+  \item \TIPA{/p\super ha$\cdot$b\'ek\super h-\ul{a}/} ``burned, I saw it''
+  \end{itemize}
+\end{itemize}
+\end{itemize}
+
+\myslide{Evidentiality in English}
+
+We can, and often do, mark evidentiality in English, although it is
+not strongly grammaticalized.
+
+\begin{exe}
+\ex \eng{Bob is hungry.}
+\ex \eng{Bob looks hungry.}
+\ex \eng{Bob seems hungry.}
+\ex \eng{Bob is apparently hungry.}
+\ex \eng{Bob would be hungry by now.}
+\ex \eng{Look at those clouds! It's going to rain!}
+\ex \eng{Look at those clouds! $^\#$ It will rain!.}
+\end{exe}
+
+\myslide{Summary of Situations}
+\begin{itemize}\addtolength{\itemsep}{-1ex}
+\item Verb/Situation Types
+\begin{itemize}
+\item Stative 
+\item  Dynamic
+  \begin{itemize}
+  \item  Punctual
+  \item  Durative
+    \begin{itemize}
+    \item  Telic/Resultative 
+    \item  Atelic
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+\item Tense/Aspect and Time: R, S and E
+\item Modality
+  \begin{itemize}
+  \item Epistemic
+  \item Deontic: Permission, Obligation
+  \end{itemize}
+\item Evidentiality
+\end{itemize}
+
+\myslide{ObJoke}
+\MyLogo{\url{http://languagelog.ldc.upenn.edu/nll/?p=15495}}
+
+\begin{itemize}
+\item \con{past}, \con{present}, and \con{future} walked into a bar. It was \txx{tense}.
+\item Luckily, auxiliary \lex{have} got a booth with a past participle. It was \txx{perfect}.
+\end{itemize}
+
+
+
+\myslide{Acknowledgments and References}
+\begin{itemize}
+\item \textit{Anne Elk's Theory on Brontosauruses} is a sketch from the
+  thirty-first Monty Python's Flying Circus episode, \textit{The All-England
+  Summarize Proust Competition}.
+\item Why we do active learning ``Active learning is an approach to instruction that involves actively engaging students with the course material through discussions, problem solving, case studies, role plays and other methods.'':
+  \\ \url{https://www.pnas.org/content/early/2019/09/03/1821936116}
+  \\ You learn better (even though it may not feel that way)
+\end{itemize}
+
+% % \MyLogo{}
+% % \begin{itemize}
+% % \item Definitions from WordNet: \url{http://wordnet.princeton.edu/}
+% % \item Images from
+% %   \begin{itemize}
+% %   \item the Open Clip Art Library: \url{http://openclipart.org/}
+% %   \item Steven Bird, Ewan Klein, and Edward Loper (2009) 
+% %      \textit{Natural Language Processing with Python}, O'Reilly Media
+% %     \\ \url{www.nltk.org/book}
+% % \end{itemize}
+% % \item Problems  partially based on exercises from Saeed (2003)
+% % \end{itemize}
+
+% %\myslide{Bibliography}
+% % Reading: Jurafsky and Martin (2008) Chapter 20
+% \small
+% \bibliographystyle{aclnat}
+% \bibliography{abb,mtg,nlp,ling}
+
+
+
+\clearpage
+%\end{CJK}
+\end{document}
+
+
+%%% Local Variables: 
+%%% coding: utf-8
+%%% mode: latex
+%%% TeX-PDF-mode: t
+%%% TeX-engine: xetex
+%%% End: 

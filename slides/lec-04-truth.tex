@@ -1,0 +1,994 @@
+\documentclass[headrule,footrule]{foils}
+%\usepackage{times}
+%\usepackage{multicol}
+
+%\usepackage{nttfoilhead}
+%\newcommand{\myslide}[1]{\foilhead[-25mm]{\raisebox{12mm}[0mm]{\emp{#1}}}}
+%\newcommand{\myslider}[1]{\rotatefoilhead[-25mm]{\raisebox{12mm}[0mm]{\emp{#1}}}}
+%\newcommand{\myslider}[1]{\rotatefoilhead{\raisebox{-8mm}{\emp{#1}}}}
+
+%%% delimiters
+\usepackage{stmaryrd}
+\newcommand{\den}[2][]{\ensuremath{\llbracket\textnormal{\textcolor{teal}{#2}}\rrbracket^{\ensuremath{#1}}}}
+
+\input{headx.tex}
+\usepackage{colortbl}
+\definecolor{Gray}{gray}{0.9}
+
+\begin{document}
+%\begin{CJK}{UTF8}{min}
+\header{Lecture 4}{Sentence Relations, Truth and Models}{}\maketitle
+
+%\include{schedule}
+
+\myslide{Overview}
+
+\begin{itemize}\addtolength{\itemsep}{-1ex}
+\item Revision: Word Meaning
+  \begin{itemize}
+  \item Defining \lex{word}
+  \item Lexical  and Derivational Relations
+  \item Lexical Universals
+ \end{itemize}
+\item Logic and Truth
+\item Necessary Truth, A Priori Truth and Analyticity
+\item Logical Metalanguage (10.2--3)
+\item Semantics and Models (10.4--5)
+\item Entailment
+\item Presupposition
+\item Next week: Chapter 5: Situations
+\end{itemize}
+
+%%%
+%%% this changes each year, so keep separate
+%%%
+\include{schedule}
+\section{Revision: \\ Word Meaning}
+
+\myslide{Word meaning}
+\begin{itemize}
+\item What is a word? How easy is it to define ‘word’?
+\item Lexical and grammatical words
+\item Lexical Relations
+\item Derivational Relations
+  \begin{itemize}
+  \item Inchoative, causative, conative, \ldots (\txx{alternations})
+  \item Agentive nouns
+  \end{itemize}
+\item Meaning: Relative or universal?
+\end{itemize}
+
+\myslide{Words} 
+\begin{description}
+\item \txx{word} slippery to define: orthographic, phonological, conceptual definitions mainly overlap
+\item \txx{lexeme} base (uninflected) form of a word (or multi word expression)
+\item \txx{vagueness} having an underspecified meaning
+\item \txx{ambiguous} having more than one possible meaning
+\item \txx{content word} with a denotation (typically open class : \textbf{lexical word})
+\item \txx{function word} no denotation (typically closed class:
+  \textbf{grammatical word}, \textbf{structural word})
+\end{description}
+
+\myslide{Senses and Relations}
+
+\begin{description}
+\item \txx{polysemous} having multiple meanings
+\item \txx{monosemous} having just one meaning
+\item \txx{homonyms} words unrelated meaning; grammatically equivalent;
+  with identical forms
+\end{description} 
+
+
+\myslide{Lexical Relations}
+\begin{description}
+\item \txx{synonymy}  all meanings identical; in all contexts; descriptive and non-
+\item \txx{hyponymy} is-a, kind-of: supertype \textbf{hypernym}; subtype \textbf{hyponym}
+\item \txx{meronymy} part-whole: part \textbf{meronym}; whole \textbf{holonym}
+\item \txx{antonymy} (complementary, gradable, reverse, converse, taxonomic sisters)
+\item \txx{member-collection} member of a group (\eng{tree-forest})
+\item \txx{portion-mass} element of stuff (\eng{grain-rice})
+\item \txx{domain}  used in a domain (\eng{[software] driver -golf})
+\end{description}
+
+\section{Sentence Relations and Truth}
+\newpage
+
+\myslide{Meanings can be related}
+\begin{exe}
+\ex  A and B are \txx{synonymous}: A means the same as B
+\begin{xlist}
+  \ex \eng{My brother is a bachelor }
+  \ex \eng{My brother has never married.}
+\end{xlist}
+\ex A \txx{entails} B: if we know A then we know B
+\begin{xlist}
+  \ex \eng{The child killed the cat.  }
+  \ex \eng{The cat is dead.}
+\end{xlist}
+\ex A \txx{contradicts} B: A is inconsistent with B 
+\begin{xlist}	
+  \ex \eng{Fred has long hair.}
+  \ex \eng{Fred is bald.}
+\end{xlist}
+\newpage
+ \ex A \txx{presupposes} B: B is part of the assumed background of A 
+\begin{xlist}	
+  \ex \eng{ The King of Pop is dead.}
+  \ex \eng{There was a King of Pop}
+  \ix \eng{I regret eating your lunch.}
+  \ex \eng{I ate your lunch.}
+\end{xlist}
+\ex A is necessarily true --- \txx{tautology}: A is true but not informative  
+\begin{xlist}	
+  \ex \eng{Smart people are smart.}
+\end{xlist}
+\ex A is necessarily false --- \txx{contradiction}: A is inconsistent with itself
+\begin{xlist}	
+  \ex \eng{ ?It is entirely made of copper and it is not made of metal.}
+  \ex \eng{A is not A. }
+\end{xlist}
+\end{exe}
+
+% \myslide{Logic}
+
+
+
+
+% \begin{itemize}
+% \item Empirical truth, a priori truth, analytic and synthetic truths, necessary truth
+% \item Remember the truth tables of common connectives:
+%   \\ if (entailment), and, or, XOR, iff 
+%   \item Entailment \hfill [A \textbf{entails} B: B follows from A; if A then always B]
+%   \begin{itemize}
+%   \item Hyponyms
+%   \item Paraphrases
+%   \end{itemize}
+% \item Presupposition
+%   \begin{itemize}
+%   \item Presuppositional triggers, lexical triggers
+%   \end{itemize}
+% \item Common ground
+% \end{itemize}
+
+
+
+\section{Logic, Truth and Argument}
+
+\myslide{Logic}
+
+\begin{itemize}
+\item Classical logic is an attempt to find valid principles of argument and inference.
+\\[2ex]
+\begin{tabular}{llr}
+  $a$ & Humans are mortal & \txx{premise} \\
+  $b$ & Socrates is human & \txx{premise}\\ \hline
+  $c$ & Socrates is mortal & \txx{conclusion}
+\end{tabular}
+\item Can we go from $a$ and $b$ to $c$? \hfill {\large Yes}
+\item Truth is \txx{empirical}: The premises need to correspond with
+  the facts of the world
+  \begin{itemize}
+  \item Sentences have \txx{truth values} (true, false or unknown)
+  \item The state of the world that makes a sentence true or false are its \txx{truth conditions}
+  \end{itemize}
+\end{itemize}
+
+
+\myslide{Logical Connectives}
+\MyLogo{It isn't just saying \textit{no it isn't}}
+\begin{itemize}
+\item \txx{and} ($p \wedge q$)
+\item \txx{or}  ($p \vee q$: disjunction, inclusive or)
+\item \txx{xor} ($p \oplus q$: exclusive or, either or)
+\item \txx{if} ($p \rightarrow q$: if then, material implication)
+% If it doesn’t rain, p = F, the conditional claim cannot be
+% invalidated by whatever is done. (q= T or q =F). p is a
+% sufficient but not necessary condition for q. Some other
+% factor might want to cause me to go to the movies!
+% But not all if.. then…constructions work like that. What are
+% some counterexamples that you can think of? If she is smart,
+% then I would win the Nobel prize (counterfactuals)
+\item \txx{iff} ($p \equiv q$: if and only if) 
+  ($(p \rightarrow q) \wedge (q \rightarrow p)$)
+\item \txx{not} ($\neg p$: contradiction)
+\end{itemize}
+
+\begin{quote}
+  An \txx{argument} is a connected series of statements attempting to
+  establish a proposition.
+\end{quote}
+
+\myslide{Truth Tables}
+\MyLogo{\textit{Yes it is}}
+\begin{center}
+  \begin{tabular}{|c|c|c|c|c|c|c|c|}
+    \hline
+    $p$ & $q$ & $p \rightarrow q$ & $p \wedge q$ & $p \vee q$ 
+    & $p \oplus q$ & $p \equiv q$ & $\neg p$\\
+    \hline
+    &   & if & and & or &  XOR & iff & not  \\
+    \hline
+    T & T & T & T & T & F & T & F \\ 
+    T & F & F & F & T & T & F & F \\  
+    F & T & T & F & T & T & F & T\\ 
+    F & F & T & F & F & F & T & T\\ \hline
+%    \hline
+  \end{tabular}
+  \begin{itemize}
+  \item Words themselves often carry more implications
+    \\ \eng{I did A and B} often implies \eng{I did A first}
+  \item There are many ways of saying the operations
+  \end{itemize}
+\end{center}
+
+
+
+\myslide{Modus ponens}
+\MyLogo{\textit{No it isn't}}
+\begin{center}
+  \begin{tabular}{llcl}
+    $a$ & All humans are mortal & $p  \rightarrow q$ & 
+    \small if someone is human then they are mortal\\
+    $b$ & Socrates is human & $p$ \\ \hline
+    $c$ & Therefore, Socrates is mortal & $q$
+  \end{tabular}
+
+
+  \begin{tabular}{|c|c|c|c|c|c|c|}
+    \hline
+    $p$ & $q$ & $p \rightarrow q$  \\
+    \hline
+    \rowcolor{Gray}
+    \textbf{T} & T & \textbf{T}  \\ 
+    \textbf{T} & F & F  \\ 
+    F & T & \textbf{T}  \\ 
+    F & F & \textbf{T}  \\ 
+    \hline
+  \end{tabular}
+\end{center}
+\begin{itemize}
+\item  The way that affirms by affirming (Latin)
+\item $p \rightarrow q, p \vdash q$
+\item \txx{material implication}  (Not quite the same as English \lex{if})
+\end{itemize}
+
+\myslide{Modus tollens}
+\MyLogo{\textit{Yes it is}}
+\begin{center}
+  \begin{tabular}{llc}
+    $a$ & If something is human then it is mortal & $p  \rightarrow q$\\
+    $b$ & Zeus is not mortal  & $\neg q$ \\ \hline
+    $c$ & Zeus is not human   & $\neg p$
+  \end{tabular}
+
+  \begin{tabular}{|c|c|c|c|c|c|c|}
+    \hline
+    $p$ & $q$ & $p \rightarrow q$  \\
+    \hline
+    T & T & \textbf{T}  \\ 
+    T & \textbf{F} & F  \\ 
+    F & T & \textbf{T}  \\ 
+    \rowcolor{Gray}
+    F & \textbf{F} & \textbf{T}  \\ 
+    \hline
+  \end{tabular}
+\end{center}
+\begin{itemize}
+\item  The way that negates by negating (Latin)
+\item $p \rightarrow q, \neg q \vdash \neg p$
+\end{itemize}
+
+\myslide{Other types of syllogisms}
+\MyLogo{\textit{No it isn't}}
+(deductive reasoning)
+\begin{itemize}
+\item \txx{Hypothetical syllogism}
+\\[2ex]
+ \begin{tabular}{ll}
+    $a$ & If something is human then it is mortal \\
+    $b$ & If something is mortal then it dies \\ \hline
+    $c$ & If something is human then it dies
+  \end{tabular}
+\\ $p \rightarrow q, q \rightarrow r \vdash p \rightarrow r$
+
+\item \txx{Disjunctive syllogism}
+\\ (modus tollendo ponens: affirm by denying)
+\\[2ex]
+ \begin{tabular}{ll}
+    $p$ & Either a human is mortal or a human is immortal \\
+    $q$ & A human is not immortal \\ \hline
+    $r$ & A human is mortal
+  \end{tabular}
+\\ $p \oplus q, \neg p \vdash q$
+\end{itemize}
+
+\myslide{Bad Arguments}
+\MyLogo{And many, many more}
+\begin{itemize}
+\item Formal
+  \begin{itemize}
+  \item \txx{Affirming the consequent}: $p \rightarrow q, q \vdash p$
+    \\ \eng{professors talk too much}, \eng{you talk too much} $\vdash$ \eng{you are a professor}
+  \end{itemize}
+\item Informal
+  \begin{itemize}
+  \item \txx{Equivocation}:  The sign said "fine for parking here", and since it was fine, I parked there. 
+  \item \txx{No True Scotsman}: X doesn't do Y; $a$ is an X and does Y; $a$ is not a true X
+  \item \txx{Slippery Slope}: We mustn't allow text abbreviations or students will not be able to write normal text.
+  \item \txx{False Dilemma}: You are with us or against us
+  \item \txx{Guilt by Association}: Hitler was a vegetarian  $\vdash$ vegetarianism is bad
+  \end{itemize}
+\end{itemize}
+
+
+
+\section{Necessary Truth, A Priori Truth and Analyticity}
+
+\myslide{Other sorts of truth}
+\MyLogo{\eng{Is \ul{Elizabeth} the \ul{queen of England}?  Is the \ul{queen} a \ul{woman}?}}
+\begin{exe}
+  \ex \eng{My sister is my sister.}
+  \ex ?\eng{She was murdered but she is still alive.}
+\end{exe}
+
+\noindent Can a statement be known to be true without checking the facts of the
+world?
+
+\begin{itemize}
+\item Arguments from the speaker's knowledge
+\begin{itemize}
+\item \txx{A priori} truth is truth that is known without experience.
+\item \txx{A posteri} truth is truth known from empirical testing.
+\end{itemize}
+\item Arguments from the facts of the world
+  \begin{itemize}
+  \item \txx{Necessary truth} is truth that cannot be denied without forcing a
+    contradiction.
+  \item \txx{Contingent truth} can be contradicted depending on the facts.
+  \end{itemize}
+\item Arguments from our model of the world
+\begin{itemize}
+\item \txx{Analytic truth} Truth follows from meaning relations  within the sentence.
+\\ need to know word meaning
+\item \txx{Synthetic truth} Agrees with facts of the world.
+\end{itemize}
+\item Normally these give the same results, but not always.  Why?
+% \\ \textit{Consuming gum is allowed in Singapore}
+% \\ Contingent truth? Why?
+\end{itemize}
+
+If we include our model of word meaning in our reasoning, then \eng{an
+  apple is a fruit} is \textbf{analytic}.  So it is important to have
+an explicit model: these models are typically called \txx{ontologies}.
+
+\begin{itemize}
+\item What about \eng{the apple of my eye}?
+\end{itemize}
+
+Building an \txx{inference engine} is actually very, very hard, \ldots
+\\ But very useful for question answering
+
+\section{Entailment}
+
+\myslide{A truth based approach to entailment}
+\begin{itemize}
+\item \txx{Entailment} \\[2ex]
+  \begin{tabular}{ll}
+    $a$ & The evil overlord  assassinated the man in the red shirt. \\ \hline
+    $b$ &  The man  in the red shirt died.
+  \end{tabular}
+  \\[2ex]
+  A sentence $p$ entails a sentence $q$ when the truth of the first ($p$)
+  guarantees the truth of the second ($q$), and the falsity of the
+  second ($q$) guarantees the falsity of the first ($p$).
+\begin{center}
+  \begin{tabular}{|c|c|c|l}
+    \cline{1-3}
+    $p$ &  & $q$   \\
+    \cline{1-3}
+    T & $\rightarrow$  & T  \\ 
+    F & $\rightarrow$  & F,T & don't care\\ 
+    F & $\leftarrow$  & F  \\ 
+    T, F & $\leftarrow$  & T  & don't care\\ 
+    \cline{1-3}
+  \end{tabular}
+\end{center}
+\end{itemize}
+
+\myslide{Sources of Entailment}
+\begin{itemize}
+\item Hyponyms
+  \begin{exe}
+    \ex \eng{I rescued a dog today.}
+    \ex \eng{I rescued an animal today.}
+  \end{exe}
+\end{itemize}
+\myslide{Paraphrases: Mutual entailment}
+\begin{itemize}
+\item 
+  \begin{exe}
+    \ex \eng{My mom baked a cake.}
+    \ex \eng{A cake was baked by my mom.}
+  \end{exe}
+\begin{center}
+  \begin{tabular}{|c|c|c|}
+    \cline{1-3}
+    $p$ &  & $q$   \\
+    \cline{1-3}
+    T & $\rightarrow$  & T  \\ 
+    F & $\rightarrow$  & F \\ 
+    F & $\leftarrow$  & F  \\ 
+    T & $\leftarrow$  & T  \\ 
+    \cline{1-3}
+  \end{tabular}
+\end{center}
+\item This is synonymy
+\item What about contradiction?
+\end{itemize}
+
+
+\myslide{The Argument Clinic} 
+
+\begin{itemize}
+\item A sketch from episode 29 of
+  Monty Python's Flying Circus
+\item \textit{An argument is a connected series of statements intended to establish a proposition}
+\end{itemize}
+
+
+
+\section{Formal Semantics}
+\MyLogo{A very brief overview --- doing it properly requires a whole course}
+
+\myslide{Language meets Logic (again)}
+
+
+\begin{itemize}
+\item \txx{formal semantics} is also known as
+  \begin{itemize}
+  \item \txx{truth-conditional semantics}
+  \item \txx{model-theoretic semantics}
+  \item \txx{Montague Grammar}
+  \item \txx{logical semantics}
+  \end{itemize}
+\item A general attempt to link the meaning of sentences to the
+  circumstances of the world: \txx{correspondence theory}
+  \begin{itemize}
+  \item If the meaning of the sentence and the state of the world
+    \emp{correspond} then the sentence is \textbf{true}
+  \end{itemize}
+\end{itemize}
+
+\myslide{Model-Theoretical Semantics}
+
+\begin{enumerate}
+\item Translate from a natural language into a logical language
+  with explicitly defined syntax and semantics
+  \\[1ex] \eng{Fran is alive} \into 
+  \\ \iz{alive(Francis)} or \iz{A(f)} or \iz{alive($e,x$), Francis($x$)}
+\item Establish a mathematical model of the situations that the
+  language describes
+  \\[1ex] Hard to do in general
+\item Establish procedures for checking the mapping between the
+  expressions in the logical language and the modeled situations.
+  \\[1ex] Works for small closed worlds
+\end{enumerate}
+
+
+\section{1: Translating English \\ into a Logical Metalanguage}
+
+\myslide{Empirical truths and connectives}
+\MyLogo{Recall lecture 4}
+\begin{itemize}
+\item \txx{not} ($\neg p$: contradiction: \eng{it is not the case that $p$})
+\item \txx{and} ($p \wedge q$)
+\item \txx{or}  ($p \vee q$: disjunction, inclusive or)
+\item \txx{xor} ($p \oplus q$: exclusive or, either or 
+  $\vee_\textnormal{\scriptsize e}$)
+\item \txx{if} ($p \rightarrow q$: if then, material implication)
+% If it doesn’t rain, p = F, the conditional claim cannot be
+% invalidated by whatever is done. (q= T or q =F). p is a
+% sufficient but not necessary condition for q. Some other
+% factor might want to cause me to go to the movies!
+% But not all if.. then…constructions work like that. What are
+% some counterexamples that you can think of? If she is smart,
+% then I would win the Nobel prize (counterfactuals)
+\item \txx{iff} ($p \equiv q$: if and only if) 
+  ($(p \rightarrow q) \wedge (q \rightarrow p)$)
+\end{itemize}
+
+\myslide{Simple Statements in Predicate Logic}
+\MyLogo{Ignore tense for the moment}
+
+\begin{itemize}
+\item Consider simple sentences
+  \begin{itemize}
+  \item Represent the \txx{predicates} by a capital letter
+    \\ these can be $n$-ary
+  \item Represent the \txx{individual constants} by lower case letters
+  \item Represent \txx{variables} by lower case letters (x,y,z)
+  \end{itemize}
+  \begin{exe}
+    \ex \eng{Bobbie is asleep}: A(b)
+    \ex \eng{Freddie drinks}: D(f)
+    \ex \eng{Freddie drinks beer}: D(f,b)
+    \ex \eng{Freddie prefers beer to whiskey}: P(f,b,w)
+    \ex \eng{Someone is asleep}: A(x) \hfill (A(x) $\wedge$ P(x)) 
+  \end{exe}
+\end{itemize}
+
+\myslide{Complex Statements in Predicate Logic}
+\MyLogo{Ignore tense for the moment}
+
+\begin{itemize}
+\item Join simple sentences with logical connectives
+\\ treat relative clauses as \txx{and}
+  \begin{exe}
+    \ex \eng{Bobbie who is asleep writhes}: A(b) $\wedge$ W(b)
+    \ex \eng{Bobbie is asleep and Freddie drinks}: A(b) $\wedge$ D(f)
+    \ex \eng{Freddie drinks and sleeps}: D(f) $\wedge$ S(f)
+    \ex \eng{Freddie doesn't drink beer}: $\neg$ D(f,b)
+    \ex \eng{If Freddie drinks whiskey Bobbie sleeps}: D(f,w) \into S(b)
+%    \ex \eng{x is asleep}: A(x)
+  \end{exe}
+\item If you run out of letters, use two, keep them unique in the
+  world you are modeling
+ \begin{exe}
+    \ex \eng{Bobbie who is asleep snores}: A(b) $\wedge$ Sn(b)
+  \end{exe}
+\end{itemize}
+
+\myslide{Quantifiers in Predicate Logic}
+\MyLogo{Keep ignoring tense, we are also ignoring number}
+
+\begin{itemize}\addtolength{\itemsep}{-1ex}
+  \item Quantifiers bind variables and scope over predications
+    \begin{itemize}
+    \item \txx{Universal Quantifier} ($\forall$: \eng{each, every, all})
+    \item \txx{Existential Quantifier} ($\exists$: \eng{some, a})
+    \begin{exe}
+      \ex \eng{All students learn logic}: $\forall$x (S(x)  $\into$ L(x,l))
+      \ex \eng{A student learns logic}: $\exists$x (S(x)  $\wedge$ L(x,l))
+      \ex \eng{Some students learn logic}: $\exists$x (S(x)  $\wedge$ L(x,l))
+      \ex\label{me} \eng{No students learn logic}: $\neg\exists$x (S(x)  $\wedge$ L(x,l))
+      \ex \eng{All students don't learn logic}: $\forall$x (S(x)  $\into$ $\neg$L(x,l))
+      \\ logically equivalent to (\ref{me})
+    \end{exe}
+  \item $\forall$ must check each one (so $\into$)
+  \item $\exists$ is falsified by one counter example  (so $\wedge$)
+    \end{itemize}
+
+  \item All variables must be bound \\
+    If there is an x, y, z it must have a $\forall$ or $\exists$
+\end{itemize}
+
+\myslide{Some Advantages in Translating to Predicate Logic}
+\MyLogo{Often people omit the P(x), P(y)}
+
+\begin{itemize}
+\item Explicit representation of scope ambiguity
+  \begin{exe}
+    \ex \eng{Everyone loves someone}
+    \begin{xlist}
+          \ex \eng{Everyone has someone they love}:  
+          \\ $\forall$x (P(x) $\into$ $\exists$y (P(y) $\wedge$
+          L(x,y))
+          \hfill $\approx$ \hfill  $\forall$x$\exists$y (L(x,y))
+          \ex \eng{There is some person who is loved by everyone}: 
+          \\   $\exists$y (P(y) $\wedge$ $\forall$x (P(x) $\into$ L(x,y))
+           \hfill $\approx$ \hfill    $\exists$y$\forall$x (L(x,y))
+    \end{xlist}
+    \ex \eng{Everyone didn't enjoy the exam}
+    \begin{xlist}
+          \ex \eng{All the people hated ``didn't enjoy'' the exam}:  
+           \\ $\forall$x (P(x)  $\into$  $\neg$E(x,e))
+           \hfill $\approx$ \hfill  $\forall$x$\neg$ E(x,e)
+          \ex \eng{Not all people enjoyed the exam}:  
+          \\ $\neg\forall$x (P(x)  $\into$  E(x,e))
+          \hfill $\approx$ \hfill  $\neg\forall$x E(x,e)
+    \end{xlist}
+  \end{exe}
+\item But the big advantage is in reasoning with the real world
+   \\ \txx{denotational semantic analysis}
+\end{itemize}
+
+\section{2: The Semantics of \\ the Logical Metalanguage\\
+(the model of the situations)}
+
+\myslide{Creating a \txx{Model}}
+
+\begin{enumerate}
+\item a \txx{semantic interpretation} of the symbols of the predicate logic
+\item a \txx{domain}: the model of a situation which identifies the
+  linguistically relevant entities, properties and relations
+\item a \txx{denotation assignment function}: this is a procedure
+  which matches the linguistic elements with the items in the model
+  that they denote (a \txx{naming function})
+\end{enumerate}
+
+\myslide{Semantic Interpretation of Symbols}
+
+\begin{itemize}
+\item Is the denotation correct (does it match the real world)?
+  \begin{itemize}
+  \item \textbf{Sentence} 
+    $p$ is true in situation $v$ if it corresponds with the real world: 
+    \\ {\den[v]{p} = T}: the denotatum of $p$ in $v$ is \textbf{true}
+    \\ {\den[v]{p} = F}: the sentence $p$ is \textbf{false} in situation $v$
+  \item \textbf{Constant} denotation of a constant is the individual entity in question
+  \item \textbf{Predicate constants} are sets of individuals for which the predicate holds
+\\ {\{$<x, y, z>$: $x$ hands $y$ to $z$\}}
+\\ the set of all individuals x, y, z such that x hands y to z
+  \end{itemize}
+
+\end{itemize}
+
+
+
+
+\myslide{The Domain}
+
+\begin{itemize}
+\item The domain represents the individuals and representations in a situation $v$
+\item Consider Joy Division in Manchester, April 1980
+  \begin{itemize}
+  \item Band Members: Ian Curtis, Bernard Sumner, Peter Hook and Stephen Morris 
+  \item Manager: Tony Wilson
+  \item Producer: Martin Hannet
+  \end{itemize}
+\item U = \{Ian, Bernard, Peter, Stephen, Tony, Martin\}
+\item Combine this with an assignment function $F$ to form a model
+\\ $M_1 = <U_1, F_1>$ (or set of models: $M_2 = <U_1, F_2>$, \ldots)
+\end{itemize}
+
+\myslide{The Denotation Assignment Function}
+\MyLogo{This describes completely a very small world}
+\begin{itemize}
+\item Match individual constants and predicate constants with the domain
+\\ F($x$) returns the \txx{extension} of $x$
+    \\ F(i) = Ian; F(b) = Bernard; F(p) = Peter; F(s) = Stephen; 
+     \\ ~~~ F(t) = Tony;  F(m) = Martin
+ \\ \begin{tabular}{lllll}
+      F(J) & = & in Joy Division & = & \{Ian, Bernard, Peter, Stephen\} \\
+      F(S) & = & sings & = & \{Ian, Peter\} \\      
+      F(G) & = & plays guitar & = & \{Bernard, Ian\} \\
+      F(B) & = & plays bass & = & \{Peter\} \\
+      F(D) & = & plays drums & = & \{Stephen\} \\
+      F(M) & = & is a manager & = & \{Tony\} \\
+      F(P) & = & is a producer & = & \{Martin\} \\
+      F(F) & = & fires at & = & \{$<$Martin, Tony$>$\} \\
+      F(O) & = & (over) produces & = & \{$<$Martin, Ian$>$, $<$Martin, Bernard$>$, \\
+      &&&&  $<$Martin, Peter$>$, $<$Martin, Stephan$>$\} \\
+    \end{tabular}
+\end{itemize}
+
+
+\myslide{Extension}
+\MyLogo{Adapted from Wikipedia}
+\begin{itemize}
+\item The \txx{extension} of a concept or expression is the set of things it denotes.
+  \begin{itemize}
+  \item The extension of the word \lex{cat} (written \den{cat}) is the
+    set of all (past, present and future) cats in the world: the set
+    includes Tom, Grumpy Cat, Tama,  and so on.
+  \item \den{Wikipedia reader} is every person who has ever read Wikipedia.
+  \item The extension of a predicate is all the things for which that predicate holds:
+    \den{sing} is everyone who has ever or will ever sing.
+  \item The extension of a whole statement, as opposed to a word or
+    phrase, is defined as its truth value. So the extension of
+    \eng{Wikipedia is useful} is the logical value 'true'.
+    \\ \den{Wikipedia is useful} = T
+  \end{itemize}
+\end{itemize}
+
+
+
+\section{3: Checking \\ the Truth-Value of Sentences}
+
+\myslide{Evaluating a simple statement}
+\begin{itemize}
+\item How can we check if \eng{Ian sings},   S(i), is true?
+  \begin{itemize}
+  \item \den[M_1]{S(i)} = T iff \den[M_1]{i} $\in$ \den[M_1]{S} \\ The
+    sentence is true if and only if the extension of \eng{Ian} is part of
+    the set defined by \eng{sings} in the model $M_1$
+  \item $F_1$(i) = Ian
+  \item $F_1$(S) =   \{Ian, Peter\}
+  \item Ian $\in$  \{Ian, Peter\}
+  \item[$\Rightarrow$] \den[M_1]{S(i)} = T
+  \end{itemize}
+\item What about  \eng{Martin sings}: S(m)
+  \begin{itemize}
+%  \item S(m)
+  \item $F_1$(m) = Martin
+  \item $F_1$(S) =   \{Ian, Peter\}
+  \item Martin $\not\in$  \{Ian, Peter\}
+  \item[$\Rightarrow$] \den[M_1]{S(m)} = F
+  \end{itemize}
+\end{itemize}
+
+\myslide{Evaluating a complex statement}
+ \begin{itemize}
+\item Is \eng{Ian or Peter plays bass} true?
+  \begin{itemize}
+  \item B(i) $\vee$ B(p)
+  \item $F_1$(i) = Ian
+  \item $F_1$(p) = Peter
+  \item $F_1$(B) =   \{Peter\}
+  \item Ian $\in$  \{Peter\} = F
+  \item Peter $\in$  \{Peter\} = T
+  \item F $\vee$ T = T
+  \item[$\Rightarrow$] \den[M_1]{B(i) $\vee$ B(p)} = T \hfill Yes
+  \end{itemize}
+  The sentence \eng{Ian or Peter plays bass} is true if and only if
+  either the extension of \eng{plays Bass} contains \eng{Peter} or the extension
+  of \eng{plays Bass} contains \eng{Ian}
+\end{itemize}
+
+\myslide{Quantifiers}
+
+\begin{itemize}
+\item \eng{Did Martin produce everyone in Joy Division?}
+  \begin{itemize}
+  \item $\forall$x (J(x) $\into$ O(m,x))
+    \begin{itemize}
+    \item i $\into$ O(m,i) = ?
+    \item b $\into$ O(m,b) = ?
+    \item p $\into$ O(m,p) = ?
+    \item s $\into$ O(m,s) = ?
+    \end{itemize}
+  \item T,T,T,T  = ?
+  \item[$\Rightarrow$] \den{ $\forall$x(J(x) $\into$ O(m,x))} = T  \hfill Yes
+  \end{itemize}
+\end{itemize}
+
+\myslide{What are the advantages?}
+
+
+\begin{itemize}
+\item If we can make a translation and define our model
+  \begin{itemize}
+  \item we can evaluate truth explicitly
+  \item we can relate utterances to situations
+  \item we can deal with quantification and compositionality
+  \item we can automate the reasoning
+  \end{itemize}
+\item More in week 10
+\end{itemize}
+
+
+
+\section{Presupposition}
+
+\myslide{Presuppositions}
+
+\begin{itemize}
+\item Many statements assume the truth of something else
+  \begin{exe}
+    \ex   \begin{xlist}
+    \ex \eng{Mary's sister bakes the best pies.} %(presupposing sentence p)
+    \ex \eng{Mary has a sister.} %(presupposition q)
+    \end{xlist}
+  \end{exe}
+\item Negating the presupposing sentence $a$ doesn't affect the presupposition $b$
+\item Names presuppose that their referents exist
+\item Triggers 
+  \begin{itemize}
+  \item Clefts (\eng{it was X that Y}); Time adverbial; Comparative
+  \item Factive verbs: \eng{realize}; 
+    some judgement verbs: \eng{blame}; 
+    some change of state: \eng{stop}
+    \end{itemize}
+\end{itemize}
+
+
+
+% \myslide{Presuppositions}
+%   To presuppose something means to assume it
+
+% He’s stopped handing in his homework on time.
+% b)  He used to hand in his homework on time.
+% a) 
+
+% Semantics or pragmatics?
+% Truth relations
+% 2)  Communications act
+% 1) 
+
+\myslide{Semantic approach}
+
+\begin{itemize}
+\item
+  \begin{tabular}[t]{cll}
+    $p$ & \eng{Mary's sister bakes the best pies}  & presupposing sentence\\
+    $q$ & \eng{Mary has a sister}  & presupposition
+  \end{tabular}
+\begin{center}
+    \begin{tabular}{|c|c|c|}
+    \cline{1-3}
+    $p$ &  & $q$   \\
+    \cline{1-3}
+    T & $\rightarrow$  & T  \\ 
+    F & $\rightarrow$  & T \\ 
+    F, T & $\leftarrow$  & T  \\ 
+%    T & $\leftarrow$  & T  \\ 
+    \cline{1-3}
+  \end{tabular}
+\end{center}
+\item Also true of:
+  \begin{tabular}[t]{cll}
+   $\neg p$ & \eng{Mary's sister doesn't bakes the best pies}
+ \end{tabular}
+
+\item Is that different from this? \\[2ex]
+  \begin{tabular}{ll}
+$a$ & \eng{I gave my dog a bath today.} \\
+$b$ & \eng{I gave an animal a bath today.}
+  \end{tabular}
+\end{itemize}
+
+\myslide{Presupposition versus entailment}
+\begin{itemize}
+\item  Negating the presupposing sentence does not affect the
+presupposition whereas negating an entailing sentence
+destroys the entailment.
+\item  Can you think of other examples that show this difference?
+\end{itemize}
+
+\myslide{Interactional approach}
+\begin{itemize}
+\item  Presupposition is one aspect of a speaker’s strategy of
+organizing information for maximum clarity for the listener.
+\begin{exe}
+  \ex  \eng{Mary’s sister bakes the best pies.} 
+  \textnormal{
+  \begin{xlist}
+    \ex  Assertion 1: \eng{Mary has a sister X.}
+    \ex  Assertion 2: \eng{X bakes the best pies.}
+  \end{xlist}}
+\end{exe}
+\item  Assertion 1 is in the \txx{background} (old information)
+\item  Assertion 2 is in the \txx{foreground} (new information)
+\end{itemize}
+   
+\myslide{Presupposition failure}
+\begin{itemize}
+\item 
+  \begin{exe}
+  \ex  \eng{The King of France is bald.}
+  \ex  \eng{There is a King of France.} \hfill presupposition
+\end{exe}
+\item  The problem with names and definite description is that they
+presuppose the existence of the named or described entities.
+\item  Solution: A speaker’s use of a name or
+definite description to refer usually carries a guarantee that the
+listener can identify the referent.
+\end{itemize}
+
+\myslide{Presupposition triggers}
+\begin{itemize}
+\item  \txx{Cleft construction}
+\begin{exe}
+\ex  \eng{It was his nonsense that irritated me.}
+\ex  \eng{What irritated me was his nonsense.} (pseudo)
+\ex  \eng{Something irritated me.} \hfill presupposition
+\end{exe}
+\item  \txx{Time adverbial}
+\begin{exe}
+\ex  \eng{I was working five jobs before you went to school}
+\ex  \eng{You went to school.} \hfill presupposition
+\end{exe}
+\item  \txx{Comparative}
+\begin{exe}
+\ex  \eng{You are even more silly than he is.}
+\ex  \eng{He is silly.} \hfill presupposition
+\end{exe}
+\end{itemize}
+
+\myslide{Presupposition triggers: Lexical triggers}
+\begin{itemize}
+\item  \txx{Factive verbs} presuppose the truth of their complement clauses.
+  \begin{exe}
+    \ex \begin{xlist}
+      \ex  \eng{The students realized that Alex was hungry.}
+      \ex  \eng{The students thought that Alex was hungry.} \hfill no presupposition
+    \end{xlist}
+    \ex \begin{xlist}
+      \ex  \eng{Alex regretted not eating lunch.}
+      \ex  \eng{Alex considered not eating lunch.} \hfill no presupposition
+    \end{xlist}
+  \end{exe}
+\item  \txx{Verbs of judgement}
+  \begin{exe}
+    \ex \eng{Kim blamed me for making a mistake}
+  \end{exe}
+\item \txx{Change of state} (sometimes)
+    \begin{exe}
+      \ex \eng{Alex stopped talking to their imaginary friend.}
+    \end{exe}
+\end{itemize}
+
+\myslide{Presupposition and context}
+\begin{itemize}
+\item  Presuppositions are context dependent. 
+\begin{exe}
+    \ex \begin{xlist}
+      \ex \eng{John ate before going to the movies.}
+      \ex  \eng{John went to the movies.} \hfill presupposition
+    \end{xlist}
+ \ex \begin{xlist}
+   \ex \eng{John died before going to the movies}
+   \ex  \eng{John went to the movies.} \hfill presupposition
+ \end{xlist}
+\end{exe}
+\item Presuppositions are \txx{defeasible}: they can be canceled
+  given the right context.
+% due to the context of knowledge
+% is known as defeasibility.
+
+\end{itemize}
+
+\myslide{Can we really talk about semantics without context?}
+\MyLogo{\eng{ceteris paribus} = ``all other things being equal or held constant''}
+\begin{itemize}
+\item  Some people argue that presupposition is a pragmatic
+phenomenon. It is supposedly part of the set of assumptions
+made by participants in a conversation: \txx{common ground}.
+\item  What happens if I said \eng{Their child is a teacher.}, and you don’t
+already know that they have children?
+\item  Lewis (1979) proposes a principle of \txx{accommodation} where 
+  \begin{quote}
+    if at time $t$ something is said that requires preposition $p$ to
+    be acceptable, and if $p$ is not presupposed just before $t$ then
+    --- \eng{ceteris paribus} --- presupposition $p$ comes into existence.
+\end{quote}
+\item Presuppositions are introduced as new information
+\end{itemize}
+
+\myslide{Summary}
+\MyLogo{}
+\begin{itemize}\addtolength{\itemsep}{-1ex}
+% \item Revision: Word Meaning
+%   \begin{itemize}
+%   \item Defining \lex{word}
+%   \item Lexical  and Derivational Relations
+%   \item Lexical Universals
+%  \end{itemize}
+\item Logic and Truth
+\item Necessary Truth, A Priori Truth and Analyticity
+\item Logical Metalanguage (10.2--3)
+\item Semantics and Models (10.4--5)
+\item Entailment
+\item Presupposition
+\item Next week: \emp{Chapter 5: Situations}
+
+% \item Definitions from WordNet: \url{http://wordnet.princeton.edu/}
+% \item Images from
+%   \begin{itemize}
+%   \item the Open Clip Art Library: \url{http://openclipart.org/}
+%   \item Steven Bird, Ewan Klein, and Edward Loper (2009) 
+%      \textit{Natural Language Processing with Python}, O'Reilly Media
+%     \\ \url{www.nltk.org/book}
+% \end{itemize}
+% \item Problems  partially based on exercises from Saeed (2003)
+\end{itemize}
+
+%\myslide{Bibliography}
+% Reading: Jurafsky and Martin (2008) Chapter 20
+\small
+\bibliographystyle{aclnat}
+\bibliography{abb,mtg,nlp,ling}
+
+\clearpage
+%\end{CJK}
+\end{document}
+
+
+
+%%% Local Variables: 
+%%% coding: utf-8
+%%% mode: latex
+%%% TeX-PDF-mode: t
+%%% TeX-engine: xetex
+%%% End: 
+
