@@ -1,22 +1,14 @@
 \documentclass[headrule,footrule]{foils}
 
-%\usepackage{nttfoilhead}
-%\newcommand{\myslide}[1]{\foilhead[-25mm]{\raisebox{12mm}[0mm]{\emp{#1}}}}
-%\newcommand{\myslider}[1]{\rotatefoilhead[-25mm]{\raisebox{12mm}[0mm]{\emp{#1}}}}
-%\newcommand{\myslider}[1]{\rotatefoilhead{\raisebox{-8mm}{\emp{#1}}}}
-
-%\newcommand{\TIPA}[1]{\textipa{\mtcitestyle{#1}}}%
-\newcommand{\TIPA}[1]{\mtcitestyle{#1}}
 
 \input{headx.tex}
 
 
 
 \begin{document}
-%\begin{CJK}{UTF8}{min}
 \header{Lecture 5}{Situations}{}\maketitle
 
-%\include{schedule}
+
 
 \myslide{Overview}
 
@@ -32,10 +24,6 @@
 \item Next week: Chapter 6: Participants
 \end{itemize}
 
-%%%
-%%% this changes each year, so keep separate
-%%%
-\include{schedule}
 
 \section{Revision: Sentence Relations and Truth}
 
@@ -186,9 +174,9 @@
     $b$ &  The man  in the red shirt died.
   \end{tabular}
   \\[2ex]
-  A sentence $p$ entails a sentence $q$ when the truth of the first ($p$)
-  guarantees the truth of the second ($q$), and the falsity of the
-  second ($q$) guarantees the falsity of the first ($p$).
+  A sentence $a$ entails a sentence $b$ when the truth of the first ($a$)
+  guarantees the truth of the second ($b$), and the falsity of the
+  second ($a$) guarantees the falsity of the first ($b$).
 \item Sources of Entailment
 \begin{itemize}
 \item Hyponyms
@@ -300,6 +288,9 @@ organizing information for maximum clarity for the listener.
 
 \myslide{Tutorial Solutions}
 \MyLogo{$\forall$ and \into; $\exists$ and $\wedge$}
+ Translate the following into predicate logic, using restricted
+  quantifiers $\forall$ and $\exists$.  If a sentence is ambiguous,
+  give both readings.
  \begin{exe}
     \ex \eng{Lancelot hated all dragons} \\
     $\forall$x (D(x)  $\into$ H(l,x))
@@ -314,15 +305,15 @@ organizing information for maximum clarity for the listener.
     $\exists$x  (P(x)  $\wedge$ S(x,h))
 \newpage
     \ex \eng{Every dragon did not like spinach} \\
-    $\forall$x (D(x)  $\into$ $\neg$L(x,l))
-    \\ $\neg\forall$x (D(x)  $\into$ L(x,l))
+    $\forall$x (D(x)  $\into$ $\neg$L(x,s))
+    \\ $\neg\forall$x (D(x)  $\into$ L(x,s))
     \ex \eng{Every dragon who did not like spinach feared Lancelot} \\
     $\forall$x ((D(x)  $\wedge$ $\neg$L(x,l)) $\into$  F(x,l))
     \\ I would accept  $\forall$x ((D(x)  $\into$ $\neg$L(x,l)) $\into$  F(x,l))
 
     \ex \eng{Not every one searched for the Holy Grail} \\
     $\neg\forall$x (P(x)  $\into$ S(x,h))
-    \ex No dragon searched for Lancelot
+    \ex \eng{No dragon searched for Lancelot}
 \\
     $\neg\exists$x (D(x)  $\wedge$ S(x,l))
   \end{exe}
@@ -344,7 +335,7 @@ organizing information for maximum clarity for the listener.
 \item But the big advantage is in reasoning with the real world
    \\ \txx{denotational semantic analysis}
 \end{itemize}
-
+ 
 
 
 
@@ -360,7 +351,7 @@ in particular how we can talk about time and belief.
 
  \begin{itemize}
  \item  How are situations classified?
- \item  How does classification affect the way we can talk 
+ \item  How does this classification affect the way we can talk 
    about these situations?
  \item  How are different types of verbs lexically biased  
    towards describing situation types?
@@ -503,7 +494,7 @@ telic verbs in some languages.
 
 \myslide{Situation Types}
 
-\begin{tabular}{lcccl}
+\noindent\begin{tabular}{lcccl}
 Situations     & Stative & Durative & Telic & Examples \\ \hline
 State         & +       & +        &       & \lex{desire, know} \\
 Activity     & $-$       & +        & $-$     & \lex{run, drive a car} \\
@@ -565,6 +556,7 @@ Achievement    & $-$       & $-$        & +     & \lex{win,  start}
 \item  English has \iz{past/non-past}
 \item  Latin marks \iz{past/present/future}
 \item  Chibemba (Bantu) has \txx{metrical tense}
+  {\small
   \begin{multicols}{2}
   \begin{itemize}
   \item  Remote Past ($<$ yesterday)
@@ -576,7 +568,7 @@ Achievement    & $-$       & $-$        & +     & \lex{win,  start}
   \item Removed Future (tomorrow)
   \item Remote Future ($>$ tomorrow)
   \end{itemize}
-\end{multicols}
+\end{multicols}}
 \end{itemize}
 
 \myslide{Tense and Time}
@@ -649,7 +641,7 @@ E&R&&&S&&&& \\ \hline
   \end{itemize}
 \end{itemize}
 
-\myslide{Aspect more Generally}
+\myslide{Aspect more generally}
 
 \begin{itemize}
 \item  \txx{Perfective} focuses on the end point
@@ -792,19 +784,19 @@ occur (hypotheticals, negation, future)
 \begin{itemize}\addtolength{\itemsep}{1.5ex}
 \item  \txx{nonvisual sensory}:  speaker felt the sensation
   \begin{itemize}
-  \item  \TIPA{/p\super ha$\cdot$b\'ek\super h-\ul{ink'e}/}  ``burned, I felt it''
+  \item \ipa{/pʰa·békʰ-\ul{ink’e/}} ``burned, I felt it''
   \end{itemize}
 \item  \txx{inferential}: speaker saw circumstantial evidence 
   \begin{itemize}
-  \item  \TIPA{/p\super ha$\cdot$b\'ek\super h-\ul{ine}/}  ``must have burned''
+  \item  \ipa{/pʰa·bék-\ul{ine}/}  ``must have burned''
   \end{itemize}
 \item  \txx{hearsay (reportative)}:   speaker is reporting what was told
   \begin{itemize}
-  \item  \TIPA{/p\super ha$\cdot$b\'ek\super h-\ul{le}/} ``burned, they say''
+  \item  \ipa{/pʰa·békʰ-\ul{·le}/} ``burned, they say''
   \end{itemize}
 \item  \txx{direct knowledge}:   speaker has direct evidence, probably visual 
   \begin{itemize}
-  \item \TIPA{/p\super ha$\cdot$b\'ek\super h-\ul{a}/} ``burned, I saw it''
+  \item \ipa{/pʰa·bék-\ul{a}/} ``burned, I saw it''
   \end{itemize}
 \end{itemize}
 \end{itemize}

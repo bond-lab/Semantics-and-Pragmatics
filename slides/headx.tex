@@ -1,6 +1,8 @@
 %%
 %%%  Macros
 %%%
+%%% fonts-sil-charis for IPA in week 5
+
 \newcommand{\logo}{HG2002 (2020)}
 \usepackage[hidelinks]{hyperref}
 
@@ -138,6 +140,9 @@ additional restrictions:
 \setotherlanguages{tamil}
 \setmainfont[Ligatures=TeX]{TeX Gyre Pagella}
 \setsansfont[Ligatures=TeX]{TeX Gyre Heros}
+\newfontfamily\ipafont{Charis SIL}
+\newcommand\ipa[1]{\mtcitestyle{\ipafont #1}}
+
 
 \usepackage{xeCJK}
 \makexeCJKinactive
@@ -160,7 +165,7 @@ additional restrictions:
 \usepackage{avm}
 %\avmoptions{topleft,center}
 \newcommand{\ft}[1]{\textsc{#1}}
-\newcommand{\val}[1]{\textit{#1}}
+\renewcommand{\val}[1]{\textit{#1}}
 \newcommand{\typ}[1]{\textit{#1}}
 \avmfont{\sc}
 \avmvalfont{\sc}

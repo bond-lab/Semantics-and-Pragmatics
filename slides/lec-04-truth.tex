@@ -228,7 +228,7 @@
 \begin{center}
   \begin{tabular}{llcl}
     $a$ & All humans are mortal & $p  \rightarrow q$ & 
-    \small if someone is human then they are mortal\\
+    \small if someone is human they are mortal\\
     $b$ & Socrates is human & $p$ \\ \hline
     $c$ & Therefore, Socrates is mortal & $q$
   \end{tabular}
@@ -284,20 +284,20 @@
 \begin{itemize}
 \item \txx{Hypothetical syllogism}
 \\[2ex]
- \begin{tabular}{ll}
-    $a$ & If something is human then it is mortal \\
-    $b$ & If something is mortal then it dies \\ \hline
-    $c$ & If something is human then it dies
+ \begin{tabular}{lll}
+    $a$ & If something is human then it is mortal &  $p \rightarrow q$ \\
+    $b$ & If something is mortal then it dies & $q \rightarrow r$ \\ \hline
+    $c$ & If something is human then it dies &  $p \rightarrow r$
   \end{tabular}
 \\ $p \rightarrow q, q \rightarrow r \vdash p \rightarrow r$
 
 \item \txx{Disjunctive syllogism}
 \\ (modus tollendo ponens: affirm by denying)
 \\[2ex]
- \begin{tabular}{ll}
-    $p$ & Either a human is mortal or a human is immortal \\
-    $q$ & A human is not immortal \\ \hline
-    $r$ & A human is mortal
+ \begin{tabular}{lll}
+    $a$ & Either a human is immortal or a human is mortal & $p \oplus q$ \\
+    $b$ & A human is not immortal  & $ \neg p $ \\ \hline
+    $c$ & A human is mortal & $q$
   \end{tabular}
 \\ $p \oplus q, \neg p \vdash q$
 \end{itemize}
@@ -308,15 +308,18 @@
 \item Formal
   \begin{itemize}
   \item \txx{Affirming the consequent}: $p \rightarrow q, q \vdash p$
-    \\ \eng{professors talk too much}, \eng{you talk too much} $\vdash$ \eng{you are a professor}
+    \\ \eng{professors talk too much}, \eng{you talk too much}
+    \\ $\vdash$ \eng{you are a professor}
   \end{itemize}
 \item Informal
   \begin{itemize}
   \item \txx{Equivocation}:  The sign said "fine for parking here", and since it was fine, I parked there. 
-  \item \txx{No True Scotsman}: X doesn't do Y; $a$ is an X and does Y; $a$ is not a true X
+  \item \txx{No True Scotsman}: X doesn't do Y; $a$ is an X and does Y;
+    \\ $a$ is not a true X
   \item \txx{Slippery Slope}: We mustn't allow text abbreviations or students will not be able to write normal text.
   \item \txx{False Dilemma}: You are with us or against us
-  \item \txx{Guilt by Association}: Hitler was a vegetarian  $\vdash$ vegetarianism is bad
+  \item \txx{Guilt by Association}: Hitler was a vegetarian \\
+    $\vdash$ vegetarianism is bad
   \end{itemize}
 \end{itemize}
 
@@ -378,13 +381,13 @@ Building an \txx{inference engine} is actually very, very hard, \ldots
     $b$ &  The man  in the red shirt died.
   \end{tabular}
   \\[2ex]
-  A sentence $p$ entails a sentence $q$ when the truth of the first ($p$)
-  guarantees the truth of the second ($q$), and the falsity of the
-  second ($q$) guarantees the falsity of the first ($p$).
+  A sentence $a$ entails a sentence $b$ when the truth of the first ($a$)
+  guarantees the truth of the second ($b$), and the falsity of the
+  second ($a$) guarantees the falsity of the first ($b$).
 \begin{center}
   \begin{tabular}{|c|c|c|l}
     \cline{1-3}
-    $p$ &  & $q$   \\
+    $a$ &  & $b$   \\
     \cline{1-3}
     T & $\rightarrow$  & T  \\ 
     F & $\rightarrow$  & F,T & don't care\\ 
