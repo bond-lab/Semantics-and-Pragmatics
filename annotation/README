@@ -1,0 +1,62 @@
+(i) get students
+ save xls with name and matric as students.tsv
+ comment out non student lines 
+
+# don't commit students.csv
+
+(ii) run assign.py
+ set the start and end sid
+ you may have to adjust the number of sentences a little to make things fit.
+
+this makes the file for annotation
+
+
+
+
+
+
+
+------------------------------------------------------------------------
+Prepare DBs
+
+bond@compling:/var/www/ntumc-unipi/db$
+
+$ mkdir 2019-hg2002
+$ mkdir 2019-hg2002/pre
+
+$ mv eng.db eng[ABCDE].db 2019-hg2002/pre/.
+$ cp 2019-hg2002/pre/eng.db .
+chown bond:clg eng.db
+chmod o+w eng.db
+chmod  +x eng.db
+# or more if you need more corpora
+cp -rp eng.db engA.db; cp -rp eng.db engB.db
+
+#
+# tag and merge
+#
+# 47488 48504
+#
+chmod o-w engA.db engB.db
+mkdir 2019-hg2002/phase1
+cp  engA.db engB.db 2019-hg2002/phase1/.
+
+#cp engA to the corpus you want
+cp engA.db engC.db
+### change the from/to in tag-mfs.py (and maybe the source corpora)
+### this takes a couple of minutes (mainly reading the PWN frequencies
+is slow)
+tag-mfs.py
+### change the from/to in assign-majtag.py
+
+
+
+#RESET PASSWORD ('Watson')
+UPDATE users SET password = '$pbkdf2-sha256$20000$LQXgfK9VCsH4n3Ou9V6LEQ$kkmH.hEQTgZL42bbnJACxyLFJ4S9pMCyJE9Nyo4Qcac' WHERE username = 's40';
+UPDATE users SET PASSWORD =   '$pbkdf2-sha256$20000$LQXgfK9VCsH4n3Ou9V6LEQ$kkmH.hEQTgZL42bbnJACxyLFJ4S9pMCyJE9Nyo4Qcac'  where username glob 's[1-9][0-9]' or username glob 's[1-9]';
+
+-----
+If you can't access the dashboard, restart apache!
+ sudo service apache2 restart
+
+Something to do with nginx

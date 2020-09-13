@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>HG2002: Semantics and Pragmatics &mdash; Assignment 1</title>
+</head>
+<body>
+
+
+<h1>HG2002: Semantics and Pragmatics</h1>
+
+
+<h2>Assignment 1: Lexical Semantic Analysis with a Semantic Network</h2>
+
+<p>This is an group assignment for <a href=index.html>HG2002</a> 
+  consisting of three parts:
+<ol>
+  <li>Annotate (on your own) 
+    All open class words in a short section of text (by <b>23:59 Oct 9th</b>).
+    In this phase please do not discuss your annotations with each other.
+    <br>
+  <li>Compare your annotations with one other annotator and a machine's results 
+    and make any changes you consider necessary (you should discuss
+    with your partner). Partners are randomly assigned. 
+    <br>
+  <li>Write a group paper  of six to eight pages describing your results 
+    (by <b>23:59 Nov 5</b>)
+</ol>
+<p>It is worth 30% of your total mark.  You will be marked on the
+  accuracy of your annotation and the quality of your write-up.
+
+
+<h3>Semantic Analysis Phase 1: Annotation</h3>
+<ul>
+  <li> If you have not done so already, read the story (at least up to
+    the part you are assigned, preferably the whole story).
+    This year we will look at
+    the <a href='https://fcbond.github.io/sh-canon/houn.html'>Hound
+    of the Baskervilles</a>
+    
+  <li> Using the on-line tool provided annotate each open class word in
+    a short (roughly 20-30 sentence) text.  
+    <ul>
+    <li> For each word you should chose one of the senses
+      in <a href='https://wordnet.princeton.edu/'>wordnet</a>
+      (Fellbaum 1998) or indicate why this is not possible.
+    <li>If you think it is marked for <a href='https://bond-lab.github.io/IMI/guide/sentiment.html'>sentiment</a>, you should note its
+    polarity and strength
+    <li> There is a <a href='https://bond-lab.github.io/IMI/guide/'>quick start guide</a>.
+    <li> More detailed instructions are
+    given <a href='https://bond-lab.github.io/IMI/tagdoc.html'>on-line<a/>,
+	read them.
+    <li>The tool works best under Chrome or Firefox.  If one does not work, plese try the other.
+    <li><a href='annotation.html#phase1.html'>Your assigned sentences are here</a>
+  </ul>
+  <li> Estimated time 4-6 hours.
+  <li> The deadline for this sub task is 23:59 Oct 9th, <b>you should
+      have annotated every word by then.</b>  It is important you make
+      this deadline so that we can merge the data for you.
+</ul>
+
+<h3>Semantic Analysis Phase 2: Comparison</h3>
+<ul>
+  <li> You will be given a comparison of your tags with those of other
+  annotators and a merged corpus with the majority tags tagged.
+  <li> You should re-tag any words on which all three of you
+    disagreed, or on which you changed your mind.
+  <li>Note that the final annotator is a naive computer
+    &mdash; it just tags most frequent sense (mfs)
+    <ul>
+      <li>mfs is calculated from the semcor corpus and three Sherlock
+	Holmes Stories (DANC, SPEC and REDH) weighted 1:3 to normalize frequencies
+      <li>Unseen proper nouns are tagged as <tt>per</tt>
+      <li>Unseen closed class words are tagged as <tt>x</tt>
+      <li>Unseen monosemous words are tagged with their single sense
+      <li>Other unseen words are tagged <tt>None</tt>
+      <li>If there are two or more equally frequent senses for a lemma
+	then it is tagged <tt>None</tt>
+    </ul>
+  <li>So feel free to over-ride them!
+</ul>
+
+<h3>Phase 3: Write up</h3>
+<ul>
+  <li> In the write up you should describe the strengths and weaknesses 
+    of using a lexical resource such as wordnet to define word meaning
+    <ul>
+      <li> Are the senses in wordnet too coarse, too fine or just right?  
+	Justify your position.
+    </ul>
+  <li> You should give concrete examples from the text you analyzed.
+  Some things you could discuss include:
+    <ul>
+    <li> Were some words easier or harder to annotate than others?
+      <ul>
+	<li> e.g. verbs, multiword expressions, concrete nouns, …
+      </ul>
+    <li> In cases where you disagreed with other annotators, on
+    reflection, do you think: you were right; they were right; the
+    definition is bad; or is there some other reason?
+    </ul>
+  <li> For words with senses missing in wordnet, you should write a
+  comment with enough information to create a new entry for them
+  consisting of, at minimum, a definition, a relational link to an
+  existing synset and an example. E.g.  
+    <ul>
+      <li> Lemma: arrow
+      <li> Def: To assign a task to someone. Generally used only if the task is unpleasant or boring.
+      <li> Ex: They come and arrow me type their document
+      <li> Hyponym of: delegate (02391803-v)
+    </ul>
+  <li> You don't need an extensive literature review, but you should
+    read and cite  the references below and  if you
+    consult other lexicons (which you are encouraged to do) then you
+    should cite them.  You should also cite the wordnet you used and
+    the stroy you tagged.
+
+  <li> You should also discuss how long it took you to do the
+  annotation, and if you think there would be ways to make the task
+  quicker or easier.
+  <li>Formatted according to
+    the LMS  guidelines</a> to submitting written work for the Division of LMS
+    (but see below).
+    <ul>
+      <li>You do not have to follow the suggested structure of "Introduction, Literature Review, Methodology, Results, Discussion, Conclusion, References."  A short introduction describing the task followed by Results, Discussion, Conclusion, References is enough.
+      <li>You should mention which corpus and which section you were annotating (e.g
+	eng: sentences XXX to YYY)
+      <li>You should use single spacing, not double spacing.
+    </ul>
+  <li>If you want to make it even more beautiful, as I am sure you do,
+    take a look at my <a href =
+			 "http://www3.ntu.edu.sg/home/fcbond/data/ling-style.pdf">(Computational)
+      Linguistic Style Guidelines</a>: a guide for the flummoxed.
+  <li> Submit both <b>hardcopy</b> (stapled, single-spaced, two sided,
+    no folder, no cover page) and <b>softcopy</b> (via NTULearn).
+  <li> The deadline for the write up <b>23:59 Nov 5</b>.  
+</ul>
+
+<h4>References</h4>
+<ul>
+  <li><a name="Bond:Morgado da Costa:Lê:2015">Bond, Francis, Luís Morgado da Costa, and Tuấn Anh Lê (2015)</a>
+<a href="http://www.aclweb.org/anthology/P/P15/P15-4002.pdf">IMI — A Multilingual Semantic Annotation Environment</a>.
+  In <i>Proceedings of ACL-IJCNLP 2015 System Demonstrations</i>, Beijing. pp&nbsp;7–12
+
+  <li>Christine Fellbaum, editor. 1998. WordNet: An Electronic Lexical Database. MIT Press.
+  <li>Shari Landes, Claudia Leacock, and Christiane
+  Fellbaum. 1998. <a href='pdf/wordnet-ch8.pdf'>Building semantic
+  concordances</a>. In Fellbaum (1998), chapter 8, pages 199–216.
+  <li>H. Langone and B. R. Haskell and G. A. Miller
+2004 <a href='http://www.aclweb.org/anthology/W/W04/W04-2710.pdf'>Annotating
+      WordNet</a>. In Proceedings of the Workshop Frontiers in Corpus Annotation at HLT-NAACL 2004.
+  <li><a name="Wang:Bond:2014">Shan  Wang and Francis Bond (2014)</a>
+<a href="http://compling.hss.ntu.edu.sg/pdf/2014-lrec-xling.pdf">Building The Sense-Tagged Multilingual Parallel Corpus</a> In <i>9th Edition of the Language
+	Resources and Evaluation Conference (LREC 2014)</i>, Reykjavik.
+</ul>
+
+<hr>
+<address>
+<strong>Francis Bond </strong>
+&lt;<a href="mailto:bond@ieee.org">bond@ieee.org</a>&gt;
+<br> <a href="http://compling.hss.ntu.edu.sg/">Computational Linguistics Lab</a>
+<br> <a href="http://linguistics.hss.ntu.edu.sg/">Division of Linguistics and Multilingual Studies</a>
+<br> <a href="http://www.ntu.edu.sg/">Nanyang Technological University</a>
+<br>Level 3, Room 55, 14 Nanyang Drive, Singapore 637332
+<br>Tel:  (+65) 6592 1568; Fax: (+65) 6794 6303
+</address>
+<hr>
+
+</body>
+</html>
