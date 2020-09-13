@@ -6,11 +6,18 @@
 
 (ii) run assign.py
  set the start and end sid
+ set the urls
  you may have to adjust the number of sentences a little to make things fit.
 
 this makes the file for annotation
 
+You may need to tweak the final group a little
 
+(iii) go to where the annotation is taking place and
+ * reset the passwords
+ * create DBs:  engA engB .. engE
+ * make sure that their owners and permissions are correct (cp -p)
+ * maybe make eng.db not writable afterwards
 
 
 
