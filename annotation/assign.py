@@ -127,7 +127,7 @@ print("""
 
 """.format(nconcepts, (sid - smin) / ngroups), file=html)
 
-url='https://lr.soh.ntu.edu.sg/ntumc/cgi-bin/tag-word.cgi?gridmode=ntumcgrid&corpus=eng&lang=eng'
+url='https://lr.soh.ntu.edu.sg/ntumc/cgi-bin/tag-word.cgi?gridmode=ntumcgrid&corpus=eng'
 print("<table>",  file=html)
 print ("""<tr>   <td>{}</td> <td>{}</td> <td>{}</td> <td>{}</td><td>{}</td></tr>""".format('ID',
                                                                                            'Name', 'UID', 'Corpus',
@@ -141,7 +141,7 @@ for sid in sorted(stud.keys()):
     sgroup[gid].append(sid)
     (name, matric, uid) = stud[sid]
     print ("""<tr> <td>s{0}</td> <td>{1}</td> <td>{2}</td> <td>{6}</td>
-   <td><a href='{5}{6}&lang=eng&sid={3}'>{3} &ndash; {4}</a></td></tr>
+   <td><a href='{5}{6}&sid={3}'>{3} &ndash; {4}</a></td></tr>
     """.format(sid, name.title(), uid,
                sents[gid][0],
                sents[gid][1],
