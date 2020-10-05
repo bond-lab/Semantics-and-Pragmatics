@@ -1,6 +1,9 @@
 \documentclass[headrule,footrule]{foils}
 
 \input{headx.tex}
+\usepackage{tikzsymbols}
+\newcommand{\PF}[1]{\Smiley[#1][green]}
+\newcommand{\NF}[1]{\Annoey[#1][red]}
 
 
 \begin{document}
@@ -28,7 +31,7 @@
 %%%
 %%% this changes each year, so keep separate
 %%%
-\include{schedule}
+%\include{schedule}
 
 
 \section{Revision: \\ Context and Inference}
@@ -574,26 +577,84 @@ These things must hold for an utterance to be a \txx{request}:
   \end{exe}
 \item[$\Rightarrow$] Low Status \into High Status is generally more indirect than High \into Low 
 \end{itemize}
+%\section{Sentence Types}
+
 
 \myslide{Politeness and Face-Threatening Acts}
 \MyLogo{\citet{Brown:Levinson:1987}}
 \begin{itemize}
-\item \txx{Positive Face} desire to seem worthy and deserving of approval
-\item \txx{Negative Face} desire to be autonomous, unimpeded by others
-\item Threats to another’s face
-  \begin{itemize}
-  \item to positive: disapproval, disagreement, interruption
-  \item to negative: orders, requests, suggestions
-  \end{itemize}
-\item Face-saving acts: 
-  \begin{itemize}
-  \item don't threaten another’s face: \eng{I may be wrong but, \ldots}
-  \item allow for negative face: \eng{Could you please, \ldots}
-  \end{itemize}
-\item Is politeness trans-cultural?
+\item[\PF{2}] \txx{Positive Face} desire to seem worthy and deserving of approval
+  \\ \emp{self-worth}: I want you to like me!
+\bigskip\bigskip\bigskip
+\item[\NF{2}] \txx{Negative Face} desire to be autonomous, unimpeded by others
+  \\ \emp{freedom}: I want you not to bother me!
+\bigskip\bigskip\bigskip
+\item It is argued that we all have these two faces
+  \\ --- they are universal
+\item But they are always under threat!
+
 \end{itemize}
 
-%\section{Sentence Types}
+\myslide{Face Threatening Acts}
+
+\begin{itemize}\addtolength{\itemsep}{-1ex}
+\item[\PF{1}] Threaten Positive Face
+  \begin{itemize}
+  \item Hearer
+    \begin{itemize}
+    \item explicit expressions of disapproval 
+    \item expressions of indifference, interruption, boasting
+    \item identification of (relative low) status (\eng{boy} not \eng{doctor})
+    \end{itemize}
+  \item Speaker
+    \begin{itemize}
+    \item apologies, accepting  compliments, losing control, confession
+    \end{itemize}
+  \end{itemize}
+\item[\NF{1}] Threaten Negative Face
+  \begin{itemize}
+  \item Hearer
+    \begin{itemize}
+    \item orders, requests, suggestions, advice
+    \item compliments, expressions of envy or admiration
+    \item offers or promises (adds obligation)
+    \end{itemize}
+  \item Speaker
+    \begin{itemize}
+    \item thanks, excuses, acceptance of offers or apologies
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+\myslide{Face Saving Strategies} \MyLogo{Choice depends on social
+  distance, power asymmetry, nature of the act}
+  \begin{itemize}\addtolength{\itemsep}{-1ex}
+\item Bald (on-record)
+\item Positive Politeness: 
+  \begin{itemize}
+  \item be attentive, appeal to in-group, joke 
+  \item reciprocate: \eng{I'll help you if you help me}
+  \item compliment: \eng{You're looking good today, \ldots}
+  \end{itemize}
+\item Negative Politeness: 
+  \begin{itemize}
+  \item hedge to minimize threat: \eng{I may be wrong but, \ldots}
+  \item allow for negative face: \eng{Could you please, \ldots}
+  \item ask indirectly: \eng{Have you got the time, \ldots}
+  \end{itemize}
+\item Indirect (off-record)
+  \begin{itemize}
+  \item \eng{It's hot in here} ``please turn on the aircon''
+  \end{itemize}
+\end{itemize}
+
+\myslide{Holmes' Saves Face}
+  \begin{itemize}
+  \item[?] Which face is threatened, and how does Holmes save it?
+    \\
+  \eng{There may be some little danger, so kindly put your army revolver in your pocket.'} \hfill \sh{REDH}\task
+\end{itemize}
+
 
 
 \myslide{Acknowledgments and References}
