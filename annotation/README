@@ -20,8 +20,40 @@ You may need to tweak the final group a little
  * maybe make eng.db not writable afterwards
    $ sudo chmod a-w eng.db
 
+(iv) Prepare for phase 2
+
+48505, 49505
+C delete 48505-49483
+
+(a) make eng writable again
+    $ chmod ug+w eng.db
+    $ chmod o-w eng.db
+    make eng[A-E] not writable
+    $ chmod a-w eng[ABCD].db
+    make sure everything is owner by bond:www-data
+    make a backup (year-subject/phase2/*) then compress
+
+(b) if a DB only annotates part, set the rest to None
+UPDATE concept SET  tag=NUll WHERE sid >= ??? and sid <= ???
+
+(c) copy one of the DBs (it doesn't matter which) to a new DB
+set target DB, source DB and sids in tag-mfs.py
+get sentiment: merge.tsv
+$ tag-mfs.py
+make the new DB not-writable
+
+This takes a bit of time.
 
 
+(d) assign the majority tags to eng.db
+set DBname, usrname and sids in assign-majtag.py
+it will read all of eng[A-E] that exist
+$ assign-majtag.py
+
+(e) make sure that agreement.cgi is set up for the right number of databases.
+
+
+Ready to go!
 
 
 ------------------------------------------------------------------------

@@ -418,20 +418,24 @@
   \begin{itemize}
   \item $\forall$x(DOG(x) \into\ ANIMAL(x))
   \end{itemize}
-\item \txx{antonym}
-  \begin{itemize}
-  \item $\forall$x(DEAD(x) \into\ $\neg$ALIVE(x))
-  \item[?] $\forall$x(ALIVE(x) \into\ $\neg$DEAD(x))
-  \end{itemize}
-\item \txx{converse}
-  \begin{itemize}
-  \item $\forall$x$\forall$y(PARENT(x,y) \into\ CHILD(y,x))
-  \end{itemize}
 \item \txx{synonym}
   \begin{itemize}
   \item $\forall$x((EGGPLANT(x) \into\ BRINJAL(x)) $\wedge$ 
     (BRINJAL(x) \into EGGPLANT(x)))
   \item $\forall$x(EGGPLANT(x) $\equiv$\ BRINJAL(x))
+  \end{itemize}
+  \newpage
+  \item \txx{antonym}
+  \begin{itemize}
+  \item $\forall$x(DEAD(x) \into\ $\neg$ALIVE(x));
+  \item[+] $\forall$x(ALIVE(x) \into\ $\neg$DEAD(x))
+  \end{itemize}
+\item \txx{converse}
+  \begin{itemize}
+  \item $\forall$x$\forall$y(PARENT(x,y) \into\ CHILD(y,x));
+  \\  $\forall$x$\forall$y(PARENT(x,y) \into\ $\neg$ CHILD(x,y))
+  \item $\forall$x$\forall$y(CHILD(y,x) \into\ PARENT(x,y))
+  \\ $\forall$x$\forall$y(CHILD(y,x) \into\ $\neg$  PARENT(y,x))
   \end{itemize}
 \end{itemize}
 

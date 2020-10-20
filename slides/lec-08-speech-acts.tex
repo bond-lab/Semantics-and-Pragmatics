@@ -41,7 +41,7 @@
 
 \myslide{Context-dependence is everywhere}
 
-\begin{itemize}\addtolength{\itemsep}{-1ex}
+\begin{itemize}\addtolength{\itemsep}{-1.5ex}
 %\item It isn't only deictic expressions that require context
 \item For example, in a bookstore
   \begin{exe}
@@ -53,12 +53,13 @@
   \end{exe}
 \item \txx{metonymy}: substituting the name of an attribute or feature for the name of the thing itself
   \begin{exe}
-    \ex \eng{\ul{The ham} sandwich is at table three}
-    \ex \eng{I spent all morning with \ul{the suits}}
+    \ex \eng{\ul{The eel} is at table three} ``person who ordered $\sim$''
+    \ex \eng{I spent all morning with \ul{the suits}} ``person who wears $\sim$''
   \end{exe}
-  \item \txx{synecdoche}: substituting the name of a part for the name of a thing
+  \item \txx{synecdoche}: substituting the name of a part for the name of a thing (or vice-versa)
   \begin{exe}
-    \ex \eng{It's good to see some \ul{new faces} here}
+    \ex \eng{It's good to see some \ul{new faces} here}  ``person with $\sim$''
+    \ex \eng{\ul{Brazil} won the world cup} ``the team from $\sim$''
   \end{exe}
 \end{itemize}
 
@@ -84,97 +85,8 @@
 \end{exe}
 \end{itemize}
 
-% \myslide{Discourse Topic}
 
-% \begin{itemize}
-% \item It is much easier to understand an utterance if you know what
-%   they are talking about.
-
-% \item Giving the same text different titles changes your interpretation
-% \item Giving a discourse topic aids in understanding and retention
-% \end{itemize}
-
-% \myslide{Background Knowledge}
-
-% What knowledge do we need to interpret the following?
-
-% \begin{exe}
-%   \ex 
-%   \begin{xlist}
-%     \ex \eng{I'm hungry
-%     \ex \eng{I'll lend you some money
-%   \end{xlist}
-%   \ex 
-%   \begin{xlist}
-%     \ex \eng{Shall we get some icecream?
-%     \ex \eng{I'm on a diet
-%   \end{xlist}
-%   \ex 
-%   \begin{xlist}
-%     \ex \eng{Shall we lunch next week?
-%     \ex \eng{It's Ramadan
-%   \end{xlist}
-%  \ex 
-%   \begin{xlist}
-%     \ex \eng{Kim chased the dog with a stick
-%     \ex \eng{Kim chased the dog with a bone
-%     \ex \eng{Kim chased the dog with a broom
-%     \ex \eng{Kim chased the dog with a white tail
-%     \ex \eng{Kim chased the dog with a wound
-
-%   \end{xlist}
-
-% \end{exe}
-
-% %\myslide{Mutual Knowledge}
-
-% \myslide{Formalizing Knowledge for Computers}
-
-% \begin{itemize}
-% \item There is a lot of work on making knowledge available to
-%   computers so that they can interpret text
-%   \begin{itemize}
-%   \item Formal ontologies (knowledge-based)
-%     \begin{itemize}
-%     \item Scripts
-%     \item Wordnets
-%     \item CYC
-%     \end{itemize}
-%   \item Example-based (compare to existing examples)
-%     \\ collect many fragments of existing knowledge
-%   \end{itemize}
-% \end{itemize}
-
-
-% \myslide{Knowledge Yielding Ontologies  
-%  for Transition-based Orgs}
-% \MyLogo{I do this}
-% \begin{center}
-%   \includegraphics[width=0.8\textwidth]{pics/kyoto-project.eps}
-% \end{center}
-
-% \myslide{What can computers do?}
-% \MyLogo{}
-% \begin{itemize}
-% \item[Q] \textit{Do birds migrate through Turkey?}
-% \item[A] Yes.  \textit{The crane ($\subset$ bird) flies across Ankara ($\subset$ bird)}.
-%   \begin{quote}
-%     \large   fly$_1$ ($e_1$, crane$_5$($x_1$)),  across($e_2$,$e_1$,$x_2$), Ankara($x_2$).
-%   \end{quote}
-%   \begin{itemize}
-%   \item  \textit{through} and \textit{across} are both \textit{path} roles.
-%   \item \textit{fly} and \textit{migrate} are both \textit{motion} verbs.
-%   \item Ankara is in Turkey
-%   \end{itemize}
-% \item Why do this?
-%   \begin{itemize}
-%   \item Local environmental knowledge often not translated into many languages
-%   \item Facts may only occur in a few documents
-% \end{itemize}
-% \end{itemize}
-
-
-\myslide{Information Structure}
+\myslide{Information Structure and Anaphora}
 
 \begin{itemize}
 \item Many languages signal whether information is \txx{new} or \txx{given}
@@ -185,9 +97,19 @@
   \item Intonation (focus)
   \item Topic marking
   \end{itemize}
+
+\item There are multiple ways to refer back to something
+  earlier in the discourse
+  \begin{exe}
+    \ex \eng{I tripped over a dog. \ul{The dog} bit me.} \hfill \txx{definite}
+    \ex \eng{I tripped over a dog. \ul{The beast} bit me.} \hfill \txx{definite}
+    \ex \eng{I tripped over a dog. \ul{It} bit me.} \hfill \txx{pronominal}
+    \ex \eng{I tripped over a dog. \ul{The tail} tangled me.} \hfill \txx{bridging}
+    \ex \eng{I tripped over a dog. $\phi$ bit me.} \hfill \txx{zero}
+
+\end{exe}
+
 \end{itemize}
-
-
 
 \myslide{Cooperation in Conversation}
 \begin{itemize}
@@ -320,7 +242,7 @@
   \end{exe}
 \end{itemize}
 
-\myslide{Perfomative Utterances}
+\myslide{Performative Utterances}
 
 \begin{exe}
   \ex \eng{I promise I won't drive home}
@@ -393,7 +315,7 @@ the truth?} – wrong formula)
     \ex \eng{10 bucks says they'll be late} [I bet you] 
     \ex \eng{Come up and see me some time!} [I invite you]
   \end{exe}
-  Can be made explicit by adding an active perfomative verb
+  Can be made explicit by adding an active performative verb
 \end{itemize}
 
 \myslide{Elements of Speech Acts}
