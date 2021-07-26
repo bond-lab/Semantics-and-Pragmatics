@@ -7,23 +7,30 @@ from collections import defaultdict as dd
 ###
 
 
-db = '/home/bond/papers/HG8011/local/new/eng.db'
+db = '2021-hg8011/eng.db'
 conn = sqlite3.connect(db)
 c = conn.cursor()
 
-groupsize = 2
+groupsize = 3
 ##200 for HG8011, 300 for HG2002 
-nconcepts = 293
+nconcepts = 200 # 209
 
 
 #select min(sid), max(sid) from sent as s join doc as d on s.docid = d.docid where d.doc='houn';
 # 45681       49504    for the whole
-smin, smax= 48505,  49504
+#select min(sid), max(sid) from sent as s join doc as d on s.docid = d.docid where d.doc='fina';
+# 18525       18935  for the Final Problem
+smin, smax= 18525, 18935
+# select count(cid) from concept where sid >= 18525 and sid <= 18935;
 # we did 47488 - 48504 (2019)
 # we did 46692 - 47485
 # we did 45681-46691
 # (- 49504 46692)
 # (* 92 300) 
+# 2021 HG8011
+#  select count(cid) from concept where sid >= 18525 and sid <= 18935;
+# 6291  
+
 
 def read_students(file):
     """
@@ -81,13 +88,16 @@ for gid in range(1,ngroups+1):
 print ("Total number of sentences:", sid - smin)
 print ("Sentences/group:", (sid - smin) / ngroups)
 
+#tsv = open('who-what.tsv')
+
+
 
  # (-  49504 47487)
 
 ###
 ### print groups
 ###
-html =open('annotation.html', 'w')
+html =open('annotaten.html', 'w')
 
 print("""
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
@@ -142,6 +152,7 @@ for sid in sorted(stud.keys()):
     (name, matric, uid) = stud[sid]
     print ("""<tr> <td>s{0}</td> <td>{1}</td> <td>{2}</td> <td>{6}</td>
    <td><a href='{5}{6}&sid={3}'>{3} &ndash; {4}</a></td></tr>
+   <!-- SID: s{0}\t{1}\t{2}\t{6}\t{3}\t{4} --!>
     """.format(sid, name.title(), uid,
                sents[gid][0],
                sents[gid][1],

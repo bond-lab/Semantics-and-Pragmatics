@@ -9,14 +9,15 @@
  set the urls
  you may have to adjust the number of sentences a little to make things fit.
 
-this makes the file for annotation
+this makes the file for annotation -- copy it to git for the subject
 
-You may need to tweak the final group a little
+You may need to tweak the final group a little, move the final student into it.
 
 (iii) go to where the annotation is taking place and
  * reset the passwords
  * create DBs:  engA engB .. engE
  * make sure that their owners and permissions are correct (cp -p)
+ chown bond:www-data eng[A-D].db
  * maybe make eng.db not writable afterwards
    $ sudo chmod a-w eng.db
 
@@ -34,7 +35,9 @@ C delete 48505-49483
     make a backup (year-subject/phase2/*) then compress
 
 (b) if a DB only annotates part, set the rest to None
-UPDATE concept SET  tag=NUll WHERE sid >= ??? and sid <= ???
+i.e. the corpus that only had one annotator.
+UPDATE concept SET  tag=NUll WHERE sid > ??? OR sid < ???.
+
 
 (c) copy one of the DBs (it doesn't matter which) to a new DB
 set target DB, source DB and sids in tag-mfs.py
