@@ -257,17 +257,17 @@ for ``you''.
 \newpage
 \begin{itemize}
 \item  Why do we need a definition for \lex{word}?
-  \begin{itemize}
-  \item Psychological reality:  People can divide language into words
-  \item Phonological contours:  People pronounce words as unit
-  \item Orthographic practice: Many languages put spaces between words
+  \begin{description}
+  \item [Psychological reality]  People can divide language into words
+  \item [Phonological contours]  People pronounce words as unit
+  \item [Orthographic practice] Many languages put spaces between words
 (although this practice only began around 600 CE for Latin, and did
-not spread to all European languages 'til as late as the 1600s)
+not spread to all European languages until as late as the 1600s)
  \begin{itemize}
  \item Some put them between phrases (Korean)
  \item Some words include spaces \eng{New York}, \eng{ad hoc}
   \end{itemize}
-\end{itemize}
+\end{description}
 \end{itemize}
 
 \myslide{Bloomfield’s grammatical definition}
@@ -482,13 +482,13 @@ In practice, the definition is somewhat task specific: it may make more sense to
     \newpage
 \item Permissible differentiation via \textbf{clarification}:
   \begin{quote}
-    \eng{Here is a \underline{grain}, or \underline{granule}, of the substance.}\\
-    \eng{* The cover is \underline{green}, \{or,that is to say\} \underline{purple}.}
+    \eng{Here is a \ul{grain}, or \ul{granule}, of the substance.}\\
+    \eng{* The cover is \ul{green}, \{or,that is to say\} \ul{purple}.}
   \end{quote}
   and \textbf{contrast}:
   \begin{quote}
-    \eng{Here is a \underline{grain} or, more exactly, \underline{granule}}\\
-    \eng{* He likes alsations, or more exactly, \underline{spaniels}}
+    \eng{Here is a \ul{grain} or, more exactly, \ul{granule}}\\
+    \eng{* He likes \ul{alsations}, or more exactly, \ul{spaniels}}
   \end{quote}
 \end{itemize}
 
@@ -787,26 +787,61 @@ Some \con{golf} terms: approach$_9$, approach shot$_1$, golf course$_1$, links c
 
 
 \myslide{Word Meaning as a Graph}
-\MyLogo{}
-\includegraphics[height=0.75\textheight]{pics/Semantic_Net.eps}
-
-\begin{itemize}
-\item You need a very big graph to capture all meanings
-\end{itemize}
+\MyLogo{It ends up being a very big graph}
+%\includegraphics[height=0.75\textheight]{pics/Semantic_Net.eps}
+ \begin{forest}
+   [entity
+   [object [artifact [equipment [golf-club [driver,name=d1] ] ] ]
+           [agent [person [worker [driver,name=d2] ]]] ]
+           [process
+       [move [propel [swing  [drive,name=d11] ]]]
+       [manipulate [  control [operate [drive,name=d21] ] ] ] ]
+        [substance]
+       [abstract [communication [writing [code [driver ] ] ] ]]
+    ] 
+ \draw[dashed] (d1) to  [out=-45, in=-135]  node[yshift=-1ex]{instrument} (d11);
+ \draw[double] (d2) to  [out=-45, in=-135]  node[yshift=-1ex]{agent} (d21);
+ ]
+ \end{forest}
+ % [object [artifact [equipment [golf-club [driver,name=d1] ] ] ]
+      %  agent [person [worker [driver,name=d2] ]]]
+      %  [process
+      %  [move [propel [swing  [drive,name=d11] ]]]
+      %  [manipulate [  control [operate [drive,name=d21] ] ] ] ]
+       
+      %  [substance]
+      %  [abstract [communication [writing [code [driver ] ] ] ]]
+    %] 
+ % \draw[dashed] (d1) to  [out=0, in=-180] (d11);
+ % \draw[double] (d2) to [out=-75, in=110](d21);
+%\end{forest} 
 
 
 \myslide{Wordnet in this course}
 
 
 \begin{itemize}
-\item We will use wordnet to test our skills in determining word meaning
+\item We use wordnet to test our skills in determining word meaning
   \begin{itemize}
   \item tag a short text from this year's story or stories
   \item discuss differences with other annotators
  \end{itemize}
-\item As well as a source of examples and inspiration
+%\item As well as a source of examples and inspiration
+\item   LMS students have used wordnets for:
+  \begin{itemize}
+  \item  Japanese derivational
+relations \citep{Bond:Wei:2019}
+\item  pronoun representation for Japanese, Mandarin and English
+  \citep{Seah:Bond:2014}
+\item exclamatives and classifiers
+\citep{Mok:Gao:Bond:2012,daCosta:Bond:2016}
+\item  sentiment analysis
+  \citep{Le:Moeljadi:Miura:Ohkuma:2016,Bond:Janz:Piasecki:2019}
+\item cross-lingual sense annotation \citep{Bonansinga:Bond:2016}
+\item multilingual crosswords \citep{Tan:2012}
+\item [\ldots]
 \end{itemize}
-
+\end{itemize}
 
 
 
@@ -949,7 +984,7 @@ the dictionary? Why or why not?
     \begin{itemize}
     \item   \tam{அவன்} \eng[he]{avaṉ}
     \item   \tam{அவள்} \eng[she]{avaḷ}
-    \item   \tam{அவர்} eng[they]{Avar} (Formal/Gender-neutral)
+    \item   \tam{அவர்} \eng[they]{Avar} (Formal/Gender-neutral)
  
     \end{itemize}
   \end{itemize}
@@ -992,8 +1027,12 @@ by Paul Kay and Luisa Maffi}
   \item lexicostatistics (quantitative language relatedness assessment)
   \item glottochronology (language divergence dating)
 \end{itemize}
-\item The \txx{Swadesh list}, developed by Morris Swadesh from 1940 onward 
+\item The \txx{Swadesh list}, developed by Morris Swadesh from 1940
+  onward 
+\item Chosen for their universal, culturally independent availability in as many languages as possible
 \end{itemize}
+
+\newpage
 \vspace*{-2ex}
 I, You, we, this, that, who, what, not, all, many, one, two, big,
 long, small, woman, man, person, fish, bird, dog, louse, tree, seed,
@@ -1006,7 +1045,9 @@ smoke, fire, ash(es), burn, path, mountain, red, green, yellow, white,
 black, night, hot, cold, full, new, good, round, dry, name
 \vspace*{-1ex}
 \begin{itemize}
-\item Available in many languages (hundreds); Now linked to wordnet 
+\item Available in many languages (hundreds); 
+\item Now linked to wordnet \citep{daCosta:Bond:Kratochvil:2016}
+  
 \end{itemize}
 \vspace*{-1ex}
 
