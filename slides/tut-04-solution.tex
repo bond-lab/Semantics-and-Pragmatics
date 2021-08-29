@@ -1,0 +1,177 @@
+\documentclass[a4paper]{article}
+
+\title{\vspace*{-30mm}HG2002: Tutorial Solutions \\  Sentence Relations and Truth}
+\author{Francis Bond \url{<bond@ieee.org>}}
+\date{}%2011-08-15}
+
+\newcommand{\ans}[1]{\hfill{#1}}
+%\newcommand{\ans}[1]{}
+
+\usepackage{multicol}
+%\Restriction{}
+%\rightfooter{}
+%\leftheader{}
+%\rightheader{}
+\usepackage{mygb4e}
+\newcommand{\lex}[1]{\textbf{\textit{#1}}}
+\newcommand{\lx}[1]{\textbf{\textit{#1}}}
+\newcommand{\ix}{\ex\it}
+\newcommand{\con}[1]{\textsc{#1}}
+\usepackage{url}
+\usepackage[normalem]{ulem}
+\newcommand{\ul}[1]{\uline{#1}}
+\newcommand{\txx}[1]{\textbf{#1}}
+\newcommand{\into}{\ensuremath{\rightarrow}}
+
+\begin{document}
+\maketitle
+
+
+\begin{enumerate}
+\item Take three sentences, $p$, $q$, and $r$ as follows. 
+
+  \begin{quotation}
+    \noindent $p$: The sun is shining. \\
+    $q$: The day is warm. \\
+    $r$: The sun is shining and the day is warm. 
+  \end{quotation}
+
+  Let’s make the working assumption that we can represent sentence $r$
+  by the logical formula $p \wedge q$. Use the truth table for $\wedge$ ``logical and'' to
+  show the truth-value of $r$ in the situations below:
+  \begin{quotation}
+    \noindent S1. $p$ is true; $q$ is false.\\
+    S2. $p$ is true; $q$ is true.\\
+    S3. $p$ is false; $q$ is true. \\
+    S4. $p$ is false; $q$ is false.
+  \end{quotation}
+  \textbf{Answer}
+  \begin{center}
+  \begin{tabular}{|c|c|c|}
+    \hline
+    $p$ & $q$ & $p \wedge q$ (and)\\
+    \hline
+    \hline
+    T & T & T  \\ 
+    T & F & F  \\  
+    F & T & F \\ 
+    F & F & F \\ \hline
+%    \hline
+  \end{tabular}
+\end{center}
+
+\item  In propositional logic, some may want to assume that $p \wedge q$ and 
+$q \wedge p$ are logically
+equivalent i.e. that the order of the elements is irrelevant. Discuss how the following
+examples show that this is not true for the way that speakers use English and. 
+\begin{exe}
+  \ix He woke up and saw on TV that he had won the lottery.
+  \\ \textnormal{You cannot see TV if you are asleep}
+  \ix Combine the egg yolks with water in a bowl and whisk the mixture until 
+  foamy.
+  \\ \textnormal{The mixture does not exist until you have combined}
+  \ix  They made two false starts and were disqualified from the race.
+  \\ \textnormal{They are disqualified because they made the false starts}
+  \ix Move and I'll shoot!
+  \\ \textnormal{I won't know to shoot unless you move}
+\end{exe}
+
+\item Prove the Contrapositive ($p \rightarrow q \equiv \neg q \rightarrow \neg p$) using truth tables:
+  \\\textbf{Answer}
+  \begin{center}
+  \begin{tabular}{|c|c|c||c|c|c|c|}
+    \hline
+    $p$ & $q$ & $p  \rightarrow q$ &
+                                     $\neg q$ & $\neg p$ & $\neg q \rightarrow \neg p $
+    & $p \rightarrow q \equiv \neg q \rightarrow \neg p$ \\
+    \hline
+    \hline
+    T & T & T& F& F& T & T\\ 
+    T & F & F& T& F& F & T \\  
+    F & T & T& F& T& T & T \\ 
+    F & F & T& T& T& T & T \\ \hline
+%    \hline
+  \end{tabular}
+\end{center}
+E.g. \textit{If it's a book, it is blue; if it's not blue, it's not a book.}
+  
+\item  Decide if the following pairs of sentences are pairs of entailment or 
+presupposition. How did you make your decisions? 
+\\ \textbf{try negating the (a) sentences, \ldots}
+\begin{exe}
+  \ex 
+  \begin{xlist}
+ \ix Sandy knows that Joe crashed the car. 
+ \ix Joe crashed the car. (\textbf{P})
+\end{xlist}
+\ex 
+  \begin{xlist}
+    \ix Australia is bigger than Singapore. 
+    \ix Singapore is smaller than Australia.  (\textbf{E})
+  \end{xlist}
+\ex 
+  \begin{xlist}
+\ix The minister blames her secretary for leaking the memo to the press. 
+\ix The memo was leaked to the press.  (\textbf{P})
+\end{xlist}
+\ex 
+  \begin{xlist}
+\ix Everyone passed the examination. 
+\ix No one failed the examination.  (\textbf{E})
+\end{xlist}
+\ex 
+\begin{xlist}
+  \ix Fran has resumed their habit of editing Wikipedia. 
+  \ix Fran had a habit of editing Wikipedia.  (\textbf{P})
+\end{xlist}
+\end{exe}
+
+%\newpage
+\item Decide which of the following sentences are analytically
+  true. Discuss the reasons for your decision.
+\begin{exe}
+  \ix If it rains, we'll get wet. 
+  \ix The train will either arrive or it won't arrive.
+  \\ \textnormal{\textbf{Analytical}: P or not P ($p \vee \neg p$)}
+  \ix Every doctor is a doctor.
+  \\ \textnormal{\textbf{Analytical}: Tautology ( $\forall x (D(x) \into D(x))$)}
+  \ix If Bobby killed a deer, Bobby killed an animal.
+  \\ \textnormal{\textbf{Analytical}: Hyponymy}
+  \ix Madrid is the capital of Spain. 
+  \ix Every city has pollution problems. 
+\end{exe}
+
+\newpage
+\item  Translate the following into predicate logic, using restricted
+  quantifiers $\forall$ and $\exists$.  If a sentence is ambiguous,
+  give both readings.
+ \begin{exe}
+    \ex \textit{Lancelot hated all dragons} \\
+    $\forall$x (D(x)  $\into$ H(l,x))
+    \ex \textit{Every dragon feared Lancelot} \\
+    $\forall$x (D(x)  $\into$ F(x,l))
+    \ex \textit{One dragon feared every knight.} \\
+    $\exists$x  (D(x)  $\wedge$ $\forall$y(K(y)  $\into$ F(x,y)))
+    \\ or  $\exists$x$\forall$y (D(x)  $\wedge$ (K(y)  $\into$ F(x,y)))
+ \\   $\forall$y(K(y)   $\into$ $\exists$x  (D(x)  $\wedge$  F(y,x)))
+ \\ or $\forall$y$\exists$x(K(y)   $\into$   (D(x)  $\wedge$  F(y,x)))
+    \ex \textit{Somebody searched for the Holy Grail} \\
+    $\exists$x  (P(x)  $\wedge$ S(x,h))
+    \ex \textit{Every dragon did not like spinach} \\
+    $\forall$x (D(x)  $\into$ $\neg$L(x,s))
+    \\ $\neg\forall$x (D(x)  $\into$ L(x,s))
+    \ex \textit{Every dragon who did not like spinach feared Lancelot} \\
+    $\forall$x ((D(x)  $\wedge$ $\neg$L(x,l)) $\into$  F(x,l))
+    \\ I would accept  $\forall$x ((D(x)  $\into$ $\neg$L(x,l)) $\into$  F(x,l))
+
+    \ex \textit{Not every one searched for the Holy Grail} \\
+    $\neg\forall$x (P(x)  $\into$ S(x,h))
+    \ex \textit{No dragon searched for Lancelot}
+\\
+    $\neg\exists$x (D(x)  $\wedge$ S(x,l))
+  \end{exe}
+\end{enumerate}
+
+
+
+\end{document}
