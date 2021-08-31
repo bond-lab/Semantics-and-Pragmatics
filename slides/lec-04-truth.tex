@@ -32,9 +32,9 @@
  \end{itemize}
 \item Logic and Truth
 \item Necessary Truth, A Priori Truth and Analyticity
+\item Entailment
 \item Logical Metalanguage (10.2--3)
 \item Semantics and Models (10.4--5)
-\item Entailment
 \item Presupposition
 \item Next week: Chapter 5: Situations
 \end{itemize}
@@ -657,6 +657,28 @@ Building an \txx{inference engine} is actually very, very hard, \ldots
 \\ $M_1 = <U_1, F_1>$ (or set of models: $M_2 = <U_1, F_2>$, \ldots)
 \end{itemize}
 
+\myslide{Extension}
+\MyLogo{Adapted from Wikipedia}
+\begin{itemize}
+\item The \txx{extension} of a concept or expression is the set of things it denotes.
+  \begin{itemize}
+  \item The extension of the word \lex{cat} (written \den{cat}) is the
+    set of all (past, present and future) cats in the world: the set
+    includes Tom, Grumpy Cat, Tama,  and so on.
+  \item \den{Wikipedia reader} is every person who has ever read Wikipedia.
+  \item The extension of a predicate is all the things for which that predicate holds:
+    \den{sing} is everyone who has ever or will ever sing.
+  \item The extension of a whole statement, as opposed to a word or
+    phrase, is defined as its truth value. So the extension of
+    \eng{Wikipedia is useful} is the logical value 'true'.
+    \\ \den{Wikipedia is useful} = T
+  \end{itemize}
+\end{itemize}
+
+
+
+
+
 \myslide{The Denotation Assignment Function}
 \MyLogo{This describes completely a very small world}
 \begin{itemize}
@@ -678,24 +700,6 @@ Building an \txx{inference engine} is actually very, very hard, \ldots
     \end{tabular}
 \end{itemize}
 
-
-\myslide{Extension}
-\MyLogo{Adapted from Wikipedia}
-\begin{itemize}
-\item The \txx{extension} of a concept or expression is the set of things it denotes.
-  \begin{itemize}
-  \item The extension of the word \lex{cat} (written \den{cat}) is the
-    set of all (past, present and future) cats in the world: the set
-    includes Tom, Grumpy Cat, Tama,  and so on.
-  \item \den{Wikipedia reader} is every person who has ever read Wikipedia.
-  \item The extension of a predicate is all the things for which that predicate holds:
-    \den{sing} is everyone who has ever or will ever sing.
-  \item The extension of a whole statement, as opposed to a word or
-    phrase, is defined as its truth value. So the extension of
-    \eng{Wikipedia is useful} is the logical value 'true'.
-    \\ \den{Wikipedia is useful} = T
-  \end{itemize}
-\end{itemize}
 
 
 
@@ -797,6 +801,48 @@ Building an \txx{inference engine} is actually very, very hard, \ldots
     \end{itemize}
 \end{itemize}
 
+\myslide{Presupposition triggers}
+\begin{itemize}
+\item  \txx{Cleft construction}
+\begin{exe}
+\ex  \eng{It was his nonsense that irritated me.}
+\ex  \eng{What irritated me was his nonsense.} (pseudo)
+\ex  \eng{Something irritated me.} \hfill presupposition
+\end{exe}
+\item  \txx{Time adverbial}
+\begin{exe}
+\ex  \eng{I was working five jobs before you went to school}
+\ex  \eng{You went to school.} \hfill presupposition
+\end{exe}
+\item  \txx{Comparative}
+\begin{exe}
+\ex  \eng{You are even more silly than he is.}
+\ex  \eng{He is silly.} \hfill presupposition
+\end{exe}
+\end{itemize}
+
+\myslide{Presupposition triggers: Lexical triggers}
+\begin{itemize}
+\item  \txx{Factive verbs} presuppose the truth of their complement clauses.
+  \begin{exe}
+    \ex \begin{xlist}
+      \ex  \eng{The students realized that Alex was hungry.}
+      \ex  \eng{The students thought that Alex was hungry.} \hfill no presupposition
+    \end{xlist}
+    \ex \begin{xlist}
+      \ex  \eng{Alex regretted not eating lunch.}
+      \ex  \eng{Alex considered not eating lunch.} \hfill no presupposition
+    \end{xlist}
+  \end{exe}
+\item  \txx{Verbs of judgement}
+  \begin{exe}
+    \ex \eng{Kim blamed me for making a mistake}
+  \end{exe}
+\item \txx{Change of state} (sometimes)
+    \begin{exe}
+      \ex \eng{Alex stopped talking to their imaginary friend.}
+    \end{exe}
+\end{itemize}
 
 
 % \myslide{Presuppositions}
@@ -881,48 +927,6 @@ definite description to refer usually carries a guarantee that the
 listener can identify the referent.
 \end{itemize}
 
-\myslide{Presupposition triggers}
-\begin{itemize}
-\item  \txx{Cleft construction}
-\begin{exe}
-\ex  \eng{It was his nonsense that irritated me.}
-\ex  \eng{What irritated me was his nonsense.} (pseudo)
-\ex  \eng{Something irritated me.} \hfill presupposition
-\end{exe}
-\item  \txx{Time adverbial}
-\begin{exe}
-\ex  \eng{I was working five jobs before you went to school}
-\ex  \eng{You went to school.} \hfill presupposition
-\end{exe}
-\item  \txx{Comparative}
-\begin{exe}
-\ex  \eng{You are even more silly than he is.}
-\ex  \eng{He is silly.} \hfill presupposition
-\end{exe}
-\end{itemize}
-
-\myslide{Presupposition triggers: Lexical triggers}
-\begin{itemize}
-\item  \txx{Factive verbs} presuppose the truth of their complement clauses.
-  \begin{exe}
-    \ex \begin{xlist}
-      \ex  \eng{The students realized that Alex was hungry.}
-      \ex  \eng{The students thought that Alex was hungry.} \hfill no presupposition
-    \end{xlist}
-    \ex \begin{xlist}
-      \ex  \eng{Alex regretted not eating lunch.}
-      \ex  \eng{Alex considered not eating lunch.} \hfill no presupposition
-    \end{xlist}
-  \end{exe}
-\item  \txx{Verbs of judgement}
-  \begin{exe}
-    \ex \eng{Kim blamed me for making a mistake}
-  \end{exe}
-\item \txx{Change of state} (sometimes)
-    \begin{exe}
-      \ex \eng{Alex stopped talking to their imaginary friend.}
-    \end{exe}
-\end{itemize}
 
 \myslide{Presupposition and context}
 \begin{itemize}
@@ -954,7 +958,7 @@ made by participants in a conversation: \txx{common ground}.
 already know that they have children?
 \item  Lewis (1979) proposes a principle of \txx{accommodation} where 
   \begin{quote}
-    if at time $t$ something is said that requires preposition $p$ to
+    if at time $t$ something is said that requires presupposition $p$ to
     be acceptable, and if $p$ is not presupposed just before $t$ then
     --- \eng{ceteris paribus} --- presupposition $p$ comes into existence.
 \end{quote}
