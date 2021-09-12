@@ -1,0 +1,102 @@
+%%%
+%%%  trees.sty - Rob Malouf, 22-Jul-1996
+%%%
+%%%  Macros for drawing HPSG trees
+%%%
+%%%   17-Feb-1997 - No longer requires avm.sty
+%%%   03-Apr-1997 - Change treefit to loose for plain trees, add optional node
+%%%                 name argument
+%%%   16-Jun-1997 - Move all avmtree font parameters into \avmtreefont
+%%%   25-Aug-1997 - Add \strut to leaves in text trees
+%%%   06-Oct-1997 - Add \strut to branches in AVM trees
+%%%   20-Oct-1997 - Add \strut to leaves in AVM trees
+%%%   28-Jan-1998 - Combine with thesis version
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{rtrees}[1998/28/01 Rob's tree macros]
+
+%% These macros use ps-tricks to do most of the work of drawing trees.  They
+%% require a recent version of PSTricks -- the one on turing won't work.  
+
+\RequirePackage{pst-tree}[1997/03/25]
+\RequirePackage{avm}
+
+%% The tree environment defines four macros:
+%%
+%%      \br{NODE}{DAUGHTERS...} creates a tree with NODE as the mother's
+%%              node label and with daugthers DAUGHTERS.  The daughters should
+%%              either be trees created with \br or they should be leaves.
+%%      \abr{NODE}{DAUGHTERS...} creates a branching node just like \br does,
+%%              but it also joins the edges with an "and" arc
+%%      \lf{NODE} creates an italicized terminal node
+%%      \rlf{NODE} creates an non-italicized terminal node
+%%      \tlf{NODE} creates an italicized terminal node connected to the
+%%              non-terminal by a triangle
+%%
+
+\newcommand{\treefont}{\small}
+\newcommand{\avmtreefont}{\relax}
+\newcount\arcno
+
+\newenvironment{tree}{%
+ \let\psedge=\ncdiag
+ \psset{vref=0pt,levelsep=0.45in,treesep=.5in,treenodesize=0pt,treefit=loose}
+ \psset{armA=0,angleA=-90,armB=0,angleB=90,nodesepA=4.5pt,nodesepB=1pt}
+ \psset{linewidth=.2pt}
+ \treefont
+ \arcno=0\let\arcpoint=\relax
+ % Branching node
+ \def\br{\@ifnextchar[{\@br}{\@br[@]}}
+ \def\@br[##1]##2##3{\pstree{\TR[name=##1]{\strut ##2}}{\let\psedge=\ncdiag ##3}}
+ % Branching and node 
+ \def\abr{\@ifnextchar[{\@abr}{\@abr[@]}}
+ \def\@abr[##1]##2##3{
+     \advance\arcno by 1
+     \pstree{\TR[name=##1]{##2}}{
+         \def\psedge####1####2{\ncdiag{####1}{####2}\arcpoint}
+         \def\arcpoint{\ncput{\pnode{\the\arcno}}
+             \global\advance\arcno by 1
+             \gdef\arcpoint{\ncput{\pnode{\the\arcno}}}}
+         ##3}
+     \count255=\arcno\advance\count255 by -1
+     \ncarc[arcangle=-45,nodesepA=0pt,nodesepB=0pt]{\the\count255}{\the\arcno}}
+ % Plain leaf node 
+ \def\lf{\@ifnextchar[{\@lf}{\@lf[@]}}
+ \def\@lf[##1]##2{\TR[name=##1]{\strut ##2}}
+ % Plain leaf node  
+ \def\rlf##1{\TR{##1}}
+ % Triangle leaf node 
+ \def\tlf##1{\setbox0=\hbox{\strut ##1}%
+              \pstree[thislevelsep=9pt,edge=none]
+                     {\Tfan[nodesepA=4.5pt,fansize=\wd0]}{\TR{\box0}}}}{}
+
+\newcommand{\twotree}[2]{
+\begin{tabular}[t]{l@{\hskip-1em}ll@{\hskip-1em}l}
+a.&#1&b.&#2
+\end{tabular}}
+
+%% The avmtree environment defines two macros:
+%%
+%%      \br{NODE}{DAUGHTERS...} creates a tree with NODE as the mother's
+%%              node label and with daugthers DAUGHTERS.  The daughters should
+%%              either be trees created with \br or they should be leaves.
+%%              The node label must be an AVM.
+%%      \lf{NODE} creates an non-italicized terminal node
+%%
+
+\newcommand{\avmtreelevel}{*1.5cm}
+
+\newenvironment{avmtree}{%
+ \avmhskip{3pt}\avmvskip{2pt}\avmfont{\small}
+ \small\avmtreefont
+ \avmcentertrue
+ \let\psedge=\ncdiag
+ \psset{treefit=tight}
+ \psset{armA=0,angleA=-90,armB=0,angleB=90,vref=0pt}
+\psset{levelsep=\avmtreelevel,linewidth=.2pt}
+ \def\br##1##2{\pstree{\TR{\strut \begin{avm}##1\end{avm}}}{##2}}
+ \def\alf##1{\TR{\begin{avm}##1\end{avm}}}
+ \def\lf##1{\TR{\strut ##1}}
+ \def\tlf##1{\setbox0=\hbox{\strut ##1}%
+              \pstree[thislevelsep=9pt,edge=none]
+                     {\Tfan[fansize=\wd0]}{\TR{\box0}}}}{}

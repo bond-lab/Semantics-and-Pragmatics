@@ -1,0 +1,71 @@
+%
+%  Maintained by Francis Bond <bond@clsab.kecl.ntt.co.jp>
+%
+% identification
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{mtg2e}
+\typeout{Machine Translation style file: mtg2e.sty - Francis Bond - 1997-04-03}
+%%%
+%%% \kjpn[of]{no}{の} = の <i>no</i> "no" (\mtcitescript)
+%%% \kjpn[of]{no}{の} (\mtciteform)
+%%%
+%%%
+%%%
+
+%
+% initial Code
+%
+\newcommand{\mtcitestyle}[1]{\textit{#1}}
+\newcommand{\mtglossstyle}[1]{#1}
+\newcommand{\mtciteleft}{}
+\newcommand{\mtciteright}{}
+\newcommand{\mtglossleft}{``}
+\newcommand{\mtglossright}{''}
+%
+% options
+%
+% Note: I need two hashes at work, but only one at home!
+\DeclareOption{lsa}{%
+\renewcommand{\mtcitestyle}[1]{\textit{#1}}%
+\renewcommand{\mtglossleft}{`}%
+\renewcommand{\mtglossright}{'}}
+%%
+\DeclareOption{lyons}{%
+\renewcommand{\mtcitestyle}[1]{\textit{#1}}%
+\renewcommand{\mtglossleft}{``}%
+\renewcommand{\mtglossright}{''}}
+%%
+\DeclareOption{ogura}{%
+\renewcommand{\mtcitestyle}[1]{\textit{#1}}%
+\renewcommand{\mtciteleft}{``}%
+\renewcommand{\mtciteright}{''}%
+\renewcommand{\mtglossleft}{(}%
+\renewcommand{\mtglossright}{)}}
+%%
+\DeclareOption{c}{\newcommand{\chn}{\mtciteform}}
+\DeclareOption{e}{\newcommand{\eng}{\mtciteform}}
+\DeclareOption{j}{\newcommand{\jpn}{\mtciteform}}
+\DeclareOption{k}{\newcommand{\kor}{\mtciteform}}
+\DeclareOption{f}{\newcommand{\fra}{\mtciteform}}
+%%
+\ProcessOptions
+%
+% Main Code
+%
+
+\def\mtciteform{\@ifnextchar [{\@mtciteformglossx}{\@mtciteformx}}
+\def\@mtciteformx#1{\mtciteleft\mtcitestyle{#1}\mtciteright}
+\def\@mtciteformglossx[#1]#2{\mtciteleft\mtcitestyle{#2}\mtciteright\ %
+\mtglossleft\mtglossstyle{#1}\mtglossright}
+
+%\def\mtciteform{\@ifnextchar [{\@tempswatrue\@mtciteformx}%
+%{\@tempswafalse\@mtciteformx[]}}
+%\def\@mtciteformx[#1]#2{\mtciteleft\mtcitestyle{#2}\mtciteright%
+%\if@tempswa  \mtglossleft#1\mtglossright\fi}
+
+
+%
+% END OF FILE
+%
+
+
