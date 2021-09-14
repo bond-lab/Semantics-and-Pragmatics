@@ -2,11 +2,17 @@
 <html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>HG2002: Semantics and Pragmatics &mdash; Assignment 1</title>
   <link rel="icon" type="image/x-icon" href="static/favicon.ico">
-</head>
-<body>
-
+ <!-- Bootstrap CSS -->
+    <link rel="stylesheet"
+	  href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+	  integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+	  crossorigin="anonymous">
+  </head>
+<body class="container">
+<div class="column">
 
 <h1>HG2002: Semantics and Pragmatics</h1>
 
@@ -17,7 +23,7 @@
   consisting of three parts:
 <ol>
   <li>Annotate (on your own) 
-    All open class words in a short section of text (by <b>23:59 Oct 9th</b>).
+    All open class words in a short section of text (by <b>23:59 Oct 15th</b>).
     In this phase please do not discuss your annotations with each other.
     <br>
   <li>Compare your annotations with one other annotator and a machine's results 
@@ -36,11 +42,10 @@
   <li> If you have not done so already, read the story (at least up to
     the part you are assigned, preferably the whole story).
     This year we will look at
-    the <a href='https://fcbond.github.io/sh-canon/houn.html'>Hound
-    of the Baskervilles</a>
+    the <a href='https://fcbond.github.io/sh-canon/nava.html'>The Adventure of the Naval Treaty</a>
     
   <li> Using the on-line tool provided annotate each open class word in
-    a short (roughly 20-30 sentence) text.  
+    a short (roughly 30 sentence) text.  
     <ul>
     <li> For each word you should chose one of the senses
       in <a href='https://wordnet.princeton.edu/'>wordnet</a>
@@ -51,7 +56,14 @@
     <li> More detailed instructions are
     given <a href='https://bond-lab.github.io/IMI/tagdoc.html'>on-line<a/>,
 	read them.
-    <li>The tool works best under Chrome or Firefox.  If one does not work, plese try the other.
+    <li>The tool works best under Chrome or Firefox.  If one does not
+      work, please try the other.
+      <ul>
+	<li>⚠We are having a problem with cookies, if you cannot log
+	  int, try logging in in private mode (2021)
+	<li>⚠ NTU has not updated the digital certificate, so please
+	click through (it is safe, I promise) (2021)
+      </ul>
     <li><a href='annotation.html#phase1.html'>Your assigned sentences are here</a>
   </ul>
   <li> Estimated time 4-6 hours.
@@ -141,6 +153,11 @@
 
 <h4>References</h4>
 <ul>
+<li>Francis Bond, Andrew Devadason, Melissa Rui Lin Teo and Luís
+  Morgado da Costa (2021)
+  <a href='https://aclanthology.org/2021.gwc-1.32/'>Teaching Through
+  Tagging — Interactive Lexical Semantics</a> In <i>Proceedings of the 11th
+  Global Wordnet Conference (GWC 2021)</i>
   <li><a name="Bond:Morgado da Costa:Lê:2015">Bond, Francis, Luís Morgado da Costa, and Tuấn Anh Lê (2015)</a>
 <a href="http://www.aclweb.org/anthology/P/P15/P15-4002.pdf">IMI — A Multilingual Semantic Annotation Environment</a>.
   In <i>Proceedings of ACL-IJCNLP 2015 System Demonstrations</i>, Beijing. pp&nbsp;7–12
@@ -151,7 +168,7 @@
   concordances</a>. In Fellbaum (1998), chapter 8, pages 199–216.
   <li>H. Langone and B. R. Haskell and G. A. Miller
 2004 <a href='http://www.aclweb.org/anthology/W/W04/W04-2710.pdf'>Annotating
-      WordNet</a>. In Proceedings of the Workshop Frontiers in Corpus Annotation at HLT-NAACL 2004.
+      WordNet</a>. In <i>Proceedings of the Workshop Frontiers in Corpus Annotation at HLT-NAACL 2004.</i>
   <li><a name="Wang:Bond:2014">Shan  Wang and Francis Bond (2014)</a>
 <a href="http://compling.hss.ntu.edu.sg/pdf/2014-lrec-xling.pdf">Building The Sense-Tagged Multilingual Parallel Corpus</a> In <i>9th Edition of the Language
 	Resources and Evaluation Conference (LREC 2014)</i>,
@@ -169,13 +186,18 @@ Reykjavik.
 <address>
 <strong>Francis Bond </strong>
 &lt;<a href="mailto:bond@ieee.org">bond@ieee.org</a>&gt;
-<br> <a href="http://compling.hss.ntu.edu.sg/">Computational Linguistics Lab</a>
+<br> <a href="https://bond-lab.github.io/">Computational Linguistics Lab</a>
 <br> <a href="http://linguistics.hss.ntu.edu.sg/">Division of Linguistics and Multilingual Studies</a>
 <br> <a href="http://www.ntu.edu.sg/">Nanyang Technological University</a>
 <br>Level 3, Room 55, 14 Nanyang Drive, Singapore 637332
 <br>Tel:  (+65) 6592 1568; Fax: (+65) 6794 6303
 </address>
 <hr>
+
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
 </body>
 </html>
