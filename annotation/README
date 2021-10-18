@@ -41,8 +41,10 @@ UPDATE concept SET  tag=NUll WHERE sid > ??? OR sid < ???.
 
 (c) copy one of the DBs (it doesn't matter which) to a new DB
 set target DB, source DB and sids in tag-mfs.py
+maybe add new source of data
 get sentiment: merge.tsv
-$ tag-mfs.py
+
+$ tag-mfs.py 
 make the new DB not-writable
 
 This takes a bit of time.

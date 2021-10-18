@@ -1,0 +1,244 @@
+\documentclass[a4paper]{article}
+
+\title{HG2002: Solution to Tutorial 10\\  Formal Semantics}
+\author{Francis Bond \url{<bond@ieee.org>}}
+\date{}%2011-08-15}
+\usepackage[margin=25mm]{geometry}
+\newcommand{\ans}[1]{\hfill{#1}}
+%\newcommand{\ans}[1]{}
+\usepackage{polyglossia}
+\setmainlanguage{english}
+\setmainfont[Ligatures=TeX]{TeX Gyre Pagella}
+\setsansfont[Ligatures=TeX]{TeX Gyre Heros}
+\usepackage{multicol}
+%\Restriction{}
+%\rightfooter{}
+%\leftheader{}
+%\rightheader{}
+\usepackage{mygb4e}
+\newcommand{\lex}[1]{\textbf{\textit{#1}}}
+\newcommand{\lx}[1]{\textbf{\textit{#1}}}
+\newcommand{\ix}{\ex\it}
+\newcommand{\con}[1]{\textsc{#1}}
+\newcommand{\eng}[1]{\textit{#1}}
+\usepackage{url}
+\newcommand{\txx}[1]{\textbf{#1}}
+\newcommand{\cmp}[1]{{[\textsc{#1}]}}
+\newcommand{\sr}[1]{\ensuremath{\langle}#1\ensuremath{\rangle}}
+\usepackage[normalem]{ulem}
+\newcommand{\ul}{\uline}
+\newcommand{\ull}{\uuline}
+\newcommand{\wl}{\uwave}
+\newcommand{\vs}{\ensuremath{\Leftrightarrow}~}
+\newcommand{\into}{\ensuremath{\rightarrow}}
+% \newcommand{\to}{\ensuremath{\Rightarrow}}
+%%% theta role
+\newcommand{\tr}[1]{\textsc{#1}}
+%%% theta grid
+\newcommand{\grid}[1]{\ensuremath{\langle}\tr{#1}{\ensuremath{\rangle}}}
+\newcommand{\com}[1]{\hfill (#1)}
+
+
+\begin{document}
+\maketitle
+
+\begin{enumerate}
+\item Are the following quantifiers (i) symmetrical or asymmetrical;
+  (ii) upward or downward entailing in the left (iib) or right (iic)
+  argument?
+  \begin{exe}
+    \ex \textit{most}
+    \begin{itemize}
+    \item[i] \textit{Most students are youths} $\not\models$
+      \textit{Most youths are students} so asymmetrical
+      \\ $^*$\textit{There are most students over there}
+    \item[iib] \textit{Most students are youths}  $\not\models$
+      \textit{Most people are youths} \com{Upward, left}
+     \\  \textit{Most students are youths}  $\not\models$
+     \textit{Most linguistic students are youths}\com{Downward, left}
+       \item[iic]  \textit{Most students study formal semantics}  $\not\models$
+     \textit{Most students study semantics} \com{Upward, right}
+     \\ \textit{Most students study semantics}  $\not\models$
+      \textit{Most students study formal semantics} \com{Downward, right}
+    \end{itemize}
+      Neither upward or downward entailing on the left or right
+
+    \ex \textit{many (cardinal)} ``a large number''
+      \begin{itemize}
+    \item[i] \textit{Many students are youths} $\models$
+      \textit{Many youths are students} so symmetrical
+      \\ \textit{There are many students over there}
+    \item[iib] \textit{Many students are youths}  $\models$
+      \textit{Many people are youths}
+     \\  \textit{Many students are youths}  $\not\models$
+     \textit{Many linguistic students are youths}
+       \item[iic] \textit{Many students study formal semantics}  $\models$
+      \textit{Many students study semantics} 
+     \\  \textit{Many students study semantics}  $\not\models$
+      \textit{Many students study formal semantics}
+    \end{itemize}
+     Upward entailing on the left and right
+
+    \ex \textit{few (cardinal)} ``a small number'' (in comparison with another number stated or implied) 
+      \begin{itemize}
+    \item[i] \textit{Few students are youths} $\models$
+      \textit{Few youths are students} so asymmetrical
+      \\ \textit{There are few students over there}
+    \item[iib] \textit{Few students are youths}  $\not\models$
+      \textit{Few people are youths}
+     \\  \textit{Few students are youths}  $\not\models$
+     \textit{Few linguistic students are youths}
+       \item[iic] \textit{Few students study semantics}  $\models$
+      \textit{Few students study formal semantics}
+     \\  \textit{Few students study formal semantics}  $\not\models$
+      \textit{Few students study semantics} 
+    \end{itemize}
+     Downward entailing on the right
+    
+    \ex \textit{every}
+    \begin{itemize}
+    \item[i] \textit{Every student is a youth} $\not\models$
+      \textit{Every youth is student} so asymmetrical
+      \\ $^*$\textit{There is every student over there}
+    \item[iib] \textit{Every student is a youth}  $\not\models$
+      \textit{Every person is a youth}
+     \\  \textit{Every student is a youth}  $\models$
+     \textit{Every linguistic student is a youth}
+       \item[iic] \textit{Every student studies formal semantics}  $\models$
+      \textit{Every student studies semantics} 
+     \\  \textit{Every student studies semantics}  $\not\models$
+      \textit{Every student studies formal semantics}
+    \end{itemize}
+      Downward entailing on the left; Upward on the right
+
+    \ex \textit{{[at least]} two}
+   \begin{itemize}
+    \item[i] \textit{At least two students are youths} $\models$
+      \textit{At least two youths are students} so symmetrical
+      \\ \textit{There are at least two students over there}
+    \item[iib] \textit{At least two students are youths}  $\models$
+      \textit{At least two people are youths}
+     \\  \textit{At least two students are youths}  $\not\models$
+     \textit{At least two linguistic students are youths}
+       \item[iic] \textit{At least two students study semantics}  $\not\models$
+      \textit{At least two students study formal semantics}
+     \\  \textit{At least two students study  formal semantics}  $\models$
+      \textit{At least two students study semantics} 
+    \end{itemize}
+       Upward  entailing on the left and right
+    
+    \ex \textit{{[exactly]} two} (no more or less)
+    \begin{itemize}
+    \item[i] \textit{Exactly two students are youths} $\models$
+      \textit{Exactly two youths are students} so symmetrical
+      \\ \textit{There are exactly two students over there}
+    \item[iib] \textit{Exactly two students are youths}  $\not\models$
+      \textit{Exactly two people are youths}
+     \\  \textit{Exactly two students are youths}  $\not\models$
+     \textit{Exactly two linguistic students are youths}
+       \item[iic] \textit{Exactly two students study formal semantics}  $\not\models$
+      \textit{Exactly two students study semantics} 
+     \\  \textit{Exactly two students study semantics}  $\not\models$
+      \textit{Exactly two students study formal semantics}
+    \end{itemize}
+    Neither upward or downward entailing on the left or right
+    
+  \end{exe}
+% \item Using the DRT rules described in Saeed (2003, \S~10.9), try to
+%   identify which NPs in the following sentences are accessible for
+%   coreference with pronouns in subsequent sentences.
+%  \begin{exe}
+%    \ex \textit{If Kim drinks a beer they are happy
+%    \ex \textit{Sandy does not own a scanner
+%    \ex \textit{Every student who answers a question enjoys it
+%   \end{exe}
+\item Using the formulae of meaning postulates, represent the
+  semantic relations between the following word pairs:
+  \\  Also give the Theta-grid for the predicates.
+  \begin{exe}
+    \ex \textit{couch/sofa}
+    \begin{itemize}
+    \item $\forall$x((COUCH(x) \into\ SOFA(x)) $\wedge$ 
+      $\forall$x ((SOFA(x) \into COUCH(x))
+    \end{itemize}
+    \ex \textit{accepted/rejected}
+    \begin{itemize}
+    \item $\forall$x(ACCEPTED(x) \into\ $\neg$REJECTED(x));
+    \item[+] $\forall$x(REJECTED(x) \into\ $\neg$ACCEPTED(x))
+    \end{itemize}
+        \lex{X be accepted} \grid{\ul{theme}}
+  \\  \lex{X be rejected} \grid{\ul{theme}}
+    \ex \textit{student/person}
+    \begin{itemize}
+    \item $\forall$x((STUDENT(x) \into\ PERSON(x))
+    \end{itemize}
+
+    \ex \textit{on/off (of a switch)}
+    \begin{itemize}
+    \item $\forall$x(ON(x) \into\ $\neg$ON(x));
+    \item[+] $\forall$x(OFF(x) \into\ $\neg$OFF(x))
+    \end{itemize}
+     \lex{X be on} \grid{\ul{theme}}
+  \\  \lex{X be off} \grid{\ul{theme}}
+    \ex \textit{buy/sell}
+
+    \begin{itemize}
+  \item $\forall$x$\forall$y(BUY(x,z,y) \into\ SELL(y,z,x));
+  \\  $\forall$x$\forall$y(BUY(x,z,y) \into\ $\neg$ SELL(x,z,y))
+  \item $\forall$x$\forall$y(SELL(y,z,x) \into\ BUY(x,z,y))
+  \\ $\forall$x$\forall$y(SELL(y,z,x) \into\ $\neg$  BUY(y,z,x))
+  \end{itemize}
+ \lex{X buy Z from Y} \grid{\ul{agent}, theme, source}
+  \\  \lex{X sell Z to Y} \grid{\ul{agent}, theme, goal}
+      \ex \textit{computer/laptop}
+     \begin{itemize}
+    \item $\forall$x((LAPTOP(x) \into\ COMPUTER(x))
+    \end{itemize}
+
+    \ex \textit{give/receive}
+    \begin{itemize}
+    \item $\forall$x$\forall$y(GIVE(x,z,y) \into\ RECEIVE(y,z,x));
+  \\  $\forall$x$\forall$y(GIVE(x,z,y) \into\ $\neg$ RECEIVE(x,z,y))
+  \item $\forall$x$\forall$y(RECEIVE(y,z,x) \into\ GIVE(x,z,y))
+  \\ $\forall$x$\forall$y(RECEIVE(y,z,x) \into\ $\neg$  GIVE(y,z,x))
+  \end{itemize}
+  \lex{X give Z to Y} \grid{\ul{agent}, theme, goal}
+  \\  \lex{X receive Z from Y} \grid{\ul{agent}, theme, source}
+
+  \ex \textit{Monday/Tuesday/Wednesday/Thursday/Friday}
+    \begin{itemize}
+    \item $\forall$x(MONDAY(x) \into\
+      ($\neg$TUESDAY(x) $\vee$ $\neg$WEDNESDAY(x)
+       $\vee$ $\neg$THURSDAY(x) $\vee$ $\neg$FRIDAY(x));
+    \item[+] $\forall$x(TUESDAY(x) \into\
+      ($\neg$MONDAY(x) $\vee$ $\neg$WEDNESDAY(x)
+       $\vee$ $\neg$THURSDAY(x) $\vee$ $\neg$FRIDAY(x));
+       \item[+] \ldots
+     \end{itemize}
+   \end{exe}
+ 
+\newpage
+\item Using set notation, define \textup{few(A,B)} (cardinal) and
+  \textup{few\_of(A,B)} (proportional).
+
+
+  \begin{itemize}
+  \item   few(A,B) = 1 iff |A ∩ B| $< n$
+\\  where $n$ is a contextually defined number that denotes a small
+number without relating it to the size of A or B.
+\item  few\_of(A,B) = 1 iff |A ∩ B| $< |A|/n$
+\\  n is a contextually defined number >1 that denotes the proportion in relation to A's size.
+\end{itemize}
+\end{enumerate}
+\vfill
+\paragraph{Acknowledgments} These questions are partially
+based on exercises from Saeed (2003).
+\end{document}
+
+
+%%% Local Variables: 
+%%% coding: utf-8
+%%% mode: latex
+%%% TeX-PDF-mode: t
+%%% TeX-engine: xetex
+%%% End: 
