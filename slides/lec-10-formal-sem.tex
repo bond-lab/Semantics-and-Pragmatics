@@ -428,7 +428,7 @@
   \item \txx{antonym}
   \begin{itemize}
   \item $\forall$x(DEAD(x) \into\ $\neg$ALIVE(x));
-  \item[+] $\forall$x(ALIVE(x) \into\ $\neg$DEAD(x))
+  \item $\forall$x(ALIVE(x) \into\ $\neg$DEAD(x))
   \end{itemize}
 \item \txx{converse}
   \begin{itemize}
@@ -511,7 +511,7 @@ $p$   & $\neg p$ ``not'' \\[2ex]
 \myslide{Logical Connectives as Sets ($p \wedge q$ and   $p \vee q$)}
 
 
-\begin{tabular}{cc}
+\noindent\begin{tabular}{cc}
 $p \wedge q$ ``and''  & $p \vee q$ ``or'' \\[2ex]  
 \scalebox{2}{
 \begin{tikzpicture}
@@ -542,7 +542,7 @@ $p \wedge q$ ``and''  & $p \vee q$ ``or'' \\[2ex]
 \myslide{Logical Connectives as Sets ($p \oplus q$ and   $p \rightarrow q$)}
 
 
-\begin{tabular}{cc}
+\noindent\begin{tabular}{cc}
 $p \oplus q$ ``exclusive or''  & $p \rightarrow q$ ``if'' \\[2ex] 
 \scalebox{2}{
 \begin{tikzpicture}
@@ -636,8 +636,9 @@ $p \oplus q$ ``exclusive or''  & $p \rightarrow q$ ``if'' \\[2ex]
 \end{itemize}
 
 \myslide{Generalized Quantifiers:  \iz{all}, \iz{most}} 
-\begin{tabular}{cc}
-all $p$ are $q$ & most $p$ are $q$ \\[2ex] 
+
+\noindent\begin{tabular}{cc}
+all $a$ are $b$ & most $a$ are $b$ \\[2ex] 
 \scalebox{2}{
 \begin{tikzpicture}
 \filldraw[fill=white] (-2,-2) rectangle (3,2);
@@ -646,8 +647,8 @@ all $p$ are $q$ & most $p$ are $q$ \\[2ex]
 \fill[pink] (0.25,0) circle (0.5);
 %\fill[white] (0,0) circle (1);
 \endscope
-\draw (0.25,0) circle (0.5) node [text=black] {$p$}
-      (1,0) circle (1.5) node [text=black,right] {$q$};
+\draw (0.25,0) circle (0.5) node [text=black] {$a$}
+      (1,0) circle (1.5) node [text=black,right] {$b$};
 % outline
 \end{tikzpicture}}
 &
@@ -659,8 +660,8 @@ all $p$ are $q$ & most $p$ are $q$ \\[2ex]
 \fill[pink] (0.2,0) circle (1);
 %\fill[white] (1,0) circle (1);
 \endscope
-\draw (0.2,0) circle (1) node [text=black] {$p$}
-      (1,0) circle (1.5) node [text=black,right] {$q$};
+\draw (0.2,0) circle (1) node [text=black] {$a$}
+      (1,0) circle (1.5) node [text=black,right] {$b$};
 % outline
 \end{tikzpicture}}
 
@@ -668,9 +669,10 @@ all $p$ are $q$ & most $p$ are $q$ \\[2ex]
 
 
 \myslide{Generalized Quantifiers:  \iz{some}, \iz{no}} 
-\begin{tabular}{cc}
-some $p$ are $q$ & no $p$ are $q$ \\[2ex] 
-\scalebox{2}{
+\noindent\begin{tabular}{cc}
+some $a$ are $b$ & no $a$ are $b$ \\[2ex] 
+
+  \scalebox{2}{
 \begin{tikzpicture}
 \filldraw[fill=white] (-2,-2) rectangle (3,2);
 \scope % A \vee B
@@ -682,10 +684,10 @@ some $p$ are $q$ & no $p$ are $q$ \\[2ex]
       (-0.6,0) circle (1) 
       (-0.4,0) circle (1) 
       (-0.2,0) circle (1) 
-      (0.0,0) circle (1) node [text=black] {$p$}
+      (0.0,0) circle (1) node [text=black] {$a$}
       (0.2,0) circle (1) 
 %      (0.25,0) circle (0.5) 
-      (1,0) circle (1.5) node [text=black,right] {$q$};
+      (1,0) circle (1.5) node [text=black,right] {$b$};
 % outline
 \end{tikzpicture}}
 &
@@ -697,8 +699,8 @@ some $p$ are $q$ & no $p$ are $q$ \\[2ex]
 \fill[pink] (-0.75,0) circle (1);
 %\fill[white] (1,0) circle (1);
 \endscope
-\draw (-.75,0) circle (1) node [text=black] {$p$}
-      (1.75,0) circle (1) node [text=black] {$q$};
+\draw (-.75,0) circle (1) node [text=black] {$a$}
+      (1.75,0) circle (1) node [text=black] {$b$};
 % outline
 \end{tikzpicture}}
 
